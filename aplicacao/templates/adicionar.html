@@ -9,5 +9,12 @@
 </head>
 <body>
     <h1>Adicionar Receita</h1>
+
+    <form action="{% url 'adicionar' %}" method="POST">{% csrf_token %}
+        <input type="text" name="nome" placeholder="Digite o nome da receita">
+        <br>
+        <br>
+        <input type="submit" value="Enviar">
+    </form>
 </body>
 </html>
