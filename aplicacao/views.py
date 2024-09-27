@@ -9,7 +9,13 @@ def home(request):
         return render(request, 'home.html')
 
 def adicionar(request):
-    nome = request.POST.get('nome')
+    if request.method == "GET":
+        return render(request, 'adicionar.html')
+    elif request.method == "POST":
+        nome = request.POST.get('nome')
 
-    receita = receita(nome=nome)
-    return render(request, 'adicionar.html')
+        Receita = receita(nome=nome)
+        
+        Receita.save()
+        return HttpResponse("Receita adicionada com sucesso")
+    
