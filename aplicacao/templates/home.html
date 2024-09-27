@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'aplicacao/css/home.css' %}">
+    <title>home</title>
+</head>
+<body>
+    <header>
+        <div class="logo">Receitopédia</div>
+        <input type="text" placeholder="Pesquisar...">
+        <div class="user-info">
+            <span>Nome Usuário</span>
+            <span>@user7269321</span>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#">Minhas Receitas</a></li>
+            <li><a href="#">Receitas Favoritas</a></li>
+            <li><a href="#">Sugestões do dia</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Minhas Receitas</h1>
+        <section class="receitas">
+            <div class="card nova-receita">
+                <span class="plus">+</span>
+                <p>Nova Receita</p>
+            </div>
+            <div class="card">
+                <span>Receita Número 01</span>
+                <div class="menu-options">⋮</div>
+            </div>
+            <div class="card favorita">
+                <span>Receita Número 02</span>
+                <div class="menu-options">⋮</div>
+            </div>
+            <div class="card">
+                <span>Receita Número 03</span>
+                <div class="menu-options">⋮</div>
+            </div>
+            <div class="card favorita">
+                <span>Receita Número 04</span>
+                <div class="menu-options">⋮</div>
+            </div>
+            <div class="card">
+                <span>Receita Número 05</span>
+                <div class="menu-options">⋮</div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
