@@ -21,6 +21,7 @@ header {
 header input {
     padding: 5px;
     width: 50%;
+    height: 56px;
     border: none;
     border-radius: 50px;
 }
