@@ -10,18 +10,24 @@ body {
 }
 
 header {
-    background-color: #333;
-    color: #fff;
+    background-color: #000000;
+    color: #DBD69B;
     padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-header .logo {
+header .logoA {
     font-size: 24px;
     color: #330fff;
 }
+
+header .logoV {
+    font-size: 24px;   
+    color: rgb(8, 66, 16);
+}
+
 
 header input {
     padding: 5px;
