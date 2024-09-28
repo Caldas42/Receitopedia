@@ -28,10 +28,12 @@
     <main>
         <h1>Minhas Receitas</h1>
         <section class="receitas">
-            <div class="card nova-receita">
-                <span class="plus">+</span>
-                <p>Nova Receita</p>
-            </div>
+            <a href="{%url 'aplicacao:adicionar'%}">
+                <div class="card nova-receita">
+                    <span class="plus">+</span>
+                    <p>Nova Receita</p>
+                </div>
+            </a>
             <div class="card">
                 <span>Receita Número 01</span>
                 <div class="menu-options">⋮</div>
