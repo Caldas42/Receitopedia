@@ -71,8 +71,6 @@ h1 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    text-decoration: none;
-    list-style: none;
 }
 
 .card {
@@ -142,4 +140,9 @@ color: #568745;
     position: relative;
     left: 75px;
     font-size: 40px;
+}
+
+#linkadd {
+    text-decoration: none;
+    list-style: none;
 }
