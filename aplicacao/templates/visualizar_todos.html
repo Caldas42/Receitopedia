@@ -14,10 +14,12 @@
     <main>
 
         {% for Receita in todas_as_receitas %}
+        <a href="{% url 'aplicacao:visualizar_um' Receita.id %}">
 
             <div class="card">
                 <h2>{{Receita.nome}}</h2>
             </div>
+        </a>
 
         {% endfor %}
     </main>
