@@ -41,7 +41,7 @@ header .user-info span:first-child {
 }
 
 nav {
-    background-color: #000;
+    background-color: #000000;
     padding: 10px;
 }
 
@@ -113,5 +113,5 @@ h1 {
 
 @font-face {
     font-family: 'Jaro';
-    src: url(../../../../fonts/Jaro-Regular-VariableFont_opsz.ttf);
+    src: url(../../../static/fonts/Jaro-Regular-VariableFont_opsz.ttf);
 }
