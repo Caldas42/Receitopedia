@@ -20,15 +20,16 @@ header {
 
 header input {
     padding: 5px;
-    width: 250px;
+    width: 50%;
     border: none;
-    border-radius: 5px;
+    border-radius: 50px;
 }
 
 header .user-info {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    
 }
 
 header .user-info span:first-child {
@@ -113,7 +114,7 @@ h1 {
 
 .space {
     letter-spacing: 0;
-    font-size: 24px;
+    font-size: 29px;
 }
 
 .Red {
