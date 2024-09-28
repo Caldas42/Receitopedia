@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from .models import receita
 
@@ -20,5 +20,5 @@ def adicionar(request):
         Receita = receita(nome=nome, ingredientes=ingredientes, modo_preparo=modo_preparo)
         
         Receita.save()
-        return HttpResponse("Receita adicionada com sucesso")
+        return redirect('aplicacao:home')
     
