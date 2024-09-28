@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'aplicacao/css/visualizar_todos.css' %}">
+    <title>Ver todas</title>
+</head>
+<body>
+    <header>
+        <a href="{% url 'aplicacao:home' %}">home</a>
+    </header>
+    <main>
+
+        {% for Receita in todas_as_receitas %}
+
+            <div class="card">
+                <h2>{{Receita.nome}}</h2>
+            </div>
+
+        {% endfor %}
+    </main>
+    
+</body>
+</html>

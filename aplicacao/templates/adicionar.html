@@ -9,5 +9,21 @@
 </head>
 <body>
     <h1>Adicionar Receita</h1>
+
+    <form action="{% url 'aplicacao:adicionar' %}" method="POST">{% csrf_token %}
+        <label for="nome">Nome da Receita:</label><br>
+        <input type="text" id="nome" name="nome" maxlength="100" placeholder="Digite o nome da receita" required><br><br>
+
+        <label for="ingredientes">Ingredientes:</label><br>
+        <textarea id="ingredientes" name="ingredientes" rows="5" cols="50" maxlength="1000" placeholder="Liste os ingredientes separados por vírgula" required></textarea><br><br>
+
+        <label for="modo-preparo">Modo de Preparo:</label><br>
+        <textarea id="modo-preparo" name="modo_preparo" rows="10" cols="50" maxlength="2000" placeholder="Descreva o modo de preparo" required></textarea><br><br>
+        
+        <label for="comentarios">Comentarios:</label><br>
+        <textarea id="comentarios" name="comentarios" rows="10" cols="50" maxlength="2000" placeholder="Adicione um comentários" required></textarea><br><br>
+        
+        <input type="submit" value="Enviar">
+    </form>
 </body>
 </html>
