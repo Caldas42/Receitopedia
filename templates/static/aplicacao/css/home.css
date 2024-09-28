@@ -132,4 +132,12 @@ color: #568745;
 
 #lupa {
     position: relative;
+    right: 170px;
+    color: #000000;
+}
+
+#user-icon{
+    position: relative;
+    
+
 }
