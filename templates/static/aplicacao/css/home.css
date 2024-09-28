@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: Jaro;
     background-color: #F1E9C0;
 }
 
@@ -20,7 +20,7 @@ header {
 
 header .logo {
     font-size: 24px;
-    color: #EA4633;
+    color: #330fff;
 }
 
 header input {
@@ -109,4 +109,9 @@ h1 {
 .menu-options {
     font-size: 20px;
     cursor: pointer;
+}
+
+@font-face {
+    font-family: 'Jaro';
+    src: url(../../../../fonts/Jaro-Regular-VariableFont_opsz.ttf);
 }
