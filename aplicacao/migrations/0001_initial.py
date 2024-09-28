@@ -16,8 +16,6 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('nome', models.CharField(max_length=100)),
-                ('ingredientes', models.CharField(max_length = 1000)),
-                ('modo_de_preparo', models.CharField(max_length = 2000)),
             ],
         ),
     ]

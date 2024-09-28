@@ -14,9 +14,10 @@ def adicionar(request):
     elif request.method == "POST":
         nome = request.POST.get('nome')
         ingredientes = request.POST.get('ingredientes')
-        modo_de_preparo = request.POST.get('modo_de_preparo')
+        modo_preparo = request.POST.get('modo_preparo')
 
-        Receita = receita(nome=nome, ingredientes=ingredientes, modo_de_preparo=modo_de_preparo)
+
+        Receita = receita(nome=nome, ingredientes=ingredientes, modo_preparo=modo_preparo)
         
         Receita.save()
         return HttpResponse("Receita adicionada com sucesso")
