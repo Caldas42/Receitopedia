@@ -121,3 +121,19 @@ h1 {
     font-family: 'Jaro';
     src: url(../../../static/fonts/Jaro-Regular-VariableFont_opsz.ttf);
 }
+
+.space {
+    letter-spacing: 0;
+}
+
+.Red {
+    color: #B73939;
+}
+
+.Green {
+color: #568745;
+}
+
+.Bege {
+    color: #DBD69B;
+}
