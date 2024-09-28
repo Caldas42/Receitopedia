@@ -71,6 +71,8 @@ h1 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+    text-decoration: none;
+    list-style: none;
 }
 
 .card {
@@ -132,12 +134,12 @@ color: #568745;
 
 #lupa {
     position: relative;
-    right: 170px;
+    right: 130px;
     color: #000000;
 }
 
 #user-icon{
     position: relative;
-    
-
+    left: 75px;
+    font-size: 40px;
 }
