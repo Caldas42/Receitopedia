@@ -22,3 +22,10 @@ def adicionar(request):
         Receita.save()
         return redirect('aplicacao:home')
     
+def visualizar_todos(request):
+    Receita = receita.objects.all()
+
+    ctx = {
+        'todas_as_receitas': Receita,
+    }
+    return render(request, 'visualizar_todos.html', ctx)
