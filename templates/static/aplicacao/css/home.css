@@ -18,17 +18,6 @@ header {
     align-items: center;
 }
 
-header .logoA {
-    font-size: 24px;
-    color: #330fff;
-}
-
-header .logoV {
-    font-size: 24px;   
-    color: rgb(8, 66, 16);
-}
-
-
 header input {
     padding: 5px;
     width: 250px;
@@ -124,6 +113,7 @@ h1 {
 
 .space {
     letter-spacing: 0;
+    font-size: 24px;
 }
 
 .Red {
