@@ -110,6 +110,19 @@ color: #568745;
     text-align: center;
 }
 
-label {
-    border-radius: 30px;    
+textarea {
+    border-radius: 30px;
+    background-color: #CAC486;
+    width: 30%;
+}
+
+#nome {
+    border-radius: 30px;
+    background-color: #CAC486;
+    width: 30%;
+    height: 40px;
+}
+
+textarea::placeholder {
+    font-family: Jaro;
 }
