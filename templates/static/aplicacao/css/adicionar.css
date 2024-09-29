@@ -100,6 +100,12 @@ h1 {
     list-style: none;
 }
 
+.space img{
+    width: 325px;
+    height: 80px;
+}
+
+
 .divAd {
     /*text-align: right;*/
     /*margin: 20px;*/

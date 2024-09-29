@@ -104,9 +104,9 @@ h1 {
     color: #AD3826;
 }
 
-.space {
-    letter-spacing: 0;
-    font-size: 29px;
+.space img{
+    width: 325px;
+    height: 80px;
 }
 
 .Red {
