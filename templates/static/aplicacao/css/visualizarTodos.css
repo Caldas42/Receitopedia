@@ -18,6 +18,10 @@ header {
     align-items: center;
 }
 
+header a {
+    text-decoration: none; 
+}
+
 header input {
     padding: 5px;
     width: 50%;
