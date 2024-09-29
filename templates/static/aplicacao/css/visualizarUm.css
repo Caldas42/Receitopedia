@@ -114,6 +114,63 @@ color: #568745;
     text-align: center;
 }
 
-label {
-    border-radius: 30px;    
+#card {
+    max-width: 800px; /* Largura máxima do card */
+    margin: 20px auto; /* Centraliza o card */
+    background-color: #F1E9C0; /* Cor de fundo do card */
+    border-radius: 10px; /* Borda arredondada */
+    padding: 20px; 
+}
+
+table {
+    width: 100%; /* Largura total da tabela */
+    border-collapse: collapse; /* Remove o espaço entre as bordas */
+    margin-top: 20px; /* Espaço acima da tabela */
+    background-color: #F1E9C0; /* Cor de fundo da tabela */
+    border-radius: 10px; /* Bordas arredondadas */
+}
+
+th, td {
+    padding: 12px; /* Espaçamento interno nas células */
+    text-align: left; /* Alinha o texto à esquerda */
+    border: none; /* Remove bordas das células */
+}
+
+th {
+    background-color: #2F4D23; /* Cor de fundo para o cabeçalho */
+    color: #DBD69B; /* Cor do texto no cabeçalho */
+}
+
+td {
+    background-color: #F1E9C0; /* Cor de fundo para as células */
+    color: #141414; /* Cor do texto nas células */
+}
+
+tr:nth-child(even) td {
+    background-color: #F1E9C0; /* Cor de fundo para linhas pares */
+}
+
+tr:hover {
+    background-color: #D0CBA0; /* Cor de fundo ao passar o mouse sobre a linha */
+}
+
+#title {
+    text-align: center; /* Alinhamento central do título */
+    margin-bottom: 20px; /* Espaço abaixo do título */
+}
+
+/* Estilos para melhorar a aparência da tabela */
+th {
+    padding: 15px; /* Adicionando mais espaçamento interno */
+    font-weight: bold; /* Negrito para os cabeçalhos */
+}
+
+td {
+    line-height: 1.6; /* Melhorar a legibilidade do texto */
+}
+
+/* Remover efeito de sombra da tabela */
+#card {
+    box-shadow: none; /* Remover sombra do card */
+    border: 1px solid #DBD69B; /* Adicionar uma borda simples em torno do card */
 }
