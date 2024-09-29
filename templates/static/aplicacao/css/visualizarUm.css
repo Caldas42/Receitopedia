@@ -12,7 +12,7 @@ body {
 header {
     background-color: #141414;
     color: #DBD69B;
-    padding: 15px 30px; /* Ajustando o padding */
+    padding: 10px; /* Ajustando o padding */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -23,8 +23,8 @@ header a {
 }
 
 header input {
-    padding: 10px;
-    width: 60%; /* Aumentando a largura */
+    padding: 5px;
+    width: 50%; /* Aumentando a largura */
     height: 40px;
     border: none;
     border-radius: 25px;
@@ -48,7 +48,7 @@ header .user-info span:first-child {
 
 nav {
     background-color: #000;
-    padding: 10px 30px; /* Ajustando o padding */
+    padding: 10px; /* Ajustando o padding */
 }
 
 nav ul {
@@ -57,7 +57,7 @@ nav ul {
 }
 
 nav ul li {
-    margin-right: 30px; /* Aumentando o espaçamento entre os itens */
+    margin-right: 20px; /* Aumentando o espaçamento entre os itens */
 }
 
 nav ul li a {
@@ -83,9 +83,8 @@ h1 {
 }
 
 .space {
-    letter-spacing: 1px;
-    font-size: 32px;
-    font-weight: bold;
+    letter-spacing: 0px;
+    font-size: 29px;
 }
 
 .Red {
