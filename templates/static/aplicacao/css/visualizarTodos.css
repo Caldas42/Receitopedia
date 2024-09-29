@@ -121,6 +121,48 @@ label {
 main a {
     text-decoration: none;
 }
+
 h2 {
     text-align: center; 
+}
+
+.recipe-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto; 
+}
+
+.recipe-card {
+    background-color: #FFF;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+    background-color: #CAC486;
+}
+
+.recipe-card:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.recipe-card h2 {
+    color: #AD3826;
+    font-size: 24px;
+    margin-bottom: 10px;
+
+}
+
+.recipe-card a {
+    text-decoration: none;
+    color: inherit; 
+}
+
+main {
+    padding: 20px;
 }
