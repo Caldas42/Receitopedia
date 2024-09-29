@@ -5,14 +5,14 @@
 }
 
 body {
-    font-family: Jaro;
+    font-family: 'Jaro', sans-serif;
     background-color: #F1E9C0;
 }
 
 header {
     background-color: #141414;
     color: #DBD69B;
-    padding: 10px;
+    padding: 15px 30px; /* Ajustando o padding */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -23,18 +23,23 @@ header a {
 }
 
 header input {
-    padding: 5px;
-    width: 50%;
+    padding: 10px;
+    width: 60%; /* Aumentando a largura */
     height: 40px;
     border: none;
-    border-radius: 50px;
+    border-radius: 25px;
+    background-color: #E3E3E3;
+    transition: background-color 0.3s;
+}
+
+header input:focus {
+    background-color: #D0D0D0;
 }
 
 header .user-info {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    
 }
 
 header .user-info span:first-child {
@@ -42,8 +47,8 @@ header .user-info span:first-child {
 }
 
 nav {
-    background-color: #000000;
-    padding: 10px;
+    background-color: #000;
+    padding: 10px 30px; /* Ajustando o padding */
 }
 
 nav ul {
@@ -52,18 +57,24 @@ nav ul {
 }
 
 nav ul li {
-    margin-right: 20px;
+    margin-right: 30px; /* Aumentando o espaçamento entre os itens */
 }
 
 nav ul li a {
     color: #FFF;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #DBD69B;
 }
 
 h1 {
     margin-bottom: 20px;
     color: #AD3826;
+    text-align: center; /* Centralizando o título */
 }
 
 @font-face {
@@ -72,8 +83,9 @@ h1 {
 }
 
 .space {
-    letter-spacing: 0;
-    font-size: 29px;
+    letter-spacing: 1px;
+    font-size: 32px;
+    font-weight: bold;
 }
 
 .Red {
@@ -81,47 +93,50 @@ h1 {
 }
 
 .Green {
-color: #568745;
+    color: #568745;
 }
 
 .Bege {
     color: #DBD69B;
 }
 
-#user-icon{
+#user-icon {
     position: relative;
-    left: 75px;
     font-size: 40px;
+    transition: transform 0.3s;
 }
 
-#linkadd {
-    text-decoration: none;
-    list-style: none;
-}
-
-.divAd {
-    text-align: right;
-    margin: 20px;
-}
-
-.h1Ad_receita {
-    text-align: center;
+#user-icon:hover {
+    transform: scale(1.1);
 }
 
 #card {
-    max-width: 800px; /* Largura máxima do card */
-    margin: 20px auto; /* Centraliza o card */
-    background-color: #F1E9C0; /* Cor de fundo do card */
-    border-radius: 10px; /* Borda arredondada */
+    max-width: 800px; 
+    margin: 20px auto; 
+    background-color: #F1E9C0; 
+    border-radius: 15px; /* Bordas arredondadas */
     padding: 20px; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra leve */
+}
+
+h2 {
+    color: #AD3826; /* Cor dos títulos das seções */
+    margin-bottom: 10px; /* Espaço abaixo do título */
+    text-align: left; /* Alinhamento à esquerda */
+}
+
+/* Estilos para as seções de Ingredientes, Modo de Preparo e Comentários */
+.colored-line {
+    padding: 10px; /* Espaçamento interno */
+    border-radius: 5px; /* Bordas arredondadas */
+    margin-bottom: 10px; /* Espaçamento entre os itens */
+    background-color: #CAC486; /* Cor uniforme para todas as seções */
 }
 
 table {
     width: 100%; /* Largura total da tabela */
     border-collapse: collapse; /* Remove o espaço entre as bordas */
     margin-top: 20px; /* Espaço acima da tabela */
-    background-color: #F1E9C0; /* Cor de fundo da tabela */
-    border-radius: 10px; /* Bordas arredondadas */
 }
 
 th, td {
@@ -146,25 +161,4 @@ tr:nth-child(even) td {
 
 tr:hover {
     background-color: #D0CBA0; /* Cor de fundo ao passar o mouse sobre a linha */
-}
-
-#title {
-    text-align: center; /* Alinhamento central do título */
-    margin-bottom: 20px; /* Espaço abaixo do título */
-}
-
-/* Estilos para melhorar a aparência da tabela */
-th {
-    padding: 15px; /* Adicionando mais espaçamento interno */
-    font-weight: bold; /* Negrito para os cabeçalhos */
-}
-
-td {
-    line-height: 1.6; /* Melhorar a legibilidade do texto */
-}
-
-/* Remover efeito de sombra da tabela */
-#card {
-    box-shadow: none; /* Remover sombra do card */
-    border: 1px solid #DBD69B; /* Adicionar uma borda simples em torno do card */
 }

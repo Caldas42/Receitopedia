@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <a href="{%url 'aplicacao:home'%}">
+        <a href="{% url 'aplicacao:home' %}">
             <div class="space">
                 <span class="Red">R</span> <span class="Green">e</span> <span class="Bege">c</span> <span class="Red">e</span> <span class="Green">i</span> <span class="Bege">t</span> <span class="Red">o</span> <span class="Green">p</span> <span class="Bege">é</span> <span class="Red">d</span> <span class="Green">i</span> <span class="Bege">a</span>
             </div>
@@ -27,31 +27,25 @@
         <ul>
             <li><a href="#">Receitas Favoritas</a></li>
             <li><a href="#">Sugestões do dia</a></li>
-            <li><a href="{%url 'aplicacao:visualizar_todos'%}">Ver todas as receitas</a></li>
+            <li><a href="{% url 'aplicacao:visualizar_todos' %}">Ver todas as receitas</a></li>
         </ul>
     </nav>
 
     <main>
         <div id="card">
             <div id="title">
-                <h1>{{Receita.nome}}</h1>
+                <h1>{{ Receita.nome }}</h1>
             </div>
-            <table>
-                <tbody>
-                    <tr>
-                        <th>Ingredientes</th>
-                        <td>{{Receita.ingredientes}}</td>
-                    </tr>
-                    <tr>
-                        <th>Modo de Preparo</th>
-                        <td>{{Receita.modo_preparo}}</td>
-                    </tr>
-                    <tr>
-                        <th>Comentários</th>
-                        <td>{{Receita.comentarios}}</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="list-container">
+                <h2>Ingredientes</h2>
+                <p class="colored-line ingredient">{{ Receita.ingredientes }}</p>
+
+                <h2>Modo de Preparo</h2>
+                <p class="colored-line preparo">{{ Receita.modo_preparo }}</p>
+                
+                <h2>Comentários</h2>
+                <p class="colored-line comentarios">{{ Receita.comentarios }}</p>
+            </div>
         </div>
     </main>
 </body>
