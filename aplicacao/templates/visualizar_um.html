@@ -32,22 +32,27 @@
     </nav>
 
     <main>
-        <span id="back">
-            <a href="{% url 'aplicacao:visualizar_todos' %}"></a>
-        </span>
         <div id="card">
             <div id="title">
                 <h1>{{Receita.nome}}</h1>
-                <div id="types">
-                    <span id="{{Receita.ingredientes}}">{{Receita.ingredientes}}</span>
-                    <br>    
-                    <span id="{{Receita.modo_preparo}}">{{Receita.modo_preparo}}</span>
-                    <br>
-                    <span id="{{Receita.comentarios}}">{{Receita.comentarios}}</span>
-                </div>
             </div>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>Ingredientes</th>
+                        <td>{{Receita.ingredientes}}</td>
+                    </tr>
+                    <tr>
+                        <th>Modo de Preparo</th>
+                        <td>{{Receita.modo_preparo}}</td>
+                    </tr>
+                    <tr>
+                        <th>Comentários</th>
+                        <td>{{Receita.comentarios}}</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-        
     </main>
 </body>
 </html>
