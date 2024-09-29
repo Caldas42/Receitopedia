@@ -117,3 +117,10 @@ color: #568745;
 label {
     border-radius: 30px;    
 }
+
+main a {
+    text-decoration: none;
+}
+h2 {
+    text-align: center; 
+}
