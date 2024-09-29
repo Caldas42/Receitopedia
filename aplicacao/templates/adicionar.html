@@ -36,7 +36,7 @@
     <div class="divAd">
         <form action="{% url 'aplicacao:adicionar' %}" method="POST">{% csrf_token %}
             <label for="nome">Nome da Receita:</label><br>
-            <input type="text" id="nome" name="nome" maxlength="100" placeholder="Nome da Receita:" required><br><br>
+            <input type="text" id="nome" name="nome" maxlength="100" placeholder="" required><br><br>
 
             <label for="ingredientes">Ingredientes:</label><br>
             <textarea id="ingredientes" name="ingredientes" rows="5" cols="50" maxlength="1000" placeholder="" required></textarea><br><br>
@@ -47,8 +47,10 @@
             <label for="comentarios">Comentarios:</label><br>
             <textarea id="comentarios" name="comentarios" rows="10" cols="50" maxlength="2000" placeholder="" required></textarea><br><br>
             
-            <input type="submit" value="Enviar">
         </form>
+    </div>
+    <div class="divButton">
+        <input type="submit" value="Enviar" class="button">
     </div>
 </body>
 </html>
