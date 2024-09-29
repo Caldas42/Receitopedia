@@ -19,7 +19,8 @@ class AddView(View):
     def get(self, request):
         if request.method == "GET":
             return render(request, 'adicionar.html')
-        elif request.method == "POST":
+    def post(self, request):
+        if request.method == "POST":
             nome = request.POST.get('nome')
             ingredientes = request.POST.get('ingredientes')
             modo_preparo = request.POST.get('modo_preparo')
