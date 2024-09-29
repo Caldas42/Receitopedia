@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: Jaro;
     background-color: #F1E9C0;
@@ -93,4 +99,17 @@ color: #568745;
 #linkadd {
     text-decoration: none;
     list-style: none;
+}
+
+.divAd {
+    text-align: right;
+    margin: 20px;
+}
+
+.h1Ad_receita {
+    text-align: center;
+}
+
+label {
+    border-radius: 30px;    
 }
