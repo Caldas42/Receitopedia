@@ -17,7 +17,6 @@
         </a>
 
         <input type="text" placeholder="" class="Navbar2">
-        <i class="fa-solid fa-magnifying-glass" id="lupa"></i>
         <i class="fa-solid fa-circle-user" id="user-icon"></i>
         <div class="user-info">
             <span>Nome Usuário</span>
@@ -34,7 +33,8 @@
     </nav>
 
     <main>
-        <h1>Receitopedia</h1>
+        <h1>Minhas receitas</h1>
+        
         <section class="receitas">
             <a href="{%url 'aplicacao:adicionar'%}" id="linkadd">
                 <div class="card nova-receita">
@@ -43,6 +43,16 @@
                 </div>
             </a>
         </section>
+
+        <div class="recipe-list">
+            {% for Receita in todas_as_receitas %}
+            <a href="{% url 'aplicacao:visualizar_um' Receita.id %}">
+                <div class="recipe-card">
+                    <h2>{{Receita.nome}}</h2>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
     </main>
 </body>
 </html>
