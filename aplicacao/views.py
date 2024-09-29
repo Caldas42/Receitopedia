@@ -5,8 +5,13 @@ from .models import receita
 # Create your views here.
 
 def home(request):
-    if request.method == "GET":
-        return render(request, 'home.html')
+    Receita = receita.objects.all()
+
+    ctx = {
+        'todas_as_receitas': Receita,
+    }
+    
+    return render(request, 'home.html', ctx)
 
 def adicionar(request):
     if request.method == "GET":
