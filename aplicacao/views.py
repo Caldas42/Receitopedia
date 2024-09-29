@@ -17,7 +17,6 @@ def adicionar(request):
         modo_preparo = request.POST.get('modo_preparo')
         comentarios = request.POST.get('comentarios')
 
-
         Receita = receita(nome=nome, ingredientes=ingredientes, modo_preparo=modo_preparo, comentarios=comentarios)
         
         Receita.save()

@@ -5,24 +5,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'aplicacao/css/visualizar_todos.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Ver todas</title>
 </head>
 <body>
     <header>
-        <a href="{% url 'aplicacao:home' %}">home</a>
-    </header>
-    <main>
+        <div class="space">
+            <span class="Red">R</span> <span class="Green">e</span> <span class="Bege">c</span> <span class="Red">e</span> <span class="Green">i</span> <span class="Bege">t</span> <span class="Red">o</span> <span class="Green">p</span> <span class="Bege">é</span> <span class="Red">d</span> <span class="Green">i</span> <span class="Bege">a</span>
+        </div>
 
+        <input type="text" placeholder="" class="Navbar2">
+        <i class="fa-solid fa-magnifying-glass" id="lupa"></i>
+        <i class="fa-solid fa-circle-user" id="user-icon"></i>
+        <div class="user-info">
+            <span>Nome Usuário</span>
+            <span>@user</span>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">Receitas Favoritas</a></li>
+            <li><a href="#">Sugestões do dia</a></li>
+            <li><a href="{%url 'aplicacao:visualizar_todos'%}">Ver todas as receitas</a></li>
+        </ul>
+    </nav>
+
+    <main>
         {% for Receita in todas_as_receitas %}
         <a href="{% url 'aplicacao:visualizar_um' Receita.id %}">
-
-            <div class="card">
+            <div>
                 <h2>{{Receita.nome}}</h2>
             </div>
         </a>
-
         {% endfor %}
     </main>
-    
 </body>
 </html>
