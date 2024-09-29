@@ -102,8 +102,10 @@ color: #568745;
 }
 
 .divAd {
-    text-align: right;
-    margin: 20px;
+    /*text-align: right;*/
+    /*margin: 20px;*/
+    text-align: center;
+    color: #3C5F30;
 }
 
 .h1Ad_receita {
@@ -123,6 +125,17 @@ textarea {
     height: 40px;
 }
 
-textarea::placeholder {
+.button {
+    border-radius: 30px;
+    background-color: #3C5F30;
     font-family: Jaro;
+    width: 12%;
+    padding: 0.6%;
+    color: #CBE5C2;
+    font-size: 110%;
+    align-items: center;
+}
+
+.divButton {
+    text-align: center;
 }
