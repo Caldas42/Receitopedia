@@ -4,9 +4,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'aplicacao/css/visualizarUm.css' %}">
+    <title>Visualizar</title>
 </head>
 <body>
-    <h2>{{Receita.nome}}</h2>
+    <header>=
+        <div class="space">
+            <span class="Red">R</span> <span class="Green">e</span> <span class="Bege">c</span> <span class="Red">e</span> <span class="Green">i</span> <span class="Bege">t</span> <span class="Red">o</span> <span class="Green">p</span> <span class="Bege">é</span> <span class="Red">d</span> <span class="Green">i</span> <span class="Bege">a</span>
+        </div>
+
+        <input type="text" placeholder="" class="Navbar2">
+        <i class="fa-solid fa-magnifying-glass" id="lupa"></i>
+        <i class="fa-solid fa-circle-user" id="user-icon"></i>
+        <div class="user-info">
+            <span>Nome Usuário</span>
+            <span>@user</span>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">Receitas Favoritas</a></li>
+            <li><a href="#">Sugestões do dia</a></li>
+            <li><a href="{%url 'aplicacao:visualizar_todos'%}">Ver todas as receitas</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <span id="back">
+            <a href="{% url 'aplicacao:visualizar_todos' %}"></a>
+        </span>
+        <div id="card">
+            <div id="title">
+                <h1>{{Receita.nome}}</h1>
+                <div id="types">
+                    <span id="{{Receita.ingredientes}}">{{Receita.ingredientes}}</span>
+                    <br>    
+                    <span id="{{Receita.modo_preparo}}">{{Receita.modo_preparo}}</span>
+                    <br>
+                    <span id="{{Receita.comentarios}}">{{Receita.comentarios}}</span>
+                </div>
+            </div>
+        </div>
+        
+    </main>
 </body>
 </html>

@@ -30,7 +30,7 @@ def visualizar_todos(request):
     }
     return render(request, 'visualizar_todos.html', ctx)
 
-def visualizar_um(request):
+def visualizar_um(request, id):
     ctx={'Receita':receita.objects.filter(id=id).first()}
 
     return render(request,'visualizar_um.html',ctx)
