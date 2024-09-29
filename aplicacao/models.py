@@ -7,3 +7,4 @@ class receita(models.Model):
     ingredientes = models.TextField(default="Ingredientes não informados")
     modo_preparo = models.TextField(default="Ingredientes não informados")
     comentarios = models.TextField(default="Comentarios não informados")
+    estrelas = models.TextField(default="Estrelas não informadas")
