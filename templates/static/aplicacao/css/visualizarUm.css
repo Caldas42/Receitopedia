@@ -159,12 +159,7 @@ tr:hover {
     background-color: #D0CBA0; /* Cor de fundo ao passar o mouse sobre a linha */
 }
 
-.space {
-    letter-spacing: 0;
-    font-size: 29px;
-}
-
-space img{
+.space img{
     width: 325px;
     height: 80px;
 }
