@@ -46,7 +46,7 @@
                 </a>
 
                 {% for Receita in todas_as_receitas %}
-                    <a href="{% url 'aplicacao:visualizar_um' Receita.id %}">
+                    <a href="{% url 'aplicacao:visualizar_um' Receita.id %}" id="linkReceitas">
                         <div class="recipe-card">
                             <h2>{{Receita.nome}}</h2>
                         </div>
