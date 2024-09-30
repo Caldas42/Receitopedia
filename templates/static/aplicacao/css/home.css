@@ -25,7 +25,11 @@ header {
 
 header a {
     text-decoration: none;
-    color: inherit;
+}
+
+.space img{
+    width: 325px;
+    height: 80px;
 }
 
 header input {
@@ -34,6 +38,17 @@ header input {
     height: 40px;
     border: none;
     border-radius: 10px;
+}
+
+#user-icon{
+    position: relative;
+    left: 75px;
+    transition: transform 0.3s;
+    font-size: 40px;
+}
+
+#user-icon:hover {
+    transform: scale(1.1);
 }
 
 header .user-info {
@@ -81,6 +96,15 @@ h1 {
     color: #AD3826; 
 }
 
+.recipe-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto; 
+}
+
 .receitas {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -116,6 +140,11 @@ h1 {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
+#linkadd {
+    text-decoration: none;
+    list-style: none;
+}
+
 .nova-receita .plus {
     font-size: 36px;
     color: #AD3826;
@@ -127,39 +156,8 @@ h1 {
     font-size: 24px;
 }
 
-
-.space img{
-    width: 325px;
-    height: 80px;
-}
-
-#user-icon{
-    position: relative;
-    left: 75px;
-    transition: transform 0.3s;
-    font-size: 40px;
-}
-
-#user-icon:hover {
-    transform: scale(1.1);
-}
-
-#linkadd {
+#linkReceitas {
     text-decoration: none;
-    list-style: none;
-}
-
-h2 {
-    text-align: center; 
-}
-
-.recipe-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto; 
 }
 
 .recipe-card {
@@ -191,6 +189,6 @@ h2 {
     color: inherit; 
 }
 
-#linkReceitas {
-    text-decoration: none;
+h2 {
+    text-align: center; 
 }
