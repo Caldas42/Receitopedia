@@ -12,12 +12,14 @@
     <header>
         <a href="{% url 'aplicacao:home' %}">
             <div class="space">
-                <img src="{% static 'aplicacao/imagens/logo_receitopedia.png' %}" alt="Logo Receitopedia">
+                <img src="{% static 'aplicacao/imagens/logo_receitopedia.png' %}" alt="Logo da Receitopédia">
             </div>
         </a>
 
         <input type="text" placeholder="" class="Navbar2">
+
         <i class="fa-solid fa-circle-user" id="user-icon"></i>
+        
         <div class="user-info">
             <span>Nome Usuário</span>
             <span>@user</span>
@@ -26,8 +28,9 @@
 
     <nav>
         <ul>
-            <li><a href="#">> Receitas Favoritas</a></li>
-            <li><a href="#">> Sugestões do dia</a></li>
+            <li><a href="#">> Favoritos</a></li>
+            <li><a href="#">> Sugestões</a></li>
+            <li><a href="#">> Timer</a></li>
         </ul>
     </nav>
 
