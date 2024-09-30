@@ -86,23 +86,18 @@ nav ul li a:hover {
     color: #DBD69B;
 }
 
+.h1Ad_receita {
+    text-align: center;
+}
+
 h1 {
     margin-bottom: 20px;
     color: #AD3826;
 }
 
-#linkadd {
-    text-decoration: none;
-    list-style: none;
-}
-
 .divAd {
     text-align: center;
     color: #3C5F30;
-}
-
-.h1Ad_receita {
-    text-align: center;
 }
 
 textarea {
