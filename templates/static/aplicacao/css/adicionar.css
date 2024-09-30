@@ -100,6 +100,15 @@ h1 {
     color: #3C5F30;
 }
 
+#nome {
+    border-radius: 5px;
+    background-color: #CAC486;
+    width: 30%;
+    height: 40px;
+    border: none;
+    padding-left: 10px;
+}
+
 textarea {
     border-radius: 5px;
     background-color: #CAC486;
@@ -108,13 +117,8 @@ textarea {
     padding-left: 10px;
 }
 
-#nome {
-    border-radius: 5px;
-    background-color: #CAC486;
-    width: 30%;
-    height: 40px;
-    border: none;
-    padding-left: 10px;
+.divButton {
+    text-align: center;
 }
 
 .button {
@@ -132,8 +136,4 @@ textarea {
 
 .button:hover {
     transform: scale(1.1);
-}
-
-.divButton {
-    text-align: center;
 }
