@@ -33,24 +33,28 @@
 
     <main>
         <h1>Minhas receitas</h1>
-        
-        <section class="receitas">
-            <a href="{%url 'aplicacao:adicionar'%}" id="linkadd">
-                <div class="card nova-receita">
-                    <span class="plus">+</span>
-                    <p>Nova Receita</p>
-                </div>
-            </a>
-        </section>
 
         <div class="recipe-list">
-            {% for Receita in todas_as_receitas %}
-            <a href="{% url 'aplicacao:visualizar_um' Receita.id %}">
-                <div class="recipe-card">
-                    <h2>{{Receita.nome}}</h2>
-                </div>
-            </a>
-            {% endfor %}
+
+            <section class="receitas">
+
+                <a href="{%url 'aplicacao:adicionar'%}" id="linkadd">
+                    <div class="card nova-receita">
+                        <span class="plus">+</span>
+                        <p>Nova Receita</p>
+                    </div>
+                </a>
+
+                {% for Receita in todas_as_receitas %}
+                    <a href="{% url 'aplicacao:visualizar_um' Receita.id %}">
+                        <div class="recipe-card">
+                            <h2>{{Receita.nome}}</h2>
+                        </div>
+                    </a>
+                {% endfor %}
+                
+            </section>
+
         </div>
     </main>
 </body>
