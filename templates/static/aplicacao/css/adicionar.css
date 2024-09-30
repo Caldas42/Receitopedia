@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: Jaro;
+    font-family: 'Jaro', sans-serif;
     background-color: #F1E9C0;
 }
 
@@ -110,12 +110,6 @@ h1 {
     text-decoration: none;
     list-style: none;
 }
-
-.space img{
-    width: 325px;
-    height: 80px;
-}
-
 
 .divAd {
     /*text-align: right;*/
