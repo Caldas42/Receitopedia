@@ -131,6 +131,12 @@ textarea {
     color: #CBE5C2;
     font-size: 110%;
     align-items: center;
+    border: none;
+    transition: 0.3s;
+}
+
+.button:hover {
+    transform: scale(1.1);
 }
 
 .divButton {

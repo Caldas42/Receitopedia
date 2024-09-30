@@ -50,7 +50,9 @@
                 <p class="colored-line comentarios">{{ Receita.estrelas }}</p>
                 <form action="{% url 'aplicacao:excluir_receita' Receita.id %}" method="post">
                     {% csrf_token %}
+                    <div class="deleteButton">
                     <button type="submit" class="delete-btn">Excluir Receita</button>
+                    </div>
                 </form>
                 
             </div>
