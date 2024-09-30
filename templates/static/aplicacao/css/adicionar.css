@@ -127,6 +127,7 @@ textarea {
     background-color: #CAC486;
     width: 30%;
     border: none;
+    padding-left: 10px;
 }
 
 #nome {
@@ -135,6 +136,7 @@ textarea {
     width: 30%;
     height: 40px;
     border: none;
+    padding-left: 10px;
 }
 
 .button {
