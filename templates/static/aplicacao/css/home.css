@@ -93,16 +93,35 @@ h1 {
 }
 
 .nova-receita {
+    background-color: #CAC486;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 0px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
+.nova-receita:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
 .nova-receita .plus {
     font-size: 36px;
     color: #AD3826;
 }
+
+.nova-receita p {
+    margin-top: 10px;
+    color: #AD3826;
+    font-size: 24px;
+}
+
 
 .space img{
     width: 325px;
@@ -137,7 +156,7 @@ h2 {
     background-color: #FFF;
     border: 1px solid #ddd;
     border-radius: 10px;
-    padding: 20px;
+    padding: 23px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
     text-align: center;
@@ -153,10 +172,15 @@ h2 {
     color: #AD3826;
     font-size: 24px;
     margin-bottom: 10px;
+    text-decoration: none;
 
 }
 
 .recipe-card a {
     text-decoration: none;
     color: inherit; 
+}
+
+#linkReceitas {
+    text-decoration: none;
 }
