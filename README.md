@@ -1,30 +1,38 @@
 # Receitopédia
 
-A aplicação que trabalharemos se baseará em um software que será possível adicionar, vizualizar, editar, excluir, favoritar e entre outras funcionalidades, receitas que o usuário desejará registrar. A aplicação será construída com a Framework Django, e, por consequência, escrita em Python. Um banco de dados será usado para registar as informações que o usuário pretende armazenar e a aplicação será salva na nuvem Azure.
+A Receitopédia é uma aplicação web voltada para o **gerenciamento de receitas.**
+
+Utilizando o framework **Django**, a aplicação foi desenvolvida com o objetivo de oferecer à comunidade de amantes da culinária uma plataforma intuitiva e funcional para a criação, organização e administração de receitas, permitindo aos usuários adicionar, editar, compartilhar e explorar receitas de forma prática e personalizada.
+
+[Jira](https://receitopedia.atlassian.net/jira/software/projects/SCRUM/boards/3)
+
+[Figma](https://www.figma.com/design/UIxrJg5ZTuVd0yeqVkzu8V/Receitop%C3%A9dia?node-id=0-1&t=GAdtcOXiKKQ1YMrh-1)
 
 ## Entrega 01
 
-### JIRA
+### Quadro
 
-[Link do Jira](https://receitopedia.atlassian.net/jira/software/projects/RECH/boards/3)
+![image](https://github.com/user-attachments/assets/e6ad23f0-084d-4e1b-9609-a16323e692b9)
 
-#### Print do quadro
+### Backlog
 
-![image](https://github.com/user-attachments/assets/5ef3c86b-49eb-49b6-bfd1-8ecf1c93ef76)
+![image](https://github.com/user-attachments/assets/70490ff1-37b5-404c-bc8e-625fc1ca9a01)
 
-#### Print do backlog
-
-![image](https://github.com/user-attachments/assets/2b062a07-a361-499b-b997-b9b5a157069b)
-
-### Figma
-
-[Link do figma](https://www.figma.com/proto/9s0pdaVfffucz2M7ilVfHg/Receitop%C3%A9dia?node-id=1-2&node-type=canvas&t=fnvkaGTJf6zo9ryo-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A2)
-
-#### [Link do screencast](https://www.youtube.com/embed/pEQ8P5feNEc)
+### [Screencast apresentando protótipo](https://www.youtube.com/embed/pEQ8P5feNEc)
 
 ## Entrega 02
 
+### Link e instruções de acesso
 
+### Screencast do uso do sistema
+
+### Quadro
+
+![image](https://github.com/user-attachments/assets/d11826a6-05ee-4aff-8151-0bb60b091a4b)
+
+### Backlog
+
+![image](https://github.com/user-attachments/assets/48349381-4372-4693-92d9-33287b80d7a4)
 
 ## Equipe
 
