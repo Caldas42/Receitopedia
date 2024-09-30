@@ -93,6 +93,12 @@ h1 {
     position: relative;
     left: 75px;
     font-size: 40px;
+    transition: transform 0.3s;
+
+}
+
+#user-icon:hover {
+    transform: scale(1.1);
 }
 
 #linkadd {

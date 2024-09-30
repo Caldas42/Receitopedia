@@ -98,6 +98,8 @@ h1 {
     position: relative;
     font-size: 40px;
     transition: transform 0.3s;
+    left: 75px;
+
 }
 
 #user-icon:hover {
