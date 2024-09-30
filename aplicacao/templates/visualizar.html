@@ -36,29 +36,24 @@
 
     <main>
         <div id="card">
-            <div id="title">
-                <h1>{{ Receita.nome }}</h1>
-            </div>
-            <div class="list-container">
-                <h2>Ingredientes</h2>
-                <p class="colored-line ingredient">{{ Receita.ingredientes }}</p>
+            <h1>{{ Receita.nome }}</h1>
 
-                <h2>Modo de Preparo</h2>
-                <p class="colored-line preparo">{{ Receita.modo_preparo }}</p>
-                
-                <h2>Comentários</h2>
-                <p class="colored-line comentarios">{{ Receita.comentarios }}</p>
+            <h2>Ingredientes</h2>
+            <p class="colored-line">{{ Receita.ingredientes }}</p>
 
-                <h2>Estrelas</h2>
-                <p class="colored-line comentarios">{{ Receita.estrelas }}</p>
-                <form action="{% url 'aplicacao:excluir' Receita.id %}" method="post">
-                    {% csrf_token %}
-                    <div class="deleteButton">
-                    <button type="submit" class="delete-btn">Excluir Receita</button>
-                    </div>
-                </form>
-                
-            </div>
+            <h2>Modo de Preparo</h2>
+            <p class="colored-line">{{ Receita.modo_preparo }}</p>
+            
+            <h2>Comentários</h2>
+            <p class="colored-line">{{ Receita.comentarios }}</p>
+
+            <form action="{% url 'aplicacao:excluir' Receita.id %}" method="post">
+                {% csrf_token %}
+
+                <div class="deleteButton">
+                    <button type="submit" class="delete-btn">Excluir receita</button>
+                </div>
+            </form>
         </div>
     </main>
 </body>

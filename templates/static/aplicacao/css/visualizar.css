@@ -113,34 +113,8 @@ h2 {
     background-color: #CAC486;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-th, td {
-    padding: 12px;
-    text-align: left;
-    border: none;
-}
-
-th {
-    background-color: #2F4D23;
-    color: #DBD69B;
-}
-
-td {
-    background-color: #F1E9C0;
-    color: #141414;
-}
-
-tr:nth-child(even) td {
-    background-color: #F1E9C0;
-}
-
-tr:hover {
-    background-color: #D0CBA0;
+.deleteButton {
+    text-align: center;
 }
 
 .delete-btn {
@@ -161,8 +135,4 @@ tr:hover {
 
 .delete-btn:hover {
     transform:scale(1.1);
-}
-
-.deleteButton {
-    text-align: center;
 }
