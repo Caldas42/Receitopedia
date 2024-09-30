@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'Jaro';
+    src: url(../../../static/fonts/Jaro-Regular-VariableFont_opsz.ttf);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,7 +10,7 @@
 }
 
 body {
-    font-family: 'Jaro', sans-serif;
+    font-family: Jaro;
     background-color: #F1E9C0;
 }
 
@@ -19,9 +24,13 @@ header {
 }
 
 header a {
-    text-decoration: none; 
+    text-decoration: none;
 }
 
+.space img{
+    width: 325px;
+    height: 80px;
+}
 
 header input {
     padding: 5px;
@@ -31,11 +40,21 @@ header input {
     border-radius: 10px;
 }
 
+#user-icon{
+    position: relative;
+    left: 75px;
+    transition: transform 0.3s;
+    font-size: 40px;
+}
+
+#user-icon:hover {
+    transform: scale(1.1);
+}
+
 header .user-info {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    
 }
 
 header .user-info span:first-child {
@@ -72,79 +91,56 @@ h1 {
     color: #AD3826;
 }
 
-@font-face {
-    font-family: 'Jaro';
-    src: url(../../../static/fonts/Jaro-Regular-VariableFont_opsz.ttf);
-}
-
-#user-icon{
-    position: relative;
-    left: 75px;
-    font-size: 40px;
-    transition: transform 0.3s;
-
-}
-
-#user-icon:hover {
-    transform: scale(1.1);
-}
-
 #card {
     max-width: 800px; 
     margin: 20px auto; 
     background-color: #F1E9C0; 
-    border-radius: 15px; /* Bordas arredondadas */
+    border-radius: 15px;
     padding: 20px; 
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
-    color: #AD3826; /* Cor dos títulos das seções */
-    margin-bottom: 10px; /* Espaço abaixo do título */
-    text-align: left; /* Alinhamento à esquerda */
+    color: #AD3826;
+    margin-bottom: 10px;
+    text-align: left;
 }
 
-/* Estilos para as seções de Ingredientes, Modo de Preparo e Comentários */
 .colored-line {
-    padding: 10px; /* Espaçamento interno */
-    border-radius: 5px; /* Bordas arredondadas */
-    margin-bottom: 10px; /* Espaçamento entre os itens */
-    background-color: #CAC486; /* Cor uniforme para todas as seções */
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #CAC486;
 }
 
 table {
-    width: 100%; /* Largura total da tabela */
-    border-collapse: collapse; /* Remove o espaço entre as bordas */
-    margin-top: 20px; /* Espaço acima da tabela */
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
 }
 
 th, td {
-    padding: 12px; /* Espaçamento interno nas células */
-    text-align: left; /* Alinha o texto à esquerda */
-    border: none; /* Remove bordas das células */
+    padding: 12px;
+    text-align: left;
+    border: none;
 }
 
 th {
-    background-color: #2F4D23; /* Cor de fundo para o cabeçalho */
-    color: #DBD69B; /* Cor do texto no cabeçalho */
+    background-color: #2F4D23;
+    color: #DBD69B;
 }
 
 td {
-    background-color: #F1E9C0; /* Cor de fundo para as células */
-    color: #141414; /* Cor do texto nas células */
+    background-color: #F1E9C0;
+    color: #141414;
 }
 
 tr:nth-child(even) td {
-    background-color: #F1E9C0; /* Cor de fundo para linhas pares */
+    background-color: #F1E9C0;
 }
 
 tr:hover {
-    background-color: #D0CBA0; /* Cor de fundo ao passar o mouse sobre a linha */
-}
-
-.space img{
-    width: 325px;
-    height: 80px;
+    background-color: #D0CBA0;
 }
 
 .delete-btn {
