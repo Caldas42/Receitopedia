@@ -37,7 +37,7 @@ class RecipeDetailView(View):
     def get(self, request, id):
         ctx={'Receita':receita.objects.filter(id=id).first()}
 
-        return render(request,'visualizar_um.html',ctx)
+        return render(request,'visualizar.html',ctx)
 
 class DeleteView(View):
     def post(self, request, id):
