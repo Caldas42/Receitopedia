@@ -77,23 +77,6 @@ h1 {
     src: url(../../../static/fonts/Jaro-Regular-VariableFont_opsz.ttf);
 }
 
-.space {
-    letter-spacing: 0;
-    font-size: 29px;
-}
-
-.Red {
-    color: #B73939;
-}
-
-.Green {
-    color: #568745;
-}
-
-.Bege {
-    color: #DBD69B;
-}
-
 #user-icon{
     position: relative;
     left: 75px;
