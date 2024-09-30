@@ -37,3 +37,10 @@ class RecipeDetailView(View):
         ctx={'Receita':receita.objects.filter(id=id).first()}
 
         return render(request,'visualizar_um.html',ctx)
+
+class DeleteView(View):
+    def post(self, request, id):
+        Receita = receita.objects.filter(id=id).first()
+        if Receita:
+            Receita.delete()
+        return redirect('aplicacao:home')

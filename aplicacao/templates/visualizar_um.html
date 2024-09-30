@@ -48,6 +48,11 @@
 
                 <h2>Estrelas</h2>
                 <p class="colored-line comentarios">{{ Receita.estrelas }}</p>
+                <form action="{% url 'aplicacao:excluir_receita' Receita.id %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="delete-btn">Excluir Receita</button>
+                </form>
+                
             </div>
         </div>
     </main>
