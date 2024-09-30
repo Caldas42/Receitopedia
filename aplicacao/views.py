@@ -19,6 +19,7 @@ class AddView(View):
     def get(self, request):
         if request.method == "GET":
             return render(request, 'adicionar.html')
+
     def post(self, request):
         if request.method == "POST":
             nome = request.POST.get('nome')
@@ -30,6 +31,7 @@ class AddView(View):
             Receita = receita(nome=nome, ingredientes=ingredientes, modo_preparo=modo_preparo, comentarios=comentarios, estrelas=estrelas)
             
             Receita.save()
+
             return redirect('aplicacao:home')
 
 class RecipeDetailView(View):
@@ -41,6 +43,8 @@ class RecipeDetailView(View):
 class DeleteView(View):
     def post(self, request, id):
         Receita = receita.objects.filter(id=id).first()
+
         if Receita:
             Receita.delete()
+
         return redirect('aplicacao:home')
