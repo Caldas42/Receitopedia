@@ -157,3 +157,8 @@ textarea {
 .divButton {
     text-align: center;
 }
+
+.space img{
+    width: 325px;
+    height: 80px;
+}
