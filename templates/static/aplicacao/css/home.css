@@ -33,7 +33,7 @@ header input {
     width: 50%;
     height: 40px;
     border: none;
-    border-radius: 50px;
+    border-radius: 10px;
 }
 
 header .user-info {

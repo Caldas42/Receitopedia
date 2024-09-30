@@ -27,7 +27,7 @@ header input {
     width: 50%; /* Aumentando a largura */
     height: 40px;
     border: none;
-    border-radius: 25px;
+    border-radius: 10px;
     background-color: #E3E3E3;
     transition: background-color 0.3s;
 }
