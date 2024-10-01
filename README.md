@@ -18,13 +18,17 @@ Utilizando o framework **Django**, a aplicação foi desenvolvida com o objetivo
 
 ![image](https://github.com/user-attachments/assets/70490ff1-37b5-404c-bc8e-625fc1ca9a01)
 
-### [Screencast apresentando protótipo](https://www.youtube.com/embed/pEQ8P5feNEc)
+### Screencast apresentando protótipo
+
+https://github.com/user-attachments/assets/8972c0cc-1602-4fc0-a309-b3952683e83e
 
 ## Entrega 02
 
-### Link e instruções de acesso
+
 
 ### Screencast do uso do sistema
+
+
 
 ### Quadro
 
