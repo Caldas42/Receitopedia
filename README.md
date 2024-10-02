@@ -1,5 +1,3 @@
-
-https://github.com/user-attachments/assets/55fea13c-a579-4762-b210-b24c0e8a53a6
 # Receitopédia
 
 A Receitopédia é uma aplicação web voltada para o **gerenciamento de receitas.**
