@@ -9,27 +9,8 @@
     <title>Receitopédia</title>
 </head>
 <body>
-    <header>
-        <a href="{%url 'aplicacao:home'%}">
-            <div class="space">
-                <img src="{% static 'aplicacao/img/logo_receitopedia.png' %}" alt="Logo da Receitopédia">
-            </div>
-        </a>
-
-        <input type="text" placeholder="Buscar">
-
-        <div class="user-info">
-            <span>Nome Usuário</span>
-        </div>
-    </header>
     
-    <nav>
-        <ul>
-            <li><a href="#">> Favoritos</a></li>
-            <li><a href="#">> Sugestões</a></li>
-            <li><a href="#">> Timer</a></li>
-        </ul>
-    </nav>
+    {% include 'navbar.html' %} 
 
     <main>
         <h1>Minhas receitas</h1>
