@@ -26,7 +26,9 @@ https://github.com/user-attachments/assets/8972c0cc-1602-4fc0-a309-b3952683e83e
 
 ### [Link da Azure](receitopedia-bncrd0c8bpbtb4ak.brazilsouth-01.azurewebsites.net)
 
-### [Screencast do uso do sistema](https://youtu.be/4vs3AW224qE)
+### Screencast do uso do sistema
+
+https://github.com/user-attachments/assets/c2917d65-35a9-444c-bdbe-455c03846943
 
 ### Quadro
 
@@ -36,10 +38,20 @@ https://github.com/user-attachments/assets/8972c0cc-1602-4fc0-a309-b3952683e83e
 
 ![image](https://github.com/user-attachments/assets/48349381-4372-4693-92d9-33287b80d7a4)
 
+## Entrega 03
+
+### Screencast da atualização dos protótipos de Lo-Fi
+
+### Screencast do deployment
+
+### Screencast da execução dos testes de sistema automatizados
+
+### Quadro da sprint 02
+
 ## Equipe
 
 * Célio Pereira Dias Júnior
 * João Danilo Correia Jota
 * João Vitor Moraes Barbosa
 * Pedro da Costa Carvalho Caldas
-* Vinicius Spósito Antonino Nogueira
+* Vinícius Spósito Antonino Nogueira
