@@ -24,11 +24,9 @@ https://github.com/user-attachments/assets/8972c0cc-1602-4fc0-a309-b3952683e83e
 
 ## Entrega 02
 
+### [Link da Azure](receitopedia-bncrd0c8bpbtb4ak.brazilsouth-01.azurewebsites.net)
 
-
-### Screencast do uso do sistema
-
-
+### [Screencast do uso do sistema](https://youtu.be/4vs3AW224qE)
 
 ### Quadro
 

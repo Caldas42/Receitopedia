@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'aplicacao/css/navbar.css' %}">
+</head>
+<body>
+    
+    <header>
+        <a href="{%url 'aplicacao:home'%}">
+            <div class="space">
+                <img src="{% static 'aplicacao/img/logo_receitopedia.png' %}" alt="Logo da Receitopédia">
+            </div>
+        </a>
+
+        <input type="text" placeholder="Buscar">
+
+        <div class="user-info">
+            <span>Nome Usuário</span>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#">> Favoritos</a></li>
+            <li><a href="#">> Sugestões</a></li>
+            <li><a href="#">> Timer</a></li>
+        </ul>
+    </nav>
+
+</body>
+</html>
