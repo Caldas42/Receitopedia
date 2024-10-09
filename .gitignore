@@ -11,6 +11,5 @@ __pycache__/
 # Arquivos de mídia e estáticos
 /media/
 
-rns.sh
-
-git_acp.sh
+# arquivos de script
+*sh
