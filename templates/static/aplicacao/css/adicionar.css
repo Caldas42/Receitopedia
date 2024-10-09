@@ -38,6 +38,7 @@ h1 {
 }
 
 textarea {
+    resize: none;
     border-radius: 5px;
     background-color: #CAC486;
     width: 30%;
