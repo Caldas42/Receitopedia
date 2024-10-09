@@ -27,6 +27,16 @@
                     <a href="{% url 'aplicacao:visualizar' Receita.id %}" id="linkReceitas">
                         <div class="recipe-card">
                             <h2>{{Receita.nome}}</h2>
+
+                            {% if Receita.rating > 0 %}
+                                {% for i in "12345" %}
+                                    {% if i <= Receita.rating|stringformat:"i" %}
+                                        <span style="color:#ffc107;">★</span>
+                                    {% else %}
+                                        <span style="color:#ddd;">★</span>
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}
                         </div>
                     </a>
                 {% endfor %}

@@ -24,6 +24,48 @@
             <h2>Comentários</h2>
             <p class="colored-line">{{ Receita.comentarios }}</p>
 
+            <form action="{% url 'aplicacao:rating' Receita.id %}" method="post">
+                {% csrf_token %}
+
+                {% if Receita.rating > 0 %}
+                <h2>Avaliação</h2>
+                    <div class="show-star-rating">
+                        {% for i in "12345" %}
+                            {% if i <= Receita.rating|stringformat:"i" %}
+                                <span style="color:#ffc107;">★</span>
+                            {% else %}
+                                <span style="color:#ddd;">★</span>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    
+                    <h2>Avaliar novamente:</h2>
+                {% else %}
+                    <h2>Já experimentou sua receita? Que tal avaliá-la?</h2>
+                {% endif %}
+                
+                <div class="star-rating">
+                    <input type="radio" id="5-stars" name="rating" value="5">
+                    <label for="5-stars">★</label>
+                    
+                    <input type="radio" id="4-stars" name="rating" value="4">
+                    <label for="4-stars">★</label>
+                    
+                    <input type="radio" id="3-stars" name="rating" value="3">
+                    <label for="3-stars">★</label>
+                    
+                    <input type="radio" id="2-stars" name="rating" value="2">
+                    <label for="2-stars">★</label>
+                    
+                    <input type="radio" id="1-star" name="rating" value="1">
+                    <label for="1-star">★</label>
+                </div>
+
+                <br>
+
+                <button type="submit" class="rate-btn">Avaliar</button>
+            </form>
+
             <form action="{% url 'aplicacao:excluir' Receita.id %}" method="post">
                 {% csrf_token %}
 

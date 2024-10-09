@@ -46,3 +46,15 @@ class DeleteView(View):
             Receita.delete()
 
         return redirect('aplicacao:home')
+    
+class RateView(View):
+    def post(self, request, id):
+        Receita = receita.objects.filter(id=id).first()
+
+        if Receita:
+            rating = request.POST.get('rating')
+
+            Receita.rating = rating
+            Receita.save()
+
+        return redirect('aplicacao:home')

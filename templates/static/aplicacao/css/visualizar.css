@@ -64,3 +64,49 @@ h2 {
 .delete-btn:hover {
     transform:scale(1.1);
 }
+
+.show-star-rating {
+    direction: ltr;
+    display: inline-block;
+    font-size: 30px;
+}
+
+.star-rating {
+    direction: rtl;
+    display: inline-block;
+    font-size: 30px;
+}
+.star-rating input {
+    display: none;
+}
+.star-rating label {
+    color: #ddd;
+    cursor: pointer;
+    font-size: 40px;
+}
+.star-rating input:checked ~ label {
+    color: #ffc107;
+}
+.star-rating input:hover ~ label {
+    color: #ffc107;
+}
+
+.rate-btn {
+    border-radius: 30px;
+    background-color: #3C5F30;
+    font-family: Jaro;
+    width: 12%;
+    padding: 0.6%;
+    color: #CBE5C2;
+    font-size: 110%;
+    align-items: center;
+    text-align: center;
+    border: none;
+    transition: 0.3s;
+    width: 15%;
+    height: 40px;
+}
+
+.rate-btn:hover {
+    transform:scale(1.1);
+}
