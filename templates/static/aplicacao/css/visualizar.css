@@ -14,16 +14,6 @@ body {
     background-color: #F1E9C0;
 }
 
-header {
-    background-color: #141414;
-    color: #DBD69B;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-
 h1 {
     margin-bottom: 20px;
     color: #AD3826;
