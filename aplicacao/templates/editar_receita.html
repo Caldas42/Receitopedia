@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,10 +9,13 @@
     <title>Editar Receita</title>
 </head>
 <body>
-    {%include 'navbar.html'%}
+    {% include 'navbar.html' %}
     <h1>Editar Receita: {{ receita.nome }}</h1>
 
-    <form action="{% url 'aplicacao:adicionar' %}" method="POST">{% csrf_token %}
+    <!-- Alterei a action para usar a URL da view de edição, passando o id da receita -->
+    <form action="{% url 'aplicacao:editar' receita.id %}" method="POST">
+        {% csrf_token %}
+        
         <label for="nome">Nome da receita:</label><br>
         <input type="text" id="nome" name="nome" maxlength="100" value="{{ receita.nome }}" required><br><br>
 
@@ -29,6 +32,5 @@
             <input type="submit" value="Atualizar" class="button">
         </div>
     </form>
-
 </body>
 </html>

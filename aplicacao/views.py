@@ -34,9 +34,9 @@ class AddView(View):
 
 class RecipeDetailView(View):
     def get(self, request, id):
-        ctx={'Receita':receita.objects.filter(id=id).first()}
+        ctx = {'Receita': receita.objects.filter(id=id).first()}
 
-        return render(request,'visualizar.html',ctx)
+        return render(request, 'visualizar.html', ctx)
 
 class DeleteView(View):
     def post(self, request, id):
@@ -69,11 +69,23 @@ class EditarView(View):
     def post(self, request, id):
         receita_obj = get_object_or_404(receita, id=id)
 
-        receita_obj.nome = request.POST.get('nome')
-        receita_obj.ingredientes = request.POST.get('ingredientes')
-        receita_obj.modo_preparo = request.POST.get('modo_preparo')
-        receita_obj.comentarios = request.POST.get('comentarios')
 
-        receita_obj.save()
+        novo_nome = request.POST.get('nome')
+        novos_ingredientes = request.POST.get('ingredientes')
+        novo_modo_preparo = request.POST.get('modo_preparo')
+        novos_comentarios = request.POST.get('comentarios')
 
-        return redirect('aplicacao:visualizar', id=receita_obj.id)
+
+        nova_receita = receita(
+            nome=novo_nome,
+            ingredientes=novos_ingredientes,
+            modo_preparo=novo_modo_preparo,
+            comentarios=novos_comentarios,
+            rating=receita_obj.rating  
+        )
+        nova_receita.save()
+
+
+        receita_obj.delete()
+
+        return redirect('aplicacao:visualizar', id=nova_receita.id)
