@@ -26,6 +26,7 @@ h1 {
     border-radius: 15px;
     padding: 20px; 
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative; /* Adicionando position relative */
 }
 
 h2 {
@@ -76,17 +77,21 @@ h2 {
     display: inline-block;
     font-size: 30px;
 }
+
 .star-rating input {
     display: none;
 }
+
 .star-rating label {
     color: #ddd;
     cursor: pointer;
     font-size: 40px;
 }
+
 .star-rating input:checked ~ label {
     color: #ffc107;
 }
+
 .star-rating input:hover ~ label {
     color: #ffc107;
 }
@@ -111,8 +116,13 @@ h2 {
     transform:scale(1.1);
 }
 
+.editButton {
+    position: absolute; /* Posiciona o elemento em relação ao card */
+    top: 20px; /* Distância do topo do card */
+    right: 20px; /* Distância da direita do card */
+}
+
 #lapis {
-    color: black;
-    text-decoration: none;
-    list-style: none;
+    color: black; /* Mantém a cor do ícone */
+    font-size: 24px; /* Ajusta o tamanho do ícone conforme necessário */
 }
