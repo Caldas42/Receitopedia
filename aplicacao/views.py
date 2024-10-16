@@ -1,4 +1,4 @@
-from django.shortcuts import redirect, render
+from django.shortcuts import redirect, render, get_object_or_404
 from .models import receita
 from django.views import View
 
@@ -58,3 +58,22 @@ class RateView(View):
             Receita.save()
 
         return redirect('aplicacao:home')
+    
+def editar_receita(request,id):
+    Receita = receita.objects.filter(id=id).first()
+    
+    if request.method == 'POST':
+        nome = request.POST.get('nome')
+        ingredientes = request.POST.get('ingredientes')
+        modo_preparo = request.POST.get('modo_preparo')
+        comentarios = request.POST.get('comentarios')
+
+        Receita.nome = nome
+        Receita.ingredientes = ingredientes
+        Receita.modo_preparo = modo_preparo
+        Receita.comentarios = comentarios
+        Receita.save()
+
+        return redirect('aplicacao:home')
+
+    return render(request, 'editar_receita.html', {'Receita': Receita})
