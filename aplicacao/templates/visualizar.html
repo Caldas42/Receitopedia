@@ -72,6 +72,12 @@
                 <div class="deleteButton">
                     <button type="submit" class="delete-btn">Excluir receita</button>
                 </div>
+
+                <div class="editButton">
+                    <a href="{% url 'aplicacao:editar' Receita.id %}" class="editlink">
+                        <i class="fa-solid fa-pencil" id="lapis"></i>
+                    </a>
+                </div>
             </form>
         </div>
     </main>
