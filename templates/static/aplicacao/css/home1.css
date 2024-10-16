@@ -88,7 +88,6 @@ h1 {
     background-color: #FFF;
     border: 1px solid #ddd;
     border-radius: 10px;
-    padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
     text-align: center;
@@ -104,15 +103,25 @@ h1 {
 .recipe-link {
     text-decoration: none; /* Remove sublinhado do link */
     color: inherit; /* Herda a cor do texto do card */
-    display: block; /* Faz o link ocupar todo o card */
+    display: flex; /* Torna o link um contêiner flexível */
+    flex-direction: column; /* Alinha os elementos em coluna */
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
     height: 100%; /* Faz o link ocupar toda a altura do card */
     width: 100%; /* Faz o link ocupar toda a largura do card */
+    padding: 20px; /* Adiciona padding para que o link cubra todo o card */
 }
 
 .recipe-card h2 {
     color: #AD3826;
     font-size: 24px;
     margin-bottom: 10px;
+}
+
+.stars {
+    display: flex; /* Alinha as estrelas na mesma linha */
+    justify-content: center; /* Centraliza as estrelas horizontalmente */
+    margin-top: 10px; /* Adiciona espaço entre o título e as estrelas */
 }
 
 h2 {
