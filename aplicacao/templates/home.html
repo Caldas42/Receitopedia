@@ -16,7 +16,7 @@
 
         <div class="recipe-list">
             <section class="receitas">
-                <a href="{%url 'aplicacao:adicionar'%}" id="linkadd">
+                <a href="{% url 'aplicacao:adicionar' %}" id="linkadd">
                     <div class="card nova-receita">
                         <span class="plus">+</span>
                         <p>Nova Receita</p>
@@ -24,22 +24,25 @@
                 </a>
 
                 {% for Receita in todas_as_receitas %}
-                    <a href="{% url 'aplicacao:visualizar' Receita.id %}" id="linkReceitas">
-                        <div class="recipe-card">
-                            <h2>{{Receita.nome}}</h2>
-                            <a href=" {%url 'aplicacao:editar' Receita.id %}"><i class="fa-solid fa-pencil"></i></a>
+                    <div class="recipe-card">
+                        <a href="{% url 'aplicacao:visualizar' Receita.id %}" id="linkReceitas">
+                            <h2>{{ Receita.nome }}</h2>
+                        </a>
 
-                            {% if Receita.rating > 0 %}
-                                {% for i in "12345" %}
-                                    {% if i <= Receita.rating|stringformat:"i" %}
-                                        <span style="color:#ffc107;">★</span>
-                                    {% else %}
-                                        <span style="color:#ddd;">★</span>
-                                    {% endif %}
-                                {% endfor %}
-                            {% endif %}
-                        </div>
-                    </a>
+                        <a href="{% url 'aplicacao:editar' Receita.id %}">
+                            <i class="fa-solid fa-pencil"></i>
+                        </a>
+
+                        {% if Receita.rating > 0 %}
+                            {% for i in "12345" %}
+                                {% if i <= Receita.rating|stringformat:"i" %}
+                                    <span style="color:#ffc107;">★</span>
+                                {% else %}
+                                    <span style="color:#ddd;">★</span>
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+                    </div>
                 {% endfor %}
             </section>
         </div>

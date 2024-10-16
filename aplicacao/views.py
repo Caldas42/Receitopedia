@@ -62,20 +62,24 @@ class RateView(View):
 
 class EditarView(View):
     def get(self, request, id):
+        # Obter a receita existente pelo ID
         receita_obj = get_object_or_404(receita, id=id)
         
-
+        # Passar a receita para o template para preencher os campos no formulário
         return render(request, 'editar_receita.html', {'receita': receita_obj})
 
     def post(self, request, id):
+        # Obter a receita existente pelo ID (não criando uma nova)
         receita_obj = get_object_or_404(receita, id=id)
 
+        # Atualizar os dados da receita existente
         receita_obj.nome = request.POST.get('nome')
         receita_obj.ingredientes = request.POST.get('ingredientes')
         receita_obj.modo_preparo = request.POST.get('modo_preparo')
         receita_obj.comentarios = request.POST.get('comentarios')
-        
 
+        # Salvar a receita existente (sem alterar o ID)
         receita_obj.save()
 
-        return redirect('aplicacao:home')
+        # Redirecionar para a página de detalhes ou para a home após a edição
+        return redirect('aplicacao:visualizar', id=receita_obj.id)
