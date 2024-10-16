@@ -27,6 +27,7 @@
                     <a href="{% url 'aplicacao:visualizar' Receita.id %}" id="linkReceitas">
                         <div class="recipe-card">
                             <h2>{{Receita.nome}}</h2>
+                            <a href=" {%url 'aplicacao:editar' Receita.id %}"><i class="fa-solid fa-pencil"></i></a>
 
                             {% if Receita.rating > 0 %}
                                 {% for i in "12345" %}

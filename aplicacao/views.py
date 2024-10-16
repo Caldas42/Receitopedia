@@ -59,21 +59,26 @@ class RateView(View):
 
         return redirect('aplicacao:home')
     
-def editar_receita(request,id):
-    Receita = receita.objects.filter(id=id).first()
-    
-    if request.method == 'POST':
-        nome = request.POST.get('nome')
-        ingredientes = request.POST.get('ingredientes')
-        modo_preparo = request.POST.get('modo_preparo')
-        comentarios = request.POST.get('comentarios')
+from django.shortcuts import render, redirect, get_object_or_404
+from django.views import View
+from .models import receita
 
-        Receita.nome = nome
-        Receita.ingredientes = ingredientes
-        Receita.modo_preparo = modo_preparo
-        Receita.comentarios = comentarios
-        Receita.save()
+class EditarView(View):
+    def get(self, request, id):
+        receita_obj = get_object_or_404(receita, id=id)
+        
+
+        return render(request, 'editar_receita.html', {'receita': receita_obj})
+
+    def post(self, request, id):
+        receita_obj = get_object_or_404(receita, id=id)
+
+        receita_obj.nome = request.POST.get('nome')
+        receita_obj.ingredientes = request.POST.get('ingredientes')
+        receita_obj.modo_preparo = request.POST.get('modo_preparo')
+        receita_obj.comentarios = request.POST.get('comentarios')
+        
+
+        receita_obj.save()
 
         return redirect('aplicacao:home')
-
-    return render(request, 'editar_receita.html', {'Receita': Receita})

@@ -3,31 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Editar Receita</title>
 </head>
 <body>
-    <h1>Editar Receita: {{ receita.titulo }}</h1>
+    <h1>Editar Receita: {{ receita.nome }}</h1>
 
-    <form action="{% url 'aplicacao:adicionar' %}" method="POST">
-        {% csrf_token %}
+    <form action="{% url 'aplicacao:adicionar' %}" method="POST">{% csrf_token %}
         <label for="nome">Nome da receita:</label><br>
-        <input type="text" id="nome" name="nome" maxlength="100" placeholder="" required><br><br>
+        <input type="text" id="nome" name="nome" maxlength="100" value="{{ receita.nome }}" required><br><br>
 
         <label for="ingredientes">Ingredientes:</label><br>
-        <textarea id="ingredientes" name="ingredientes" rows="5" cols="50" maxlength="1000" placeholder="" required></textarea><br><br>
+        <textarea id="ingredientes" name="ingredientes" rows="5" cols="50" maxlength="1000" required>{{ receita.ingredientes }}</textarea><br><br>
 
         <label for="modo-preparo">Modo de preparo:</label><br>
-        <textarea id="modo_preparo" name="modo_preparo" rows="10" cols="50" maxlength="2000" placeholder="" required></textarea><br><br>
+        <textarea id="modo_preparo" name="modo_preparo" rows="10" cols="50" maxlength="2000" required>{{ receita.modo_preparo }}</textarea><br><br>
         
         <label for="comentarios">Comentários:</label><br>
-        <textarea id="comentarios" name="comentarios" rows="10" cols="50" maxlength="2000" placeholder=""></textarea><br><br>
+        <textarea id="comentarios" name="comentarios" rows="10" cols="50" maxlength="2000">{{ receita.comentarios }}</textarea><br><br>
 
         <div class="divButton">
-            <input type="submit" value="Enviar" class="button">
+            <input type="submit" value="Atualizar" class="button">
         </div>
     </form>
-
-    <a href="{% url 'aplicacao:home' %}">Voltar para a lista de receitas</a>
 
 </body>
 </html>
