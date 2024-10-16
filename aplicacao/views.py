@@ -59,9 +59,6 @@ class RateView(View):
 
         return redirect('aplicacao:home')
     
-from django.shortcuts import render, redirect, get_object_or_404
-from django.views import View
-from .models import receita
 
 class EditarView(View):
     def get(self, request, id):
