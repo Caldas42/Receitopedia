@@ -25,20 +25,19 @@
 
                 {% for Receita in todas_as_receitas %}
                     <div class="recipe-card">
-                        <a href="{% url 'aplicacao:visualizar' Receita.id %}" id="linkReceitas">
+                        <a href="{% url 'aplicacao:visualizar' Receita.id %}" class="recipe-link"> <!-- Torna o card inteiro clicável -->
                             <h2>{{ Receita.nome }}</h2>
+
+                            {% if Receita.rating > 0 %}
+                                {% for i in "12345" %}
+                                    {% if i <= Receita.rating|stringformat:"i" %}
+                                        <span style="color:#ffc107;">★</span>
+                                    {% else %}
+                                        <span style="color:#ddd;">★</span>
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}
                         </a>
-
-
-                        {% if Receita.rating > 0 %}
-                            {% for i in "12345" %}
-                                {% if i <= Receita.rating|stringformat:"i" %}
-                                    <span style="color:#ffc107;">★</span>
-                                {% else %}
-                                    <span style="color:#ddd;">★</span>
-                                {% endif %}
-                            {% endfor %}
-                        {% endif %}
                     </div>
                 {% endfor %}
             </section>

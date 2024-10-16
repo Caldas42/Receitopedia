@@ -84,19 +84,16 @@ h1 {
     font-size: 24px;
 }
 
-#linkReceitas {
-    text-decoration: none;
-}
-
 .recipe-card {
     background-color: #FFF;
     border: 1px solid #ddd;
     border-radius: 10px;
-    padding: 23px;
+    padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
     text-align: center;
     background-color: #CAC486;
+    position: relative; /* Mantém o link no card */
 }
 
 .recipe-card:hover {
@@ -104,17 +101,18 @@ h1 {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
+.recipe-link {
+    text-decoration: none; /* Remove sublinhado do link */
+    color: inherit; /* Herda a cor do texto do card */
+    display: block; /* Faz o link ocupar todo o card */
+    height: 100%; /* Faz o link ocupar toda a altura do card */
+    width: 100%; /* Faz o link ocupar toda a largura do card */
+}
+
 .recipe-card h2 {
     color: #AD3826;
     font-size: 24px;
     margin-bottom: 10px;
-    text-decoration: none;
-
-}
-
-.recipe-card a {
-    text-decoration: none;
-    color: inherit; 
 }
 
 h2 {
