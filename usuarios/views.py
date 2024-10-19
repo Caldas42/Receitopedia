@@ -5,11 +5,11 @@ from django.contrib import messages
 # Create your views here.
 
 def registrar(request):
-    if request.method == "POST": #registrando usuario
-        form = UserCreationForm
+    if request.method == "POST":
+        form = UserCreationForm(request.POST) 
         if form.is_valid():
             form.save()
-            return redirect('login')
+            return redirect('login') 
     else:
-        form = UserCreationForm()
-    return render(request, 'usuarios/registrar.html', {'form': form})
+        form = UserCreationForm() 
+    return render(request, 'registrar.html', {'form': form})
