@@ -156,5 +156,5 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'templates/static')]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_REDIRECT_URL = 'minhas_receitas'
+LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'login'
