@@ -28,8 +28,9 @@ class AddView(View):
             ingredientes = request.POST.get('ingredientes')
             modo_preparo = request.POST.get('modo_preparo')
             comentarios = request.POST.get('comentarios')
+            user=request.user
 
-            Receita = receita(nome=nome, ingredientes=ingredientes, modo_preparo=modo_preparo, comentarios=comentarios)
+            Receita = receita(nome=nome, ingredientes=ingredientes, modo_preparo=modo_preparo, comentarios=comentarios, user=user)
             
             Receita.save()
 
