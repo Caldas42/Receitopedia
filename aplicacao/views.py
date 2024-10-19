@@ -1,18 +1,21 @@
 from django.shortcuts import redirect, render, get_object_or_404
 from .models import receita
 from django.views import View
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 # Create your views here.
 
-class HomeView(View):
+class HomeView(LoginRequiredMixin, View):
+    login_url = 'login'
     def get(self, request):
-        Receita = receita.objects.all()
+        if request.user.is_authenticated:
+            Receita = receita.objects.filter(user=request.user)
 
-        ctx = {
-            'todas_as_receitas': Receita,
-        }
-        
-        return render(request, 'home.html', ctx)
+            ctx = {
+                'todas_as_receitas': Receita,
+            }
+            
+            return render(request, 'home.html', ctx)
 
 class AddView(View):
     def get(self, request):
