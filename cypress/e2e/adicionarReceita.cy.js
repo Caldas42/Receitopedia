@@ -13,21 +13,29 @@ describe('Adicionando receita', () => {
         cy.get('h2').last().invoke('text').should('have.string', "chocolate quente")
     })
 
-    it('Adicionando uma receita com nome maior que o', () => {
+    it('Esquecendo de colocar o nome ao adicionar receita', () => {
         cy.visit('/');
         cy.get('#username').type('admin')
         cy.get('#password').type('123cjpv')
         cy.get('button').click()
         cy.get('.card').click()
-        cy.get('#nome').type('Sopa feita na casa da minha avó muito gostosa eu adorava essa sopa boa demais. A última vez que comi faz muitos anos, quero fazer para o natal.')
         cy.get('#ingredientes').type('Carne, legumes e água.')
         cy.get('#modo_preparo').type('Refogue a carne e os legumes e acrescente a água. Deixe cozinhando por 30min e está pronto.')
         cy.get('#comentarios').type('Minha sopa favorita.')
         cy.get('.button').click()
-        
+        cy.get('#nome').invoke('text').should('have.string', "")
     })
 
-    it('cenario3', () => {
-        //steps do cenario3
+    it('Esquecendo de colocar os ingredientes', () => {
+        cy.visit('/');
+        cy.get('#username').type('admin')
+        cy.get('#password').type('123cjpv')
+        cy.get('button').click()
+        cy.get('.card').click()
+        cy.get('#nome').type('Sopa.')
+        cy.get('#modo_preparo').type('Refogue a carne e os legumes e acrescente a água. Deixe cozinhando por 30min e está pronto.')
+        cy.get('#comentarios').type('Minha sopa favorita.')
+        cy.get('.button').click()
+        cy.get('#ingredientes').invoke('text').should('have.string', "")
     })
 })
