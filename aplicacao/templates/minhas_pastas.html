@@ -1,17 +1,31 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>pastas</title>
+    <link rel="stylesheet" href="{% static 'aplicacao/css/home1.css' %}">
+    <title>Minhas Pastas</title>
 </head>
 <body>
-    <h2>Minhas Pastas</h2>
-    <ul>
+    {% include 'navbar.html' %}
+    
+    <h1>Minhas Pastas</h1>
+    
+    <div>
         {% for pasta in pastas %}
-            <li>{{ pasta.nome }}</li>
+            <div class="pasta">
+                <h2>{{ pasta.nome }}</h2>
+                <h3>Adicionar Receitas:</h3>
+                {% for receita in receitas %}
+                    <a href="{% url 'aplicacao:adicionar_a_pasta' receita.id %}">Adicionar {{ receita.nome }} a esta Pasta</a><br>
+                {% endfor %}
+            </div>
+        {% empty %}
+            <p>Você não tem pastas criadas.</p>
         {% endfor %}
-    </ul>
-
+    </div>
+    
+    <a href="{% url 'aplicacao:criar_pasta' %}">Criar Nova Pasta</a>
 </body>
 </html>

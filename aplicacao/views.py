@@ -1,14 +1,12 @@
 from django.shortcuts import redirect, render, get_object_or_404
-from .models import receita
+from .models import receita, Pasta
 from .forms import PastaForm
-from .models import Pasta
 from django.views import View
 from django.contrib.auth.mixins import LoginRequiredMixin
 
-# Create your views here.
-
 class HomeView(LoginRequiredMixin, View):
     login_url = 'login'
+    
     def get(self, request):
         if request.user.is_authenticated:
             Receita = receita.objects.filter(user=request.user)
@@ -16,102 +14,87 @@ class HomeView(LoginRequiredMixin, View):
             ctx = {
                 'todas_as_receitas': Receita,
             }
-            
             return render(request, 'home.html', ctx)
 
 class AddView(View):
     def get(self, request):
-        if request.method == "GET":
-            return render(request, 'adicionar.html')
+        return render(request, 'adicionar.html')
 
     def post(self, request):
-        if request.method == "POST":
-            nome = request.POST.get('nome')
-            ingredientes = request.POST.get('ingredientes')
-            modo_preparo = request.POST.get('modo_preparo')
-            comentarios = request.POST.get('comentarios')
-            user=request.user
+        nome = request.POST.get('nome')
+        ingredientes = request.POST.get('ingredientes')
+        modo_preparo = request.POST.get('modo_preparo')
+        comentarios = request.POST.get('comentarios')
+        user = request.user
 
-            Receita = receita(nome=nome, ingredientes=ingredientes, modo_preparo=modo_preparo, comentarios=comentarios, user=user)
-            
-            Receita.save()
+        Receita = receita(nome=nome, ingredientes=ingredientes, modo_preparo=modo_preparo, comentarios=comentarios, user=user)
+        Receita.save()
 
-            return redirect('aplicacao:home')
+        return redirect('aplicacao:home')
 
 class RecipeDetailView(View):
     def get(self, request, id):
-        ctx = {'Receita': receita.objects.filter(id=id).first()}
-
+        receita_obj = get_object_or_404(receita, id=id)
+        pastas = Pasta.objects.filter(usuario=request.user)
+        ctx = {'Receita': receita_obj, 'pastas': pastas}
         return render(request, 'visualizar.html', ctx)
 
 class DeleteView(View):
     def post(self, request, id):
-        Receita = receita.objects.filter(id=id).first()
-
-        if Receita:
-            Receita.delete()
-
+        Receita = get_object_or_404(receita, id=id)
+        Receita.delete()
         return redirect('aplicacao:home')
-    
+
 class RateView(View):
     def post(self, request, id):
-        Receita = receita.objects.filter(id=id).first()
-
-        if Receita:
-            rating = request.POST.get('rating')
-
-            Receita.rating = rating
-            Receita.save()
-
+        Receita = get_object_or_404(receita, id=id)
+        rating = request.POST.get('rating')
+        Receita.rating = rating
+        Receita.save()
         return redirect('aplicacao:home')
-    
 
 class EditarView(View):
     def get(self, request, id):
         receita_obj = get_object_or_404(receita, id=id)
-        
         return render(request, 'editar_receita.html', {'receita': receita_obj})
 
     def post(self, request, id):
         receita_obj = get_object_or_404(receita, id=id)
 
+        receita_obj.nome = request.POST.get('nome')
+        receita_obj.ingredientes = request.POST.get('ingredientes')
+        receita_obj.modo_preparo = request.POST.get('modo_preparo')
+        receita_obj.comentarios = request.POST.get('comentarios')
+        receita_obj.save()
 
-        novo_nome = request.POST.get('nome')
-        novos_ingredientes = request.POST.get('ingredientes')
-        novo_modo_preparo = request.POST.get('modo_preparo')
-        novos_comentarios = request.POST.get('comentarios')
-
-
-        nova_receita = receita(
-            nome=novo_nome,
-            ingredientes=novos_ingredientes,
-            modo_preparo=novo_modo_preparo,
-            comentarios=novos_comentarios,
-            rating=receita_obj.rating  
-        )
-        nova_receita.save()
-
-
-        receita_obj.delete()
-
-        return redirect('aplicacao:visualizar', id=nova_receita.id)
+        return redirect('aplicacao:visualizar', id=receita_obj.id)
 
 def criar_pasta(request):
     if request.method == 'POST':
         form = PastaForm(request.POST)
         if form.is_valid():
             pasta = form.save(commit=False)
-            pasta.usuario = request.user  # Associando a pasta ao usuário logado
+            pasta.usuario = request.user
             pasta.save()
-            return redirect('minhas_pastas')
+            return redirect('aplicacao:minhas_pastas')
     else:
         form = PastaForm()
     return render(request, 'criar_pasta.html', {'form': form})
 
 def minhas_pastas(request):
     pastas = Pasta.objects.filter(usuario=request.user)
-    return render(request, 'minhas_pastas.html', {'pastas': pastas})
+    receitas = receita.objects.filter(user=request.user)  # Pega as receitas do usuário
+    return render(request, 'minhas_pastas.html', {'pastas': pastas, 'receitas': receitas})
 
-# def adicionar_a_pasta(request, receita_id):
-    # Lógica para adicionar a receita à pasta
-   # return redirect('nome_da_view')
+
+class AdicionarReceitaAPastaView(View):
+    def post(self, request, receita_id):
+        pasta_id = request.POST.get('pasta_id')
+        pasta_obj = get_object_or_404(Pasta, id=pasta_id, usuario=request.user)
+        receita_obj = get_object_or_404(receita, id=receita_id)
+
+        receita_obj.pasta = pasta_obj
+        receita_obj.save()
+
+        return redirect('aplicacao:visualizar', id=receita_id)
+

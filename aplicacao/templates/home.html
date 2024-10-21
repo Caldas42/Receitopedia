@@ -13,7 +13,9 @@
     <h5><a href="{% url 'logout' %}">Sair da conta</a></h5>
 
     <main>
-        <h1>Minhas receitas</h1>
+        <div class="header-section">
+            <h1>Minhas Receitas</h1>
+        </div>
 
         <div class="recipe-list">
             <section class="receitas">
@@ -26,7 +28,7 @@
 
                 {% for Receita in todas_as_receitas %}
                     <div class="recipe-card">
-                        <a href="{% url 'aplicacao:visualizar' Receita.id %}" class="recipe-link"> <!-- Torna o card inteiro clicável -->
+                        <a href="{% url 'aplicacao:visualizar' Receita.id %}" class="recipe-link">
                             <h2>{{ Receita.nome }}</h2>
 
                             {% if Receita.rating > 0 %}

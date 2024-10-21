@@ -24,6 +24,50 @@ h1 {
     color: #AD3826; 
 }
 
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.create-folder-section {
+    margin: 40px 0;
+    text-align: center;
+}
+
+.create-folder-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.create-folder-form input[type="text"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 300px; /* Ajuste conforme necessário */
+}
+
+.create-folder-form button {
+    background-color: #AD3826;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.create-folder-form button:hover {
+    background-color: #9B2E21;
+}
+
+.error-message {
+    color: red;
+    margin-top: 10px;
+}
+
 .recipe-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));

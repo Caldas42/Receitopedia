@@ -1,17 +1,22 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>criar pasta</title>
+    <link rel="stylesheet" href="{% static 'aplicacao/css/home1.css' %}">
+    <title>Criar Pasta</title>
 </head>
 <body>
-    <h2>Criar Pasta</h2>
+    {% include 'navbar.html' %}
+    
+    <h1>Criar Nova Pasta</h1>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Criar</button>
+        <button type="submit">Criar Pasta</button>
     </form>
-
+    
+    <a href="{% url 'aplicacao:minhas_pastas' %}">Voltar para Minhas Pastas</a>
 </body>
 </html>
