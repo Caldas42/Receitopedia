@@ -18,7 +18,7 @@ Utilizando o framework **Django**, a aplicação foi desenvolvida com o objetivo
 
 ![image](https://github.com/user-attachments/assets/70490ff1-37b5-404c-bc8e-625fc1ca9a01)
 
-### Screencast apresentando protótipo
+### Screencast Apresentando Protótipo
 
 https://github.com/user-attachments/assets/8972c0cc-1602-4fc0-a309-b3952683e83e
 
@@ -26,7 +26,7 @@ https://github.com/user-attachments/assets/8972c0cc-1602-4fc0-a309-b3952683e83e
 
 ### [Link da Azure](receitopedia-bncrd0c8bpbtb4ak.brazilsouth-01.azurewebsites.net)
 
-### Screencast do uso do sistema
+### Screencast do Uso do Sistema
 
 https://github.com/user-attachments/assets/c2917d65-35a9-444c-bdbe-455c03846943
 
@@ -40,13 +40,13 @@ https://github.com/user-attachments/assets/c2917d65-35a9-444c-bdbe-455c03846943
 
 ## Entrega 03
 
-### Screencast da atualização dos protótipos de Lo-Fi
+### Screencast da Atualização dos Protótipos de Lo-Fi
 
-### Screencast do deployment
+### Screencast do Deployment
 
-### Screencast da execução dos testes de sistema automatizados
+### Screencast da Execução dos Testes de Sistema Automatizados
 
-### Quadro da sprint 02
+### Quadro da Sprint 02
 
 ## Equipe
 
