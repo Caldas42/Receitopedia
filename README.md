@@ -42,6 +42,8 @@ https://github.com/user-attachments/assets/c2917d65-35a9-444c-bdbe-455c03846943
 
 ### Screencast da Atualização dos Protótipos de Lo-Fi
 
+https://github.com/user-attachments/assets/3c8e4c21-977c-4d4c-a460-64c28ab57bcf
+
 ### Screencast do Deployment
 
 ### Screencast da Execução dos Testes de Sistema Automatizados
