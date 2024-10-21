@@ -88,6 +88,10 @@ def minhas_pastas(request):
 
 
 class AdicionarReceitaAPastaView(View):
+    def get(self, request, receita_id):
+        pastas = Pasta.objects.filter(usuario=request.user)
+        return render(request, 'adicionar_a_pasta.html', {'pastas': pastas, 'receita_id': receita_id})
+
     def post(self, request, receita_id):
         pasta_id = request.POST.get('pasta_id')
         pasta_obj = get_object_or_404(Pasta, id=pasta_id, usuario=request.user)
@@ -97,4 +101,13 @@ class AdicionarReceitaAPastaView(View):
         receita_obj.save()
 
         return redirect('aplicacao:visualizar', id=receita_id)
-
+    
+class ReceitasPastaView(View):
+    def get(self, request, pasta_id):
+        pasta = get_object_or_404(Pasta, id=pasta_id, usuario=request.user)
+        receitas = receita.objects.filter(pasta=pasta)  # Pega as receitas que estão nessa pasta
+        ctx = {
+            'pasta': pasta,
+            'receitas': receitas,
+        }
+        return render(request, 'receitas_pasta.html', ctx)

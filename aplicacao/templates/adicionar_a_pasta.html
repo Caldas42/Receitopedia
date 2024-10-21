@@ -1,0 +1,21 @@
+<!-- adicionar_a_pasta.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Adicionar Receita à Pasta</title>
+</head>
+<body>
+    <h1>Adicionar Receita à Pasta</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="pasta_id">Selecione a pasta:</label>
+        <select id="pasta_id" name="pasta_id">
+            {% for pasta in pastas %}
+                <option value="{{ pasta.id }}">{{ pasta.nome }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Adicionar">
+    </form>
+</body>
+</html>
