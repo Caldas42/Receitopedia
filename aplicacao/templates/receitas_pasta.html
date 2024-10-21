@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'aplicacao/css/visualizar_cadastros.css' %}">
+    <title>Receitas na Pasta</title>
+</head>
+<body>
+    {% include 'navbar.html' %} 
+
+    <div class="container">
+        <h1>Receitas na Pasta: {{ pasta.nome }}</h1>
+        {% for receita in receitas %}
+        <h2 id="nome-cadastro">{{ receita.nome }}</h2>
+        <table>
+            <tr>
+                <th>Ingredientes</th>
+                <td>{{ receita.ingredientes }}</td>
+            </tr>
+            <tr>
+                <th>Modo de Preparo</th>
+                <td>{{ receita.modo_preparo }}</td>
+            </tr>
+            <tr>
+                <th>Comentario</th>
+                <td>{{ receita.comentarios }}</td>
+            </tr>
+            <tr>
+                <th>Rating</th>
+                <td>{{ receita.rating }}</td>
+            </tr>
+        </table>
+        {% empty %}
+        <p>Esta pasta não contém receitas.</p>
+        {% endfor %}
+    </div>
+</body>
+</html>

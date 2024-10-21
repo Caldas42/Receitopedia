@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'aplicacao/css/home1.css' %}">
+    <link rel="stylesheet" href="{% static 'aplicacao/css/minhas_pastas.css' %}">
     <title>Minhas Pastas</title>
 </head>
 <body>
@@ -12,11 +12,16 @@
     
     <h1>Minhas Pastas</h1>
     
-    <div>
+    <div class="pasta-list">
+        <!-- Card para Criar Nova Pasta -->
+        <div class="pasta-card create-folder-card">
+            <h2>Criar Nova Pasta</h2>
+            <a href="{% url 'aplicacao:criar_pasta' %}" class="create-folder-link">Clique aqui para criar uma nova pasta</a>
+        </div>
+
         {% for pasta in pastas %}
-            <div class="pasta">
-                <h2>{{ pasta.nome }}</h2>
-                <h3>Adicionar Receitas:</h3>
+            <div class="pasta-card">
+                <h2><a href="{% url 'aplicacao:receitas_pasta' pasta.id %}">{{ pasta.nome }}</a></h2> <!-- Link para visualizar receitas da pasta -->
                 {% for receita in receitas %}
                     <a href="{% url 'aplicacao:adicionar_a_pasta' receita.id %}">Adicionar {{ receita.nome }} a esta Pasta</a><br>
                 {% endfor %}
@@ -25,7 +30,5 @@
             <p>Você não tem pastas criadas.</p>
         {% endfor %}
     </div>
-    
-    <a href="{% url 'aplicacao:criar_pasta' %}">Criar Nova Pasta</a>
 </body>
 </html>
