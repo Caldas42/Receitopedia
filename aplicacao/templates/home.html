@@ -13,12 +13,14 @@
     <h5><a href="{% url 'logout' %}">Sair da conta</a></h5>
 
     <main>
+
         <div class="header-section">
             <h1>Minhas Receitas</h1>
         </div>
 
         <div class="recipe-list">
             <section class="receitas">
+                <a href="{% url 'aplicacao:criar_pasta' %}">Criar Nova Pasta</a>
                 <a href="{% url 'aplicacao:adicionar' %}" id="linkadd">
                     <div class="card nova-receita">
                         <span class="plus">+</span>
