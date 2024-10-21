@@ -9,11 +9,18 @@
 </head>
 <body>
     <h2>Entrar</h2>
-    <form method="POST">
+    
+    <form method="POST" action="">
         {% csrf_token %}
-        {{ form.as_p }}
+        <label for="username">Usuário:</label>
+        <input type="text" id="username" name="username" required>
+    
+        <label for="password">Senha:</label>
+        <input type="password" id="password" name="password" required>
+    
         <button type="submit">Login</button>
     </form>
+    
     <h4>Não tem conta? <a href="{% url 'registrar' %}">Regsitre-se aqui</a></h4>
 </body>
 </html>
