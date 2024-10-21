@@ -1,8 +1,8 @@
 describe('Adicionando receita', () => {
     it('Adicionando uma receita com sucesso', () => {
         cy.visit('/');
-        cy.get('#username').type('admin')
-        cy.get('#password').type('123cjpv')
+        cy.get('#username').type('cypress')
+        cy.get('#password').type('123abc')
         cy.get('button').click()
         cy.get('.card').click()
         cy.get('#nome').type('chocolate quente')
@@ -15,8 +15,8 @@ describe('Adicionando receita', () => {
 
     it('Esquecendo de colocar o nome ao adicionar receita', () => {
         cy.visit('/');
-        cy.get('#username').type('admin')
-        cy.get('#password').type('123cjpv')
+        cy.get('#username').type('cypress')
+        cy.get('#password').type('123abc')
         cy.get('button').click()
         cy.get('.card').click()
         cy.get('#ingredientes').type('Carne, legumes e água.')
@@ -28,8 +28,8 @@ describe('Adicionando receita', () => {
 
     it('Esquecendo de colocar os ingredientes', () => {
         cy.visit('/');
-        cy.get('#username').type('admin')
-        cy.get('#password').type('123cjpv')
+        cy.get('#username').type('cypress')
+        cy.get('#password').type('123abc')
         cy.get('button').click()
         cy.get('.card').click()
         cy.get('#nome').type('Sopa.')
