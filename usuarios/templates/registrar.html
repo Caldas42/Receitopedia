@@ -11,10 +11,20 @@
 </head>
 <body>
     <h2 id="titulo_principal">Criar Conta</h2>
-    <form method="POST">
+    
+    <form method="POST" action="">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" id="botao_cadastro">Cadastrar</button>
+        <label for="username">Usuário:</label>
+        <input type="text" id="username" name="username" required>
+    
+        <label for="password">Senha:</label>
+        <input type="password" id="password" name="password" required>
+    
+        <label for="password_confirm">Confirme a Senha:</label>
+        <input type="password" id="password_confirm" name="password_confirm" required>
+    
+        <button type="submit">Registrar</button>
     </form>
+    
 </body>
 </html>
