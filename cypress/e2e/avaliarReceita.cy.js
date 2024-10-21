@@ -1,4 +1,4 @@
-describe('test suite 1', () => {
+describe('Avaliar receita', () => {
     it('cenario1', () => {
         //steps do cenario1
     })
