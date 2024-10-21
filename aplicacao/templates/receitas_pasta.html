@@ -4,26 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'aplicacao/css/receitas_pasta.css' %}">
-    <title>{{ pasta.nome }} - Receitas</title>
+    <link rel="stylesheet" href="{% static 'aplicacao/css/visualizar_cadastros.css' %}">
+    <title>Receitas na Pasta</title>
 </head>
 <body>
-    {% include 'navbar.html' %}
-    
-    <h1>Receitas em "{{ pasta.nome }}"</h1>
-    
-    <div class="recipe-list">
+    {% include 'navbar.html' %} 
+
+    <div class="container">
+        <h1>Receitas na Pasta: {{ pasta.nome }}</h1>
         {% for receita in receitas %}
-            <div class="recipe-card">
-                <h2>{{ receita.nome }}</h2>
-                <p>{{ receita.descricao }}</p>
-                <a href="{% url 'aplicacao:visualizar' receita.id %}">Ver Detalhes</a> <!-- Link para detalhes da receita -->
-            </div>
+        <h2 id="nome-cadastro">{{ receita.nome }}</h2>
+        <table>
+            <tr>
+                <th>Ingredientes</th>
+                <td>{{ receita.ingredientes }}</td>
+            </tr>
+            <tr>
+                <th>Modo de Preparo</th>
+                <td>{{ receita.modo_preparo }}</td>
+            </tr>
+            <tr>
+                <th>Tempo de Preparo</th>
+                <td>{{ receita.tempo_preparo }}</td>
+            </tr>
+            <tr>
+                <th>Rendimento</th>
+                <td>{{ receita.rendimento }}</td>
+            </tr>
+        </table>
         {% empty %}
-            <p>Esta pasta não contém receitas.</p>
+        <p>Esta pasta não contém receitas.</p>
         {% endfor %}
     </div>
-
-    <a href="{% url 'aplicacao:minhas_pastas' %}">Voltar para Minhas Pastas</a>
 </body>
 </html>
