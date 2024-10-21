@@ -15,6 +15,8 @@
         <div id="card">
             <h1>{{ Receita.nome }}</h1>
 
+            <a href="{% url 'adicionar_a_pasta' receita.id %}">Adicionar à pasta</a>
+
             <h2>Ingredientes</h2>
             <p class="colored-line">{{ Receita.ingredientes }}</p>
 
@@ -79,6 +81,15 @@
                     </a>
                 </div>
             </form>
+            <form method="post" action="{% url 'adicionar_a_pasta' receita.id %}">
+    {% csrf_token %}
+    <select name="pasta">
+        {% for pasta in pastas %}
+            <option value="{{ pasta.id }}">{{ pasta.nome }}</option>
+        {% endfor %}
+    </select>
+    <button type="submit">Adicionar</button>
+</form>
         </div>
     </main>
 </body>

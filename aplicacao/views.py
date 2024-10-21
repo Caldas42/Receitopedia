@@ -1,18 +1,23 @@
 from django.shortcuts import redirect, render, get_object_or_404
 from .models import receita
+from .forms import PastaForm
+from .models import Pasta
 from django.views import View
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 # Create your views here.
 
-class HomeView(View):
+class HomeView(LoginRequiredMixin, View):
+    login_url = 'login'
     def get(self, request):
-        Receita = receita.objects.all()
+        if request.user.is_authenticated:
+            Receita = receita.objects.filter(user=request.user)
 
-        ctx = {
-            'todas_as_receitas': Receita,
-        }
-        
-        return render(request, 'home.html', ctx)
+            ctx = {
+                'todas_as_receitas': Receita,
+            }
+            
+            return render(request, 'home.html', ctx)
 
 class AddView(View):
     def get(self, request):
@@ -25,8 +30,9 @@ class AddView(View):
             ingredientes = request.POST.get('ingredientes')
             modo_preparo = request.POST.get('modo_preparo')
             comentarios = request.POST.get('comentarios')
+            user=request.user
 
-            Receita = receita(nome=nome, ingredientes=ingredientes, modo_preparo=modo_preparo, comentarios=comentarios)
+            Receita = receita(nome=nome, ingredientes=ingredientes, modo_preparo=modo_preparo, comentarios=comentarios, user=user)
             
             Receita.save()
 
@@ -89,3 +95,23 @@ class EditarView(View):
         receita_obj.delete()
 
         return redirect('aplicacao:visualizar', id=nova_receita.id)
+
+def criar_pasta(request):
+    if request.method == 'POST':
+        form = PastaForm(request.POST)
+        if form.is_valid():
+            pasta = form.save(commit=False)
+            pasta.usuario = request.user  # Associando a pasta ao usuário logado
+            pasta.save()
+            return redirect('minhas_pastas')
+    else:
+        form = PastaForm()
+    return render(request, 'criar_pasta.html', {'form': form})
+
+def minhas_pastas(request):
+    pastas = Pasta.objects.filter(usuario=request.user)
+    return render(request, 'minhas_pastas.html', {'pastas': pastas})
+
+def adicionar_a_pasta(request, receita_id):
+    # Lógica para adicionar a receita à pasta
+    return redirect('nome_da_view')
