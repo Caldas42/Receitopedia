@@ -1,6 +1,7 @@
 {
   "name": "receitopedia",
   "version": "1.0.0",
+  "description": "A Receitopédia é uma aplicação web voltada para o **gerenciamento de receitas.**",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -8,5 +9,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "dependencies": {
+    "cypress": "^13.15.0"
+  }
 }
