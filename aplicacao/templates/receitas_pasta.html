@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'aplicacao/css/receitas_pasta.css' %}">
+    <title>{{ pasta.nome }} - Receitas</title>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    
+    <h1>Receitas em "{{ pasta.nome }}"</h1>
+    
+    <div class="recipe-list">
+        {% for receita in receitas %}
+            <div class="recipe-card">
+                <h2>{{ receita.nome }}</h2>
+                <p>{{ receita.descricao }}</p>
+                <a href="{% url 'aplicacao:visualizar' receita.id %}">Ver Detalhes</a> <!-- Link para detalhes da receita -->
+            </div>
+        {% empty %}
+            <p>Esta pasta não contém receitas.</p>
+        {% endfor %}
+    </div>
+
+    <a href="{% url 'aplicacao:minhas_pastas' %}">Voltar para Minhas Pastas</a>
+</body>
+</html>
