@@ -112,6 +112,6 @@ def minhas_pastas(request):
     pastas = Pasta.objects.filter(usuario=request.user)
     return render(request, 'minhas_pastas.html', {'pastas': pastas})
 
-def adicionar_a_pasta(request, receita_id):
+# def adicionar_a_pasta(request, receita_id):
     # Lógica para adicionar a receita à pasta
-    return redirect('nome_da_view')
+   # return redirect('nome_da_view')

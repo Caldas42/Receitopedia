@@ -12,7 +12,5 @@ urlpatterns = [
     path('editar/<int:id>/', views.EditarView.as_view(), name='editar'),
     path('criar_pasta/', views.criar_pasta, name='criar_pasta'),
     path('minhas_pastas/', views.minhas_pastas, name='minhas_pastas'),
-    path('adicionar-a-pasta/<int:receita_id>/', views.adicionar_a_pasta, name='adicionar_a_pasta'),
-    #path('cadastro/', views.x.as_view(), name='cadasto_usuario'),
-    #path('criar_conta/', views.x.as_view(), name='criar_conta')
+    #path('adicionar-a-pasta/<int:receita_id>/', views.adicionar_a_pasta, name='adicionar_a_pasta')
 ]
