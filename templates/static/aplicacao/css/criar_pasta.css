@@ -1,70 +1,64 @@
+@font-face {
+    font-family: 'Jaro';
+    src: url(../../../static/fonts/Jaro-Regular-VariableFont_opsz.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Jaro;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-}
-
-.main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.form-container {
-    background-color: #fff;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    font-family: Jaro;
+    background-color: #F1E9C0;
 }
 
 h1 {
+    text-align: center;
     margin-bottom: 20px;
-    color: #333;
+    color: #AD3826;
 }
 
-.form-group {
-    margin-bottom: 20px;
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #F1E9C0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
 label {
+    color: #3C5F30;
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     font-weight: bold;
 }
 
 input[type="text"] {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.create-btn {
-    padding: 10px 20px;
-    background-color: #28a745;
-    color: white;
+    margin-bottom: 20px;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
+    background-color: #CAC486;
 }
 
-.create-btn:hover {
-    background-color: #218838;
-}
-
-.back-btn-container {
-    margin-top: 20px;
-}
-
-.back-btn {
-    text-decoration: none;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
     border-radius: 5px;
+    background-color: #3C5F30;
+    color: #CBE5C2;
+    font-size: 110%;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-.back-btn:hover {
-    background-color: #0056b3;
+input[type="submit"]:hover {
+    transform: scale(1.1);
 }
