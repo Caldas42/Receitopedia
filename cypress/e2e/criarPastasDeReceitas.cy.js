@@ -11,9 +11,9 @@ describe('Criar pastas de receitas ', () => {
         cy.get('#comentarios').type('Bom para tomar no frio.')
         cy.get('.button').click()
         cy.get('h2').last().invoke('text').should('have.string', "chocolate quente")
-        cy.get('li > a').click()
+        cy.get('ul > :nth-child(2) > a').click()
         cy.get('.create-folder-link').click()
-        cy.get('form > [type="text"]').type('melhopres')
+        cy.get('form > [type="text"]').type('Bebidas quentes')
         cy.get('button').click()
     })
 
@@ -31,7 +31,7 @@ describe('Criar pastas de receitas ', () => {
         cy.get('h2').last().invoke('text').should('have.string', "chocolate quente")
         cy.get('li > a').click()
         cy.get('.create-folder-link').click()
-        cy.get('form > [type="text"]').type('melhopres')
+        cy.get('form > [type="text"]').type('Bebidas quentes')
         cy.get('button').click()
         cy.get(':nth-child(2) > .add-receita-form > button').click()
 
