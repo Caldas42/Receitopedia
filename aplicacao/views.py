@@ -74,22 +74,14 @@ class EditarView(View):
         receita_obj.save()
 
         return redirect('aplicacao:visualizar', id=receita_obj.id)
+class PastasView(View):
+    def get(self, request):
+        pastas = Pasta.objects.filter(usuario=request.user)
+        receitas = receita.objects.filter(user=request.user)
+        return render(request, 'minhas_pastas.html', {'pastas': pastas, 'receitas': receitas})
 
-def criar_pasta(request):
-    if request.method == 'POST':
-        nome = request.POST.get('nome')
-        if nome:
-            pasta = Pasta(nome=nome, usuario=request.user)
-            pasta.save()
-            return redirect('aplicacao:minhas_pastas')
-        else:
-            return render(request, 'criar_pasta.html', {'error': 'O nome da pasta é obrigatório.'})
-    return render(request, 'criar_pasta.html')
-
-def minhas_pastas(request):
-    pastas = Pasta.objects.filter(usuario=request.user)
-    receitas = receita.objects.filter(user=request.user)  # Pega as receitas do usuário
-    return render(request, 'minhas_pastas.html', {'pastas': pastas, 'receitas': receitas})
+    def post(self, request):
+        pass
 
 
 class AdicionarReceitaAPastaView(View):
@@ -110,7 +102,7 @@ class AdicionarReceitaAPastaView(View):
 class ReceitasPastaView(View):
     def get(self, request, pasta_id):
         pasta = get_object_or_404(Pasta, id=pasta_id, usuario=request.user)
-        receitas = receita.objects.filter(pasta=pasta)  # Pega as receitas que estão nessa pasta
+        receitas = receita.objects.filter(pasta=pasta)  
         ctx = {
             'pasta': pasta,
             'receitas': receitas,

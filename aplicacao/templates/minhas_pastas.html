@@ -37,6 +37,27 @@
                         </select>
                         <input type="hidden" name="pasta_id" value="{{ pasta.id }}">
                         <button type="submit">Adicionar à Pasta</button>
+                        <script>
+                            function updateFormAction(receitaId, form) {
+                                if (receitaId) {
+                                    form.action = "{% url 'aplicacao:adicionar_a_pasta' 0 %}".replace('0', receitaId);
+                                } else {
+                                    form.action = "{% url 'aplicacao:adicionar_a_pasta' 0 %}".replace('0', '');
+                                }
+                            }
+                        
+                            // Adiciona validação ao enviar o formulário
+                            document.querySelectorAll('.add-receita-form').forEach(form => {
+                                form.addEventListener('submit', function(event) {
+                                    const selectBox = this.querySelector('select[name="receita_id"]');
+                                    if (!selectBox.value) {
+                                        event.preventDefault(); // Impede o envio do formulário
+                                        alert('Por favor, selecione uma receita antes de adicionar à pasta.'); // Mensagem de erro
+                                    }
+                                });
+                            });
+                        </script>
+                        
                     </form>
                 </div>
             {% empty %}
