@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'aplicacao/css/visualizar_cadastros.css' %}">
+    <link rel="stylesheet" href="{% static 'aplicacao/css/receitas_pasta.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Receitas na Pasta</title>
 </head>
 <body>
@@ -12,29 +13,45 @@
 
     <div class="container">
         <h1>Receitas na Pasta: {{ pasta.nome }}</h1>
-        {% for receita in receitas %}
-        <h2 id="nome-cadastro">{{ receita.nome }}</h2>
-        <table>
-            <tr>
-                <th>Ingredientes</th>
-                <td>{{ receita.ingredientes }}</td>
-            </tr>
-            <tr>
-                <th>Modo de Preparo</th>
-                <td>{{ receita.modo_preparo }}</td>
-            </tr>
-            <tr>
-                <th>Comentario</th>
-                <td>{{ receita.comentarios }}</td>
-            </tr>
-            <tr>
-                <th>Rating</th>
-                <td>{{ receita.rating }}</td>
-            </tr>
-        </table>
-        {% empty %}
-        <p>Esta pasta não contém receitas.</p>
-        {% endfor %}
+
+        <div class="receitas-info-table">
+            <h2>Informações das Receitas</h2>
+            {% for receita in receitas %}
+            <h3 id="{{ receita.nome }}">{{ receita.nome }}</h3>
+            <table>
+                <tr>
+                    <th>Ingredientes</th>
+                    <td>{{ receita.ingredientes }}</td>
+                </tr>
+                <tr>
+                    <th>Modo de Preparo</th>
+                    <td>{{ receita.modo_preparo }}</td>
+                </tr>
+                <tr>
+                    <th>Comentários</th>
+                    <td>{{ receita.comentarios }}</td>
+                </tr>
+                <tr>
+                    <th>Rating</th>
+                    <td>
+                        {% if receita.rating > 0 %}
+                            <div class="stars">
+                                {% for i in "12345" %}
+                                    {% if i <= receita.rating|stringformat:"i" %}
+                                        <span style="color:#ffc107;">★</span>
+                                    {% else %}
+                                        <span style="color:#ddd;">★</span>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </td>
+                </tr>
+            </table>
+            {% empty %}
+            <p>Não há informações adicionais disponíveis.</p>
+            {% endfor %}
+        </div>
     </div>
 </body>
 </html>
