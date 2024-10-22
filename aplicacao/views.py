@@ -1,8 +1,8 @@
 from django.shortcuts import redirect, render, get_object_or_404
 from .models import receita, Pasta
-#from .forms import PastaForm
 from django.views import View
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib import messages
 
 class HomeView(LoginRequiredMixin, View):
     login_url = 'login'
@@ -49,6 +49,12 @@ class RateView(View):
     def post(self, request, id):
         Receita = get_object_or_404(receita, id=id)
         rating = request.POST.get('rating')
+
+        if not rating:
+            # Retorna uma mensagem de erro ou redireciona de volta para a página
+            messages.error(request, 'Por favor, selecione uma avaliação.')
+            return redirect('aplicacao:visualizar', id=id)
+
         Receita.rating = rating
         Receita.save()
         return redirect('aplicacao:home')
