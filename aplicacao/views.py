@@ -102,7 +102,7 @@ class AdicionarReceitaAPastaView(View):
 class ReceitasPastaView(View):
     def get(self, request, pasta_id):
         pasta = get_object_or_404(Pasta, id=pasta_id, usuario=request.user)
-        receitas = receita.objects.filter(pasta=pasta)  
+        receitas = receita.objects.filter(pasta=pasta)  # Pega as receitas que estão nessa pasta
         ctx = {
             'pasta': pasta,
             'receitas': receitas,
