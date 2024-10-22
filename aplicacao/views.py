@@ -76,25 +76,23 @@ class EditarView(View):
         return redirect('aplicacao:visualizar', id=receita_obj.id)
     
 class CreateFolderView(View):
-    def criar_pasta(self, request):
-            if request.method == 'POST':
-                nome = request.POST.get('nome')
-                if nome:
-                    pasta = Pasta(nome=nome, usuario=request.user)
-                    pasta.save()
-                    return redirect('aplicacao:minhas_pastas')
-                else:
-                    return render(request, 'criar_pasta.html', {'error': 'O nome da pasta é obrigatório.'})
-            return render(request, 'criar_pasta.html')
+    def post(self, request):
+        nome = request.POST.get('nome')
+        if nome:
+            pasta = Pasta(nome=nome, usuario=request.user)
+            pasta.save()
+            return redirect('aplicacao:minhas_pastas')
+        else:
+            return render(request, 'criar_pasta.html', {'error': 'O nome da pasta é obrigatório.'})
+    
+    def get(self, request):
+        return render(request, 'criar_pasta.html')
 
 class PastasView(View):
     def get(self, request):
         pastas = Pasta.objects.filter(usuario=request.user)
         receitas = receita.objects.filter(user=request.user)
         return render(request, 'minhas_pastas.html', {'pastas': pastas, 'receitas': receitas})
-
-    def post(self, request):
-        pass
 
 class AdicionarReceitaAPastaView(View):
     def get(self, request, receita_id):
