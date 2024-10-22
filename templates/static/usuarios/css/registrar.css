@@ -7,3 +7,20 @@ body {
     font-family: Jaro;
     background-color: #F1E9C0;
 }
+
+.button {
+    border-radius: 30px;
+    background-color: #3C5F30;
+    font-family: Jaro;
+    width: 12%;
+    padding: 0.6%;
+    color: #CBE5C2;
+    font-size: 110%;
+    align-items: center;
+    border: none;
+    transition: 0.3s;
+}
+
+.button:hover {
+    transform: scale(1.1);
+}
