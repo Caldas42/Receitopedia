@@ -26,7 +26,7 @@ describe('Adicionando receita', () => {
         cy.get('#nome').invoke('text').should('have.string', "")
     })
 
-    it('Esquecendo de colocar os ingredientes', () => {
+    it('Esquecendo de colocar os ingredientes ao adicionar receita', () => {
         cy.visit('/');
         cy.get('#username').type('cypress')
         cy.get('#password').type('123abc')
