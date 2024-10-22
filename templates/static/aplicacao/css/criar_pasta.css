@@ -47,7 +47,7 @@ label {
     background-color: #CAC486;
 }
 
-input[type="submit"] {
+#botao {
     width: 100%;
     padding: 10px;
     border: none;
@@ -59,6 +59,6 @@ input[type="submit"] {
     transition: 0.3s;
 }
 
-input[type="submit"]:hover {
+#botao:hover {
     transform: scale(1.1);
 }
