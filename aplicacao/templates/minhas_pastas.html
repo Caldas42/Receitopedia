@@ -29,14 +29,13 @@
                     <!-- Select Box para Adicionar Receita -->
                     <form action="{% url 'aplicacao:adicionar_a_pasta' 0 %}" method="POST" class="add-receita-form">
                         {% csrf_token %}
-                        <select name="receita_id" onchange="updateFormAction(this.value, this.form)" class="styled-select">
+                        <select name="receita_id" onchange="updateFormAction(this.value, this.form)">
                             <option value="" disabled selected>Escolha uma receita</option>
                             {% for receita in receitas %}
                                 <option value="{{ receita.id }}">{{ receita.nome }}</option>
                             {% endfor %}
                         </select>
                         <input type="hidden" name="pasta_id" value="{{ pasta.id }}">
-<<<<<<< HEAD
                         <button type="submit">Adicionar à Pasta</button>
                         <script>
                             function updateFormAction(receitaId, form) {
@@ -59,9 +58,6 @@
                             });
                         </script>
                         
-=======
-                        <button type="submit" class="styled-button">Adicionar à Pasta</button>
->>>>>>> 4618599d8d7fc193985b86a6b530d26ea7802c4f
                     </form>
                 </div>
             {% empty %}
