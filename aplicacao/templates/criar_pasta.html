@@ -13,8 +13,9 @@
     <h1>Criar Nova Pasta</h1>
     <form method="post">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Criar Pasta</button>
+        <label>Nome da pasta:</label>
+        <input type="text" name="nome" required>
+        <button type="submit">Criar pasta</button>
     </form>
     
     <a href="{% url 'aplicacao:minhas_pastas' %}">Voltar para Minhas Pastas</a>

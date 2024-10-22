@@ -1,6 +1,6 @@
 from django.shortcuts import redirect, render, get_object_or_404
 from .models import receita, Pasta
-from .forms import PastaForm
+#from .forms import PastaForm
 from django.views import View
 from django.contrib.auth.mixins import LoginRequiredMixin
 
@@ -71,15 +71,14 @@ class EditarView(View):
 
 def criar_pasta(request):
     if request.method == 'POST':
-        form = PastaForm(request.POST)
-        if form.is_valid():
-            pasta = form.save(commit=False)
-            pasta.usuario = request.user
+        nome = request.POST.get('nome')
+        if nome:
+            pasta = Pasta(nome=nome, usuario=request.user)
             pasta.save()
             return redirect('aplicacao:minhas_pastas')
-    else:
-        form = PastaForm()
-    return render(request, 'criar_pasta.html', {'form': form})
+        else:
+            return render(request, 'criar_pasta.html', {'error': 'O nome da pasta é obrigatório.'})
+    return render(request, 'criar_pasta.html')
 
 def minhas_pastas(request):
     pastas = Pasta.objects.filter(usuario=request.user)

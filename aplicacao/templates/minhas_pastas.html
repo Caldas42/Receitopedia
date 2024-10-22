@@ -10,25 +10,29 @@
 <body>
     {% include 'navbar.html' %}
     
-    <h1>Minhas Pastas</h1>
-    
-    <div class="pasta-list">
-        <!-- Card para Criar Nova Pasta -->
-        <div class="pasta-card create-folder-card">
-            <h2>Criar Nova Pasta</h2>
-            <a href="{% url 'aplicacao:criar_pasta' %}" class="create-folder-link">Clique aqui para criar uma nova pasta</a>
+    <main>
+        <div class="header-section">
+            <h1>Minhas Pastas</h1>
         </div>
 
-        {% for pasta in pastas %}
-            <div class="pasta-card">
-                <h2><a href="{% url 'aplicacao:receitas_pasta' pasta.id %}">{{ pasta.nome }}</a></h2> <!-- Link para visualizar receitas da pasta -->
-                {% for receita in receitas %}
-                    <a href="{% url 'aplicacao:adicionar_a_pasta' receita.id %}">Adicionar {{ receita.nome }} a esta Pasta</a><br>
-                {% endfor %}
+        <div class="pasta-list">
+            <!-- Card para Criar Nova Pasta -->
+            <div class="pasta-card create-folder-card">
+                <h2>Criar Nova Pasta</h2>
+                <a href="{% url 'aplicacao:criar_pasta' %}" class="create-folder-link">Clique aqui para criar uma nova pasta</a>
             </div>
-        {% empty %}
-            <p>Você não tem pastas criadas.</p>
-        {% endfor %}
-    </div>
+
+            {% for pasta in pastas %}
+                <div class="pasta-card">
+                    <h2><a href="{% url 'aplicacao:receitas_pasta' pasta.id %}">{{ pasta.nome }}</a></h2>
+                    {% for receita in receitas %}
+                        <a href="{% url 'aplicacao:adicionar_a_pasta' receita.id %}">Adicionar {{ receita.nome }} a esta Pasta</a><br>
+                    {% endfor %}
+                </div>
+            {% empty %}
+                <p>Você não tem pastas criadas.</p>
+            {% endfor %}
+        </div>
+    </main>
 </body>
 </html>
