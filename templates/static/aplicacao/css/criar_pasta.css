@@ -38,7 +38,7 @@ label {
     font-weight: bold;
 }
 
-input[type="text"] {
+#nomenav {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
