@@ -1,4 +1,9 @@
+@font-face {
+    font-family: 'Jaro';
+    src: url(../../../static/fonts/Jaro-Regular-VariableFont_opsz.ttf);
+}
+
 body {
-    background-color: blueviolet;
-    size: 10px;
+    font-family: Jaro;
+    background-color: #F1E9C0;
 }
