@@ -11,11 +11,7 @@ describe('Excluir receita', () => {
         cy.get('#comentarios').type('Bom para tomar no frio.')
         cy.get('.button').click()
         cy.get('h2').last().invoke('text').should('have.string', "chocolate quente")
-        cy.get('h2').last().then(($el) => {
-            const text = $el.text();
-            expect(text).to.contain("chocolate quente");
-            $el.click();
-        });
+        cy.get('h2').last().click()
         cy.get('.delete-btn').click()
     })
 
