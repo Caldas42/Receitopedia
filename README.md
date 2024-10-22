@@ -50,7 +50,11 @@ https://github.com/user-attachments/assets/3c8e4c21-977c-4d4c-a460-64c28ab57bcf
 
 ### Quadro da Sprint 02
 
+![image](https://github.com/user-attachments/assets/fe6a042b-db1d-4ca1-a443-4b63ef4e56ef)
+
 ### Backlog da Sprint 02
+
+![image](https://github.com/user-attachments/assets/9788fed5-9af7-4039-8da4-64c1360421c0)
 
 ## Equipe
 
