@@ -10,12 +10,17 @@ describe('visualizar receita', () => {
         cy.get('#modo_preparo').type('Aqueça o leite, acrescente o chocolate e misture bem.')
         cy.get('#comentarios').type('Bom para tomar no frio.')
         cy.get('.button').click()
+<<<<<<< HEAD
         cy.get('h2').last().invoke('text').should('have.string', "Chocolate quente")
         cy.get('h2').last().click()
         cy.get('h1').last().invoke('text').should('have.string', "Chocolate quente")
         cy.get('#card > :nth-child(3)').last().invoke('text').should('have.string', "Chocolate e leite integral.")
         cy.get('#card > :nth-child(5)').last().invoke('text').should('have.string', "Aqueça o leite, acrescente o chocolate e misture bem.")
         cy.get('#card > :nth-child(7)').last().invoke('text').should('have.string', "Bom para tomar no frio.")
+=======
+        cy.get('h2').last().invoke('text').should('have.string', "chocolate quente")
+        cy.get('h2').last().click()
+>>>>>>> 27d8666d2284b6804d87e25c1b12e13d203a8216
     })
 
     it('cenario2', () => {
