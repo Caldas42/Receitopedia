@@ -38,6 +38,6 @@ describe('Criar pastas de receitas ', () => {
     })
 
     it('cenario3', () => {
-        //steps do cenario3
+        
     })
 })
