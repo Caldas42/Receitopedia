@@ -8,6 +8,8 @@ Utilizando o framework **Django**, a aplicação foi desenvolvida com o objetivo
 
 [Figma](https://www.figma.com/design/UIxrJg5ZTuVd0yeqVkzu8V/Receitop%C3%A9dia?node-id=0-1&t=GAdtcOXiKKQ1YMrh-1)
 
+[Deploy na Azure](receitopedia-bncrd0c8bpbtb4ak.brazilsouth-01.azurewebsites.net)
+
 ## Entrega 01
 
 ### Quadro
@@ -23,8 +25,6 @@ Utilizando o framework **Django**, a aplicação foi desenvolvida com o objetivo
 https://github.com/user-attachments/assets/8972c0cc-1602-4fc0-a309-b3952683e83e
 
 ## Entrega 02
-
-### [Link da Azure](receitopedia-bncrd0c8bpbtb4ak.brazilsouth-01.azurewebsites.net)
 
 ### Screencast do Uso do Sistema
 
@@ -49,6 +49,8 @@ https://github.com/user-attachments/assets/3c8e4c21-977c-4d4c-a460-64c28ab57bcf
 ### Screencast da Execução dos Testes de Sistema Automatizados
 
 ### Quadro da Sprint 02
+
+### Backlog da Sprint 02
 
 ## Equipe
 
