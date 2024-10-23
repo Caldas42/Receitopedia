@@ -1,7 +1,7 @@
 describe('Criar pastas de receitas ', () => {
     it('Criando uma pasta', () => {
         cy.visit('/');
-        cy.get('#username').type('cypress')
+        cy.get('#username').type('cypress2')
         cy.get('#password').type('123abc')
         cy.get('button').click()
         cy.wait(3000)
@@ -18,7 +18,7 @@ describe('Criar pastas de receitas ', () => {
 
     it('Adicionando receita a pasta', () => {
         cy.visit('/');
-        cy.get('#username').type('cypress')
+        cy.get('#username').type('cypress2')
         cy.get('#password').type('123abc')
         cy.get('button').click()
         cy.get('.card').click()
@@ -56,7 +56,7 @@ describe('Criar pastas de receitas ', () => {
 
     it('Esquecendo de colocar o nome da pasta ao cria-la', () => {
         cy.visit('/');
-        cy.get('#username').type('cypress')
+        cy.get('#username').type('cypress2')
         cy.get('#password').type('123abc')
         cy.get('button').click()
         cy.wait(2000)

@@ -1,7 +1,7 @@
 describe('Atualizando receita', () => {
     it('Atualizando o nome com sucesso', () => {
         cy.visit('/');
-        cy.get('#username').type('cypress')
+        cy.get('#username').type('cypress2')
         cy.get('#password').type('123abc')
         cy.get('button').click()
         cy.get('.card').click()
@@ -31,7 +31,7 @@ describe('Atualizando receita', () => {
 
     it('Atualizando o modo de preparo com sucesso', () => {
         cy.visit('/');
-        cy.get('#username').type('cypress')
+        cy.get('#username').type('cypress2')
         cy.get('#password').type('123abc')
         cy.get('button').click()
         cy.get('.card').click()
@@ -61,7 +61,7 @@ describe('Atualizando receita', () => {
 
     it('Esquecendo de colocar os ingredientes novos depois de ter apagado os ingredientes antigos', () => {
         cy.visit('/');
-        cy.get('#username').type('cypress')
+        cy.get('#username').type('cypress2')
         cy.get('#password').type('123abc')
         cy.get('button').click()
         cy.get('.card').click()

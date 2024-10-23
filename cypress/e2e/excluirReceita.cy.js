@@ -1,7 +1,7 @@
 describe('Excluir receita', () => {
     it('Excluindo uma receita com sucesso', () => {
         cy.visit('/');
-        cy.get('#username').type('cypress')
+        cy.get('#username').type('cypress2')
         cy.get('#password').type('123abc')
         cy.get('button').click()
         cy.get('.card').click()
@@ -20,7 +20,7 @@ describe('Excluir receita', () => {
 
     it('Excluindo todas as receitas', () => {
         cy.visit('/');
-        cy.get('#username').type('cypress')
+        cy.get('#username').type('cypress2')
         cy.get('#password').type('123abc')
         cy.get('button').click()
         cy.get('.card').click()
@@ -45,7 +45,7 @@ describe('Excluir receita', () => {
 
     it('Excluindo todas as receitas sem ter nenhuma', () => {
         cy.visit('/');
-        cy.get('#username').type('cypress')
+        cy.get('#username').type('cypress2')
         cy.get('#password').type('123abc')
         cy.get('button').click()
         cy.wait(3000)

@@ -1,7 +1,7 @@
 describe('Avaliar receita', () => {
     it('Avaliar a receita com uma estrela com sucesso', () => {
         cy.visit('/');
-        cy.get('#username').type('cypress')
+        cy.get('#username').type('cypress2')
         cy.get('#password').type('123abc')
         cy.get('button').click()
         cy.get('.card').click()
@@ -32,7 +32,7 @@ describe('Avaliar receita', () => {
 
     it('Reavaliando uma receita com sucesso', () => {
         cy.visit('/');
-        cy.get('#username').type('cypress')
+        cy.get('#username').type('cypress2')
         cy.get('#password').type('123abc')
         cy.get('button').click()
         cy.get('.card').click()
@@ -72,7 +72,7 @@ describe('Avaliar receita', () => {
 
     it('Esquecendo de clicar nas estrelas e avaliando', () => {
         cy.visit('/');
-        cy.get('#username').type('cypress')
+        cy.get('#username').type('cypress2')
         cy.get('#password').type('123abc')
         cy.get('button').click()
         cy.get('.card').click()
