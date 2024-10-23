@@ -14,4 +14,5 @@ urlpatterns = [
     path('minhas_pastas/', views.PastasView.as_view(), name='minhas_pastas'),
     path('adicionar_a_pasta/<int:receita_id>/', views.AdicionarReceitaAPastaView.as_view(), name='adicionar_a_pasta'),
     path('pasta/<int:pasta_id>/receitas/', views.ReceitasPastaView.as_view(), name='receitas_pasta'),  # Nova URL
+    path('delete_all/', views.DeleteAllReceitasView.as_view(), name='delete_all_receitas'),
 ]
