@@ -1,5 +1,5 @@
 describe('Criar pastas de receitas ', () => {
-    it('Criar pastas de receitas', () => {
+    it('Criando uma pasta de receitas', () => {
         cy.visit('/');
         cy.get('#username').type('cypress')
         cy.get('#password').type('123abc')
@@ -15,13 +15,46 @@ describe('Criar pastas de receitas ', () => {
         cy.get('.create-folder-link').click()
         cy.get('form > [type="text"]').type('Bebidas quentes')
         cy.get('button').click()
+        cy.get('h2').last().invoke('text').should('have.string', "Bebidas quentes")
     })
 
-    it('esquecendo de adicionar receita para botar na pasta', () => {
-
+    it('Adicionando receita a pasta', () => {
+        cy.visit('/');
+        cy.get('#username').type('cypress')
+        cy.get('#password').type('123abc')
+        cy.get('button').click()
+        cy.get('.card').click()
+        cy.get('#nome').type('chocolate quente')
+        cy.get('#ingredientes').type('Chocolate e leite integral.')
+        cy.get('#modo_preparo').type('Aqueça o leite, acrescente o chocolate e misture bem.')
+        cy.get('#comentarios').type('Bom para tomar no frio.')
+        cy.get('.button').click()
+        cy.get('h2').last().invoke('text').should('have.string', "chocolate quente")
+        cy.get('ul > :nth-child(2) > a').click()
+        cy.get('.create-folder-link').click()
+        cy.get('form > [type="text"]').type('Bebidas quentes')
+        cy.get('button').click()
+        cy.get('h2').last().invoke('text').should('have.string', "Bebidas quentes")
+        cy.get('.add-receita-form').last().find('select').select(1)
+        cy.get('.add-receita-form').last().find('button').click()
+        cy.get('h1').invoke('text').should('have.string', "chocolate quente")
     })
 
-    it('cenario3', () => {
-        
+    it('Esquecendo de colocar o nome da pasta ao cria-la', () => {
+        cy.visit('/');
+        cy.get('#username').type('cypress')
+        cy.get('#password').type('123abc')
+        cy.get('button').click()
+        cy.get('.card').click()
+        cy.get('#nome').type('chocolate quente')
+        cy.get('#ingredientes').type('Chocolate e leite integral.')
+        cy.get('#modo_preparo').type('Aqueça o leite, acrescente o chocolate e misture bem.')
+        cy.get('#comentarios').type('Bom para tomar no frio.')
+        cy.get('.button').click()
+        cy.get('h2').last().invoke('text').should('have.string', "chocolate quente")
+        cy.get('ul > :nth-child(2) > a').click()
+        cy.get('.create-folder-link').click()
+        cy.get('button').click()
+        cy.get('#nomenav').invoke('text').should('have.string', "")
     })
 })
