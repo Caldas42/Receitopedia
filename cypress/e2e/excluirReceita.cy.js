@@ -1,5 +1,5 @@
 describe('Excluir receita', () => {
-    it('Excluindo a receita com sucesso', () => {
+    it('Excluindo uma receita com sucesso', () => {
         cy.visit('/');
         cy.get('#username').type('cypress')
         cy.get('#password').type('123abc')
