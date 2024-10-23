@@ -158,3 +158,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = 'aplicacao:home'
 LOGOUT_REDIRECT_URL = 'login'
+
+CSRF_COOKIE_SECURE = True  # Se você está rodando sob HTTPS
+SESSION_COOKIE_SECURE = True
+CSRF_USE_SESSIONS = False
