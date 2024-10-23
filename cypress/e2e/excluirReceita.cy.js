@@ -37,7 +37,11 @@ describe('Excluir receita', () => {
         cy.get('.delete-all-btn').click()
     })
 
-    it('cenario3', () => {
-        //steps do cenario3
+    it('Excluindo todas as receitas sem ter nenhuma', () => {
+        cy.visit('/');
+        cy.get('#username').type('cypress')
+        cy.get('#password').type('123abc')
+        cy.get('button').click()
+        cy.get('.delete-all-btn').click()
     })
 })
