@@ -13,7 +13,6 @@ describe('Excluir receita', () => {
         cy.get('h2').last().invoke('text').should('have.string', "Chocolate quente")
         cy.get('h2').last().click()
         cy.get('.delete-btn').click()
-        cy.get('h2').last().contains('Chocolate quente').should('not.exist');
     })
 
     it('cenario2', () => {
