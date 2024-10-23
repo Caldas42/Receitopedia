@@ -9,17 +9,22 @@
 </head>
 <body>
     <h2>Entrar</h2>
-    
-    <form method="POST" action="">
-        {% csrf_token %}
-        <label for="username">Usuário:</label>
-        <input type="text" id="username" name="username" required>
-    
-        <label for="password">Senha:</label>
-        <input type="password" id="password" name="password" required>
-    
-        <button type="submit">Login</button>
-    </form>
+    <div>
+        <form method="POST" action="">
+            {% csrf_token %}
+            <div class="loginForm">
+                <label for="username">Usuário:</label>
+                <input type="text" id="username" name="username" required>
+            
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" required>
+                
+                <br>
+
+                <button type="submit" class="button">Login</button>
+            </div>
+        </form>
+    </div>
     
     <h4>Não tem conta? <a href="{% url 'registrar' %}" id="links">Regsitre-se aqui</a></h4>
 </body>
