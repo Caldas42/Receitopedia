@@ -46,7 +46,7 @@ https://github.com/user-attachments/assets/3c8e4c21-977c-4d4c-a460-64c28ab57bcf
 
 ### Screencast do Deployment
 
-### Screencast da Execução dos Testes de Sistema Automatizados
+### [Screencast da Execução dos Testes de Sistema Automatizados](https://youtu.be/GvZJupZB3fg)
 
 ### Quadro da Sprint 02
 
