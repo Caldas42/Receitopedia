@@ -1,7 +1,7 @@
 describe('visualizar receita', () => {
     it('Visualizando receita com comentário com sucesso', () => {
         cy.visit('/');
-        cy.get('#username').type('cypress')
+        cy.get('#username').type('cypress2')
         cy.get('#password').type('123abc')
         cy.get('button').click()
         cy.get('.card').click()
@@ -24,7 +24,7 @@ describe('visualizar receita', () => {
 
     it('Visualizando receita sem comentário com sucesso', () => {
         cy.visit('/');
-        cy.get('#username').type('cypress')
+        cy.get('#username').type('cypress2')
         cy.get('#password').type('123abc')
         cy.get('button').click()
         cy.get('.card').click()
@@ -44,7 +44,7 @@ describe('visualizar receita', () => {
 
     it('Visualizando receita avaliada com sucesso', () => {
         cy.visit('/');
-        cy.get('#username').type('cypress')
+        cy.get('#username').type('cypress2')
         cy.get('#password').type('123abc')
         cy.get('button').click()
         cy.get('.card').click()
