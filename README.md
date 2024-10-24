@@ -8,7 +8,7 @@ Utilizando o framework **Django**, a aplicação foi desenvolvida com o objetivo
 
 [Figma](https://www.figma.com/design/UIxrJg5ZTuVd0yeqVkzu8V/Receitop%C3%A9dia?node-id=0-1&t=GAdtcOXiKKQ1YMrh-1)
 
-[Deploy na Azure](https://receitopedia-bncrd0c8bpbtb4ak.brazilsouth-01.azurewebsites.net)
+[Deploy na Azure](https://receitopediaapp.azurewebsites.net)
 
 ## Entrega 01
 
