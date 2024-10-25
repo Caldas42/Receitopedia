@@ -129,7 +129,7 @@ class SugestaoView(View):
     login_url = 'login'
 
     def get(self, request):
-        receitas_sugestao = receita.objects.filter(sugestao=True).order_by('?')[:6]
+        receitas_sugestao = receita.objects.filter(sugestao=True).order_by('?')[:1]
         ctx = {'receitas_sugestao': receitas_sugestao}
         return render(request, 'sugestoes.html', ctx)
     
