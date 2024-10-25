@@ -1,8 +1,10 @@
 from django.shortcuts import redirect, render, get_object_or_404
-from .models import receita, Pasta
+from .models import receita, Pasta, ReceitaSalva
 from django.views import View
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
+
+import random
 
 class HomeView(LoginRequiredMixin, View):
     login_url = 'login'
@@ -26,8 +28,12 @@ class AddView(View):
         modo_preparo = request.POST.get('modo_preparo')
         comentarios = request.POST.get('comentarios')
         user = request.user
+        if request.user.id == 999:
+            sugestao = True
+        else:
+            sugestao = False
 
-        Receita = receita(nome=nome, ingredientes=ingredientes, modo_preparo=modo_preparo, comentarios=comentarios, user=user)
+        Receita = receita(nome=nome, ingredientes=ingredientes, modo_preparo=modo_preparo, comentarios=comentarios, user=user, sugestao=sugestao)
         Receita.save()
 
         return redirect('aplicacao:home')
@@ -118,3 +124,21 @@ class ReceitasPastaView(View):
             'receitas': receitas,
         }
         return render(request, 'receitas_pasta.html', ctx)
+    
+class SugestaoView(View):
+    login_url = 'login'
+
+    def get(self, request):
+        receitas_sugestao = receita.objects.filter(sugestao=True).order_by('?')[:6]
+        ctx = {'receitas_sugestao': receitas_sugestao}
+        return render(request, 'sugestoes.html', ctx)
+    
+class SalvarReceitaView(LoginRequiredMixin, View):
+    login_url = 'login'
+
+    def post(self, request, receitaEspecifica_id):
+        receitaEspecifica = receita.objects.get(id=receitaEspecifica_id)
+
+        if not ReceitaSalva.objects.filter(user=request.user, receitaEspecifica=receitaEspecifica).exists():
+            ReceitaSalva.objects.create(user=request.user, receitaEspecifica=receitaEspecifica)
+        return redirect('aplicacao:sugestoes')

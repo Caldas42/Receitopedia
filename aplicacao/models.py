@@ -20,3 +20,8 @@ class receita(models.Model):
 
     def __str__(self):
         return self.nome
+
+class ReceitaSalva(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    receitaSalva = models.ForeignKey(receita, on_delete=models.CASCADE)
+    saved_at = models.DateTimeField(auto_now_add=True)
