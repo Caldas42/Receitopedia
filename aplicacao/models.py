@@ -15,6 +15,7 @@ class receita(models.Model):
     comentarios = models.TextField(default="Comentários não informados")
     rating = models.IntegerField(default=0)
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
+    sugestao = models.BooleanField()
     pasta = models.ForeignKey(Pasta, on_delete=models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
