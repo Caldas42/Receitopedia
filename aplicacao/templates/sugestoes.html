@@ -15,6 +15,7 @@
         {% for receita in receitas_sugestao %}
             <div class="cardSugestao">
                 <h3>{{% receita.nome %}}</h3>
+                <h5>{{% receita.user %}} (oficial!)</h5>
 
                 <form action="{% url 'aplicacao:salvar_receita' receita.id %}" method="post">
                     {% csrf_token %}
