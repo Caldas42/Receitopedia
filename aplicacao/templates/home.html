@@ -16,6 +16,23 @@
 
         <div class="header-section">
             <h1>Minhas Receitas</h1>
+
+            <!-- Mensagens de feedback -->
+            {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+
+            <!-- Botão para excluir todas as receitas -->
+            <form action="{% url 'aplicacao:delete_all_receitas' %}" method="post">
+                {% csrf_token %}
+                <button type="submit" class="delete-all-btn" onclick="return confirm('Tem certeza que deseja excluir todas as receitas?');">
+                    Excluir Todas as Receitas
+                </button>
+            </form>
         </div>
 
         <div class="recipe-list">

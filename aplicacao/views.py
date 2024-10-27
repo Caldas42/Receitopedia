@@ -74,9 +74,9 @@ class EditarView(View):
         receita_obj.save()
 
         return redirect('aplicacao:visualizar', id=receita_obj.id)
-
-def criar_pasta(request):
-    if request.method == 'POST':
+    
+class CreateFolderView(View):
+    def post(self, request):
         nome = request.POST.get('nome')
         if nome:
             pasta = Pasta(nome=nome, usuario=request.user)
@@ -84,13 +84,15 @@ def criar_pasta(request):
             return redirect('aplicacao:minhas_pastas')
         else:
             return render(request, 'criar_pasta.html', {'error': 'O nome da pasta é obrigatório.'})
-    return render(request, 'criar_pasta.html')
+    
+    def get(self, request):
+        return render(request, 'criar_pasta.html')
 
-def minhas_pastas(request):
-    pastas = Pasta.objects.filter(usuario=request.user)
-    receitas = receita.objects.filter(user=request.user)  # Pega as receitas do usuário
-    return render(request, 'minhas_pastas.html', {'pastas': pastas, 'receitas': receitas})
-
+class PastasView(View):
+    def get(self, request):
+        pastas = Pasta.objects.filter(usuario=request.user)
+        receitas = receita.objects.filter(user=request.user)
+        return render(request, 'minhas_pastas.html', {'pastas': pastas, 'receitas': receitas})
 
 class AdicionarReceitaAPastaView(View):
     def get(self, request, receita_id):
@@ -106,7 +108,7 @@ class AdicionarReceitaAPastaView(View):
         receita_obj.save()
 
         return redirect('aplicacao:visualizar', id=receita_id)
-    
+ 
 class ReceitasPastaView(View):
     def get(self, request, pasta_id):
         pasta = get_object_or_404(Pasta, id=pasta_id, usuario=request.user)
@@ -116,3 +118,16 @@ class ReceitasPastaView(View):
             'receitas': receitas,
         }
         return render(request, 'receitas_pasta.html', ctx)
+
+class DeleteAllReceitasView(View):
+    def post(self, request):
+        # Verificar se existem receitas
+        receitas = receita.objects.filter(user=request.user)
+        
+        if receitas.exists():
+            receitas.delete()  # Deletar todas as receitas
+            messages.success(request, 'Todas as receitas foram excluídas com sucesso!')
+        else:
+            messages.error(request, 'Não há receitas para excluir.')
+
+        return redirect('aplicacao:home')

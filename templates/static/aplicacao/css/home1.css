@@ -171,3 +171,33 @@ h1 {
 h2 {
     text-align: center; 
 }
+/* Botão de excluir todas as receitas */
+.delete-all-btn {
+    background-color: #AD3826; /* Cor de fundo do botão */
+    color: #fff; /* Cor do texto */
+    padding: 10px 20px; /* Espaçamento interno do botão */
+    border: none; /* Remove a borda */
+    border-radius: 5px; /* Borda arredondada */
+    cursor: pointer; /* Muda o cursor para pointer ao passar o mouse */
+    font-size: 16px; /* Tamanho da fonte */
+    transition: background-color 0.3s, transform 0.3s; /* Efeito de transição ao passar o mouse */
+    margin-bottom: 20px; /* Espaçamento abaixo do botão */
+}
+
+.delete-all-btn:hover {
+    background-color: #9B2E21; /* Cor de fundo ao passar o mouse */
+    transform: scale(1.05); /* Leve zoom ao passar o mouse */
+}
+
+/* Posicionando o botão na parte superior e centralizado */
+.header-section {
+    display: flex;
+    justify-content: space-between; /* Distribui o espaço entre os itens */
+    align-items: center;
+    margin-bottom: 20px; /* Espaçamento inferior */
+}
+
+/* Alinhando o botão no topo, junto com o título */
+.header-section .delete-all-btn {
+    margin-right: 20px; /* Adiciona espaço entre o botão e o título */
+}
