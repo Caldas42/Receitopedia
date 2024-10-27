@@ -11,11 +11,14 @@ class HomeView(LoginRequiredMixin, View):
     
     def get(self, request):
         if request.user.is_authenticated:
-            Receita = receita.objects.filter(user=request.user)
+            Receita = receita.objects.filter(user=request.user) #refatorar depois
+            receitas_salvas = receita.objects.filter(id__in=receitas_salvas)
 
             ctx = {
                 'todas_as_receitas': Receita,
+                'receitas_salvas': receitas_salvas,
             }
+            
             return render(request, 'home.html', ctx)
 
 class AddView(View):
@@ -136,9 +139,10 @@ class SugestaoView(View):
 class SalvarReceitaView(LoginRequiredMixin, View):
     login_url = 'login'
 
-    def post(self, request, receitaEspecifica_id):
-        receitaEspecifica = receita.objects.get(id=receitaEspecifica_id)
+    def post(self, request, receita_id):
+        receita_especifica = receita.objects.get(id=receita_id)
 
-        if not ReceitaSalva.objects.filter(user=request.user, receitaEspecifica=receitaEspecifica).exists():
-            ReceitaSalva.objects.create(user=request.user, receitaEspecifica=receitaEspecifica)
+        if not ReceitaSalva.objects.filter(user=request.user, receitaSalva=receita_especifica).exists():
+            ReceitaSalva.objects.create(user=request.user, receitaSalva=receita_especifica)
+
         return redirect('aplicacao:sugestoes')
