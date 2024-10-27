@@ -10,15 +10,17 @@ class HomeView(LoginRequiredMixin, View):
     login_url = 'login'
     
     def get(self, request):
+
         if request.user.is_authenticated:
-            Receita = receita.objects.filter(user=request.user) #refatorar depois
+            Receita = receita.objects.filter(user=request.user)
+
+            receitas_salvas = ReceitaSalva.objects.filter(user=request.user).values_list('receitaSalva', flat=True)
             receitas_salvas = receita.objects.filter(id__in=receitas_salvas)
 
             ctx = {
                 'todas_as_receitas': Receita,
                 'receitas_salvas': receitas_salvas,
             }
-            
             return render(request, 'home.html', ctx)
 
 class AddView(View):
