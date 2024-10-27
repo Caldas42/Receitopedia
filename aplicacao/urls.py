@@ -15,5 +15,5 @@ urlpatterns = [
     path('adicionar_a_pasta/<int:receita_id>/', views.AdicionarReceitaAPastaView.as_view(), name='adicionar_a_pasta'),
     path('pasta/<int:pasta_id>/receitas/', views.ReceitasPastaView.as_view(), name='receitas_pasta'),
     path('sugestoes/', views.SugestaoView.as_view(), name='sugestoes'),
-    path('salvar_receita/', views.SalvarReceitaView.as_view(), name='salvar_receita'),
+    path('salvar_receita/<int:receita_id>/', views.SalvarReceitaView.as_view(), name='salvar_receita'),
 ]
