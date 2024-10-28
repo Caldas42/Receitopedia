@@ -136,5 +136,5 @@ class TimerView(View):
     def get(self,request):
         return render(request, 'timer.html')
     
-    def post(self,request):
+    #def post(self,request):
         
