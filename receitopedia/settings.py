@@ -63,7 +63,6 @@ else:
 # Application definition
 
 INSTALLED_APPS = [
-    'usuarios',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -71,6 +70,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'aplicacao',
+    'usuarios',
     #Adicionar whitenoise na lista de aplicativos instalados
     "whitenoise.runserver_nostatic",
 ]

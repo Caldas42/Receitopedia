@@ -74,9 +74,9 @@ class EditarView(View):
         receita_obj.save()
 
         return redirect('aplicacao:visualizar', id=receita_obj.id)
-
-def criar_pasta(request):
-    if request.method == 'POST':
+    
+class CreateFolderView(View):
+    def post(self, request):
         nome = request.POST.get('nome')
         if nome:
             pasta = Pasta(nome=nome, usuario=request.user)
@@ -84,13 +84,15 @@ def criar_pasta(request):
             return redirect('aplicacao:minhas_pastas')
         else:
             return render(request, 'criar_pasta.html', {'error': 'O nome da pasta é obrigatório.'})
-    return render(request, 'criar_pasta.html')
+    
+    def get(self, request):
+        return render(request, 'criar_pasta.html')
 
-def minhas_pastas(request):
-    pastas = Pasta.objects.filter(usuario=request.user)
-    receitas = receita.objects.filter(user=request.user)  # Pega as receitas do usuário
-    return render(request, 'minhas_pastas.html', {'pastas': pastas, 'receitas': receitas})
-
+class PastasView(View):
+    def get(self, request):
+        pastas = Pasta.objects.filter(usuario=request.user)
+        receitas = receita.objects.filter(user=request.user)
+        return render(request, 'minhas_pastas.html', {'pastas': pastas, 'receitas': receitas})
 
 class AdicionarReceitaAPastaView(View):
     def get(self, request, receita_id):
@@ -106,7 +108,7 @@ class AdicionarReceitaAPastaView(View):
         receita_obj.save()
 
         return redirect('aplicacao:visualizar', id=receita_id)
-    
+ 
 class ReceitasPastaView(View):
     def get(self, request, pasta_id):
         pasta = get_object_or_404(Pasta, id=pasta_id, usuario=request.user)
@@ -116,22 +118,3 @@ class ReceitasPastaView(View):
             'receitas': receitas,
         }
         return render(request, 'receitas_pasta.html', ctx)
-    
-class RemoverReceitaDaPastaView(View):
-    def post(self, request, receita_id):
-        receita_obj = get_object_or_404(receita, id=receita_id)
-
-        # Armazena o ID da pasta antes de remover a receita
-        pasta_id = receita_obj.pasta.id if receita_obj.pasta else None
-
-        # Remover a receita da pasta
-        receita_obj.pasta = None
-        receita_obj.save()
-
-        messages.success(request, 'Receita removida da pasta com sucesso!')
-
-        # Redirecionar para a página da pasta se existir, caso contrário redirecionar para "minhas pastas"
-        if pasta_id:
-            return redirect('aplicacao:receitas_pasta', pasta_id=pasta_id)
-        else:
-            return redirect('aplicacao:minhas_pastas')  # ou 'aplicacao:home', dependendo da sua lógica
