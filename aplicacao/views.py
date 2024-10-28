@@ -147,7 +147,7 @@ class RemoverReceitaDaPastaView(View):
         receita_obj.pasta = None
         receita_obj.save()
 
-        messages.success(request, 'Receita removida da pasta com sucesso!')
+        
 
         # Redirecionar para a página da pasta se existir, caso contrário redirecionar para "minhas pastas"
         if pasta_id:
