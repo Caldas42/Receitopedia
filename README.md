@@ -44,19 +44,35 @@ https://github.com/user-attachments/assets/c2917d65-35a9-444c-bdbe-455c03846943
 
 https://github.com/user-attachments/assets/3c8e4c21-977c-4d4c-a460-64c28ab57bcf
 
-### Screencast do Deployment
+### Screencast do Deployment das Novas Histórias
 
 https://github.com/user-attachments/assets/80b9f92d-dbab-49e3-b273-f3547ee5819f
 
 ### [Screencast da Execução dos Testes de Sistema Automatizados](https://youtu.be/GvZJupZB3fg)
 
-### Quadro da Sprint 02
+### Print do Quadro da Sprint 02 Atualizado Refletindo a Entrega
 
 ![image](https://github.com/user-attachments/assets/fe6a042b-db1d-4ca1-a443-4b63ef4e56ef)
 
-### Backlog da Sprint 02
+### Print do Backlog da Sprint 02 Atualizado Refletindo a Entrega
 
 ![image](https://github.com/user-attachments/assets/9788fed5-9af7-4039-8da4-64c1360421c0)
+
+## Entrega 04
+
+### Screencast da Atualização dos Protótipos de Lo-Fi
+
+### Screencast do Deployment das Novas Histórias
+
+### Screencast da Execução dos Testes de Sistema Automatizados
+
+### Print do Quadro da Sprint 03 Atualizado Refletindo a Entrega
+
+![image](https://github.com/user-attachments/assets/c5969754-d239-428b-9532-cb6698d341cf)
+
+### Print do Backlog da Sprint 03 Atualizado Refletindo a Entrega
+
+![image](https://github.com/user-attachments/assets/b1a04ec6-f203-4d60-9568-c55ecce88a84)
 
 ## Equipe
 

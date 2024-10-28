@@ -154,3 +154,5 @@ class RemoverReceitaDaPastaView(View):
             return redirect('aplicacao:receitas_pasta', pasta_id=pasta_id)
         else:
             return redirect('aplicacao:minhas_pastas')  # ou 'aplicacao:home', dependendo da sua lógica
+    #def post(self,request):
+        
