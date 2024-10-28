@@ -25,80 +25,78 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #ffffff; /* Cor de fundo branca */
-    padding: 20px; /* Espaçamento interno */
-    border-radius: 10px; /* Bordas arredondadas */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-    margin: 20px auto; /* Margem vertical automática */
-    width: 90%; /* Largura responsiva */
-    max-width: 400px; /* Largura máxima */
+    background-color: #ffffff; 
+    padding: 20px; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    margin: 20px auto; 
+    width: 90%;
+    max-width: 400px;
 }
 
 label {
-    margin: 10px 0; /* Espaçamento acima e abaixo do rótulo */
-    color: #333; /* Cor do texto */
+    margin: 10px 0;
+    color: #333;
 }
 
 input[type="number"] {
-    width: 60px; /* Largura fixa para os campos de entrada */
-    padding: 5px; /* Espaçamento interno */
-    border: 1px solid #ccc; /* Borda cinza clara */
-    border-radius: 5px; /* Bordas arredondadas */
-    margin-right: 10px; /* Espaçamento à direita */
-    font-size: 16px; /* Tamanho da fonte */
+    width: 60px;
+    padding: 5px; 
+    border: 1px solid #ccc;
+    border-radius: 5px; 
+    margin-right: 10px;
+    font-size: 16px;
 }
 
 .circle {
-    width: 200px; /* Largura do círculo */
-    height: 200px; /* Altura do círculo */
-    border-radius: 50%; /* Faz o círculo ficar redondo */
-    background: #e0e0e0; /* Cor de fundo do círculo */
-    position: relative; /* Necessário para posicionar o conteúdo interno */
-    overflow: hidden; /* Para ocultar a parte do círculo que não deve ser visível */
-    margin: 20px 0; /* Espaço em volta do círculo */
-}
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: #e0e0e0;
+    position: relative;
+    overflow: hidden;
+    margin: 20px 0;
 
 .circle-inner {
     width: 100%;
     height: 100%;
-    background: #f44336; /* Cor de fundo do círculo */
-    position: absolute; /* Posicionamento absoluto para controle do clip-path */
-    clip-path: inset(0% 0% 0% 0%); /* Inicialmente visível */
-    transition: clip-path 1s linear; /* Transição suave do círculo */
+    background: #f44336;
+    position: absolute;
+    clip-path: inset(0% 0% 0% 0%);
+    transition: clip-path 1s linear;
 }
 
 .timer-text {
-    position: absolute; /* Posicionamento absoluto para centrar o texto */
-    top: 50%; /* Centraliza verticalmente */
-    left: 50%; /* Centraliza horizontalmente */
-    transform: translate(-50%, -50%); /* Ajusta a posição para o centro */
-    font-size: 32px; /* Tamanho do texto */
-    font-weight: bold; /* Texto em negrito */
-    color: white; /* Cor do texto */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
 }
 
 button {
-    background-color: #4CAF50; /* Cor de fundo do botão */
-    color: white; /* Cor do texto */
-    padding: 10px 15px; /* Espaçamento interno */
-    border: none; /* Remove bordas padrão */
-    border-radius: 5px; /* Bordas arredondadas */
-    cursor: pointer; /* Muda o cursor ao passar sobre o botão */
-    font-size: 16px; /* Tamanho da fonte */
-    margin: 5px; /* Espaço entre botões */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Transições suaves */
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
-
 button:disabled {
-    background-color: #ccc; /* Cor para botões desabilitados */
-    cursor: not-allowed; /* Cursor diferente para indicar desabilitação */
+    background-color: #ccc;
+    cursor: not-allowed;
 }
 
 button:hover:not(:disabled) {
-    background-color: #45a049; /* Cor ao passar o mouse */
-    transform: scale(1.05); /* Pequeno aumento ao passar o mouse */
+    background-color: #45a049;
+    transform: scale(1.05);
 }
 
 button:active:not(:disabled) {
-    transform: scale(0.98); /* Leve redução ao clicar */
+    transform: scale(0.98);
 }
