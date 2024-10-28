@@ -135,3 +135,6 @@ class DeleteAllReceitasView(View):
 class TimerView(View):
     def get(self,request):
         return render(request, 'timer.html')
+    
+    def post(self,request):
+        

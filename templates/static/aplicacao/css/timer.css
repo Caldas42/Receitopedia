@@ -1,0 +1,68 @@
+@font-face {
+    font-family: 'Jaro';
+    src: url(../../../static/fonts/Jaro-Regular-VariableFont_opsz.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Jaro;
+}
+
+body {
+    font-family: Jaro;
+    background-color: #F1E9C0;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #AD3826;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.timer-container {
+    text-align: center;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.timer-circle {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 8px solid #28a745;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: countdown 60s linear forwards;
+}
+
+.timer-text {
+    position: absolute;
+    font-size: 2rem;
+    color: #333;
+}
+
+@keyframes countdown {
+    from {
+        border-color: #28a745;
+    }
+    to {
+        border-color: #ff4b5c; /* Mudança de cor ao final */
+        transform: scale(0.5); /* Opcional: redimensiona o círculo */
+    }
+}
