@@ -16,7 +16,6 @@
         </div>
 
         <div class="pasta-list">
-            <!-- Card para Criar Nova Pasta -->
             <div class="pasta-card create-folder-card">
                 <h2>Criar Nova Pasta</h2>
                 <a href="{% url 'aplicacao:criar_pasta' %}" class="create-folder-link">Clique aqui para criar uma nova pasta</a>
@@ -26,7 +25,6 @@
                 <div class="pasta-card">
                     <h2><a href="{% url 'aplicacao:receitas_pasta' pasta.id %}">{{ pasta.nome }}</a></h2>
                     
-                    <!-- Select Box para Adicionar Receita -->
                     <form action="{% url 'aplicacao:adicionar_a_pasta' 0 %}" method="POST" class="add-receita-form">
                         {% csrf_token %}
                         <select name="receita_id" onchange="updateFormAction(this.value, this.form)" class="styled-select">
@@ -36,7 +34,30 @@
                             {% endfor %}
                         </select>
                         <input type="hidden" name="pasta_id" value="{{ pasta.id }}">
+<<<<<<< HEAD
                         <button type="submit" class="styled-button">Adicionar à Pasta</button>
+=======
+                        <button type="submit">Adicionar à Pasta</button>
+                        <script>
+                            function updateFormAction(receitaId, form) {
+                                if (receitaId) {
+                                    form.action = "{% url 'aplicacao:adicionar_a_pasta' 0 %}".replace('0', receitaId);
+                                } else {
+                                    form.action = "{% url 'aplicacao:adicionar_a_pasta' 0 %}".replace('0', '');
+                                }
+                            }
+                        
+                            document.querySelectorAll('.add-receita-form').forEach(form => {
+                                form.addEventListener('submit', function(event) {
+                                    const selectBox = this.querySelector('select[name="receita_id"]');
+                                    if (!selectBox.value) {
+                                        event.preventDefault();
+                                        alert('Por favor, selecione uma receita antes de adicionar à pasta.');
+                                    }
+                                });
+                            });
+                        </script>
+>>>>>>> 1298e60a8c57ec5d6214ee8cb4d50e51f02a95e6
                     </form>
                 </div>
             {% empty %}
