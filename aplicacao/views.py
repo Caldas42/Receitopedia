@@ -155,4 +155,9 @@ class RemoverReceitaDaPastaView(View):
         else:
             return redirect('aplicacao:minhas_pastas')  # ou 'aplicacao:home', dependendo da sua lógica
     #def post(self,request):
+class DeletePastaView(View):
+    def post(self, request, pasta_id):
+        pasta_obj = get_object_or_404(Pasta, id=pasta_id, usuario=request.user)
+        pasta_obj.delete()
+        return redirect('aplicacao:minhas_pastas')
         

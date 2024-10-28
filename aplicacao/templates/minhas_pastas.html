@@ -35,26 +35,12 @@
                         </select>
                         <input type="hidden" name="pasta_id" value="{{ pasta.id }}">
                         <button type="submit" class="styled-button">Adicionar à Pasta</button>
-                        <button type="submit">Adicionar à Pasta</button>
-                        <script>
-                            function updateFormAction(receitaId, form) {
-                                if (receitaId) {
-                                    form.action = "{% url 'aplicacao:adicionar_a_pasta' 0 %}".replace('0', receitaId);
-                                } else {
-                                    form.action = "{% url 'aplicacao:adicionar_a_pasta' 0 %}".replace('0', '');
-                                }
-                            }
-                        
-                            document.querySelectorAll('.add-receita-form').forEach(form => {
-                                form.addEventListener('submit', function(event) {
-                                    const selectBox = this.querySelector('select[name="receita_id"]');
-                                    if (!selectBox.value) {
-                                        event.preventDefault();
-                                        alert('Por favor, selecione uma receita antes de adicionar à pasta.');
-                                    }
-                                });
-                            });
-                        </script>
+                    </form>
+                    
+                    <!-- Formulário para excluir a pasta -->
+                    <form action="{% url 'aplicacao:excluir_pasta' pasta.id %}" method="POST" class="delete-pasta-form">
+                        {% csrf_token %}
+                        <button type="submit" class="styled-button" onclick="return confirm('Tem certeza que deseja excluir esta pasta?');">Excluir Pasta</button>
                     </form>
                 </div>
             {% empty %}

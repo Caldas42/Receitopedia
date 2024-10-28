@@ -17,5 +17,7 @@ urlpatterns = [
     path('delete_all/', views.DeleteAllReceitasView.as_view(), name='delete_all_receitas'),
     path('timer/', views.TimerView.as_view(), name='timer'),
     path('remover_da_pasta/<int:receita_id>/', views.RemoverReceitaDaPastaView.as_view(), name='remover_da_pasta'),
+    path('excluir_pasta/<int:pasta_id>/', views.DeletePastaView.as_view(), name='excluir_pasta'),
+
 
 ]
