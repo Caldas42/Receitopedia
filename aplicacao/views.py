@@ -118,3 +118,16 @@ class ReceitasPastaView(View):
             'receitas': receitas,
         }
         return render(request, 'receitas_pasta.html', ctx)
+
+class DeleteAllReceitasView(View):
+    def post(self, request):
+        # Verificar se existem receitas
+        receitas = receita.objects.filter(user=request.user)
+        
+        if receitas.exists():
+            receitas.delete()  # Deletar todas as receitas
+            messages.success(request, 'Todas as receitas foram excluídas com sucesso!')
+        else:
+            messages.error(request, 'Não há receitas para excluir.')
+
+        return redirect('aplicacao:home')
