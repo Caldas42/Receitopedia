@@ -47,9 +47,8 @@ select, input[type="submit"] {
     background-color: #CAC486;
 }
 
-/* Remover qualquer alteração de cor no hover */
 select:hover {
-    background-color: #CAC486; /* Cor original mantida */
+    background-color: #CAC486;
     cursor: pointer;
 }
 

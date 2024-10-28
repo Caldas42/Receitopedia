@@ -12,7 +12,6 @@
     {% include 'navbar.html' %}
     <h1>Editar Receita: {{ receita.nome }}</h1>
 
-    <!-- Alterei a action para usar a URL da view de edição, passando o id da receita -->
     <form action="{% url 'aplicacao:editar' receita.id %}" method="POST">
         {% csrf_token %}
         
