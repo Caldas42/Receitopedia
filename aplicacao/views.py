@@ -135,3 +135,22 @@ class DeleteAllReceitasView(View):
 class TimerView(View):
     def get(self,request):
         return render(request, 'timer.html')
+    
+class RemoverReceitaDaPastaView(View):
+    def post(self, request, receita_id):
+        receita_obj = get_object_or_404(receita, id=receita_id)
+
+        # Armazena o ID da pasta antes de remover a receita
+        pasta_id = receita_obj.pasta.id if receita_obj.pasta else None
+
+        # Remover a receita da pasta
+        receita_obj.pasta = None
+        receita_obj.save()
+
+        messages.success(request, 'Receita removida da pasta com sucesso!')
+
+        # Redirecionar para a página da pasta se existir, caso contrário redirecionar para "minhas pastas"
+        if pasta_id:
+            return redirect('aplicacao:receitas_pasta', pasta_id=pasta_id)
+        else:
+            return redirect('aplicacao:minhas_pastas')  # ou 'aplicacao:home', dependendo da sua lógica
