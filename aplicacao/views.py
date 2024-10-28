@@ -131,3 +131,7 @@ class DeleteAllReceitasView(View):
             messages.error(request, 'Não há receitas para excluir.')
 
         return redirect('aplicacao:home')
+    
+class TimerView(View):
+    def get(self,request):
+        return render(request, 'timer.html')
