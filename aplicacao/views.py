@@ -130,7 +130,49 @@ class ReceitasPastaView(View):
             'receitas': receitas,
         }
         return render(request, 'receitas_pasta.html', ctx)
+
+class DeleteAllReceitasView(View):
+    def post(self, request):
+        # Verificar se existem receitas
+        receitas = receita.objects.filter(user=request.user)
+        
+        if receitas.exists():
+            receitas.delete()  # Deletar todas as receitas
+            messages.success(request, 'Todas as receitas foram excluídas com sucesso!')
+        else:
+            messages.error(request, 'Não há receitas para excluir.')
+
+        return redirect('aplicacao:home')
     
+class TimerView(View):
+    def get(self,request):
+        return render(request, 'timer.html')
+    
+class RemoverReceitaDaPastaView(View):
+    def post(self, request, receita_id):
+        receita_obj = get_object_or_404(receita, id=receita_id)
+
+        # Armazena o ID da pasta antes de remover a receita
+        pasta_id = receita_obj.pasta.id if receita_obj.pasta else None
+
+        # Remover a receita da pasta
+        receita_obj.pasta = None
+        receita_obj.save()
+
+        
+
+        # Redirecionar para a página da pasta se existir, caso contrário redirecionar para "minhas pastas"
+        if pasta_id:
+            return redirect('aplicacao:receitas_pasta', pasta_id=pasta_id)
+        else:
+            return redirect('aplicacao:minhas_pastas')  # ou 'aplicacao:home', dependendo da sua lógica
+    #def post(self,request):
+class DeletePastaView(View):
+    def post(self, request, pasta_id):
+        pasta_obj = get_object_or_404(Pasta, id=pasta_id, usuario=request.user)
+        pasta_obj.delete()
+        return redirect('aplicacao:minhas_pastas')
+
 class SugestaoView(View):
     login_url = 'login'
 

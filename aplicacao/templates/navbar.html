@@ -16,10 +16,6 @@
         </a>
 
         <input type="text" placeholder="Buscar">
-
-        <div class="user-info">
-            <span>Nome Usuário</span>
-        </div>
     </header>
     
     <nav>
@@ -27,6 +23,8 @@
             <li><a href="{% url 'aplicacao:home' %}">Minhas Receitas</a></li>
             <li><a href="{% url 'aplicacao:minhas_pastas' %}">Minhas Pastas</a></li>
             <li><a href="{% url 'aplicacao:sugestoes' %}">Sugestões</a></li>
+            <li><a href="{%url 'aplicacao:timer' %}">Timer</a></li>
+            <li><a href="{% url 'logout' %}" class="logout-button">Sair da conta</a></li>
         </ul>
     </nav>
 </body>

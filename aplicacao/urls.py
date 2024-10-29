@@ -16,4 +16,8 @@ urlpatterns = [
     path('pasta/<int:pasta_id>/receitas/', views.ReceitasPastaView.as_view(), name='receitas_pasta'),
     path('sugestoes/', views.SugestaoView.as_view(), name='sugestoes'),
     path('salvar_receita/<int:receita_id>/', views.SalvarReceitaView.as_view(), name='salvar_receita'),
+    path('delete_all/', views.DeleteAllReceitasView.as_view(), name='delete_all_receitas'),
+    path('timer/', views.TimerView.as_view(), name='timer'),
+    path('remover_da_pasta/<int:receita_id>/', views.RemoverReceitaDaPastaView.as_view(), name='remover_da_pasta'),
+    path('excluir_pasta/<int:pasta_id>/', views.DeletePastaView.as_view(), name='excluir_pasta'),
 ]
