@@ -48,38 +48,6 @@
                 {% endfor %}
             </section>
         </div>
-
-        <!--<div class="header-section">
-            <h1>Receitas salvas</h1>
-        </div>
-
-        <br>
-
-         <div class="recipe-list">
-            <section class="receitas">
-
-                {% for receita_salva in receitas_salvas %}
-                    <div class="recipe-card">
-                        <a href="{% url 'aplicacao:visualizar' receita_salva.id %}" class="recipe-link">
-                            <h2>{{ receita_salva.nome }}</h2>
-
-                            {% if receita_salva.rating > 0 %}
-                                <div class="stars">
-                                    {% for i in "12345" %}
-                                        {% if i <= receita_salva.rating|stringformat:"i" %}
-                                            <span style="color:#ffc107;">★</span>
-                                        {% else %}
-                                            <span style="color:#ddd;">★</span>
-                                        {% endif %}
-                                    {% endfor %}
-                                </div>
-                            {% endif %}
-                        </a>
-                    </div>
-                {% endfor %}
-
-            </section>
-        </div> -->
     </main>
 </body>
 </html>

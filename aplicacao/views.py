@@ -21,7 +21,6 @@ class HomeView(LoginRequiredMixin, View):
 
             ctx = {
                 'todas_as_receitas': Receita,
-                #'receitas_salvas': receitas_salvas,
             }
             return render(request, 'home.html', ctx)
 
