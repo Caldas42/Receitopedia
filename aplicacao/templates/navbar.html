@@ -14,8 +14,10 @@
                 <img src="{% static 'aplicacao/img/logo_receitopedia.png' %}" alt="Logo da Receitopédia">
             </div>
         </a>
-
+        
         <input type="text" placeholder="Buscar">
+        
+        <a href="{% url 'logout' %}" class="logout-button">Sair da conta</a>
     </header>
     
     <nav>
@@ -24,7 +26,6 @@
             <li><a href="{% url 'aplicacao:minhas_pastas' %}">Minhas Pastas</a></li>
             <li><a href="{% url 'aplicacao:timer' %}">Timer</a></li>
             <li><a href="{% url 'aplicacao:sugestoes' %}">Sugestões</a></li>
-            <li><a href="{% url 'logout' %}" class="logout-button">Sair da conta</a></li>
         </ul>
     </nav>
 </body>

@@ -89,3 +89,20 @@ h1 {
 .receitas-info-table table {
     margin-top: 10px;
 }
+
+.styled-button {
+    background-color: #ff4b5c;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.styled-button:hover {
+    background-color: #ff1e3c;
+}

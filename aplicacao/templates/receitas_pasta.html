@@ -1,48 +1,63 @@
-{% include 'navbar.html' %}
-<div class="receitas-info-table">
-    <h2>Informações das Receitas</h2>
-    {% for receita in receitas %}
-    <h3 id="{{ receita.nome }}">{{ receita.nome }}</h3>
-    <table>
-        <tr>
-            <th>Ingredientes</th>
-            <td>{{ receita.ingredientes }}</td>
-        </tr>
-        <tr>
-            <th>Modo de Preparo</th>
-            <td>{{ receita.modo_preparo }}</td>
-        </tr>
-        <tr>
-            <th>Comentários</th>
-            <td>{{ receita.comentarios }}</td>
-        </tr>
-        <tr>
-            <th>Rating</th>
-            <td>
-                {% if receita.rating > 0 %}
-                    <div class="stars">
-                        {% for i in "12345" %}
-                            {% if i <= receita.rating|stringformat:"i" %}
-                                <span style="color:#ffc107;">★</span>
-                            {% else %}
-                                <span style="color:#ddd;">★</span>
-                            {% endif %}
-                        {% endfor %}
-                    </div>
-                {% endif %}
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <form action="{% url 'aplicacao:remover_da_pasta' receita.id %}" method="POST">
-                    {% csrf_token %}
-                    <input type="hidden" name="pasta_id" value="{{ pasta.id }}">
-                    <button type="submit" class="styled-button">Remover da Pasta</button>
-                </form>
-            </td>
-        </tr>
-    </table>
-    {% empty %}
-    <p>Não há informações adicionais disponíveis.</p>
-    {% endfor %}
-</div>
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'aplicacao/css/receitas_pasta.css' %}">
+    <title>Receitas Pasta</title>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    
+    <div class="container">
+        <div class="receitas-info-table">
+            <h2>Informações das Receitas</h2>
+            {% for receita in receitas %}
+            <h3 id="{{ receita.nome }}">{{ receita.nome }}</h3>
+            <table>
+                <tr>
+                    <th>Ingredientes</th>
+                    <td>{{ receita.ingredientes }}</td>
+                </tr>
+                <tr>
+                    <th>Modo de Preparo</th>
+                    <td>{{ receita.modo_preparo }}</td>
+                </tr>
+                <tr>
+                    <th>Comentários</th>
+                    <td>{{ receita.comentarios }}</td>
+                </tr>
+                <tr>
+                    <th>Rating</th>
+                    <td>
+                        {% if receita.rating > 0 %}
+                            <div class="stars">
+                                {% for i in "12345" %}
+                                    {% if i <= receita.rating|stringformat:"i" %}
+                                        <span style="color:#ffc107;">★</span>
+                                    {% else %}
+                                        <span style="color:#ddd;">★</span>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <form action="{% url 'aplicacao:remover_da_pasta' receita.id %}" method="POST">
+                            {% csrf_token %}
+                            <input type="hidden" name="pasta_id" value="{{ pasta.id }}">
+                            <button type="submit" class="styled-button">Remover da Pasta</button>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+            {% empty %}
+            <p>Não há informações adicionais disponíveis.</p>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
