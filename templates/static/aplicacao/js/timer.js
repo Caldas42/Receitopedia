@@ -37,6 +37,7 @@ document.getElementById('start-button').addEventListener('click', function() {
         const percentage = (totalTime / ((hours * 3600) + (minutes * 60) + seconds)) * 100;
         circleInner.style.clipPath = `inset(${100 - percentage}% 0% 0% 0%)`;
 
+        
         if (totalTime <= 0) {
             clearInterval(countdown);
             timerText.textContent = "Tempo esgotado!";
@@ -48,10 +49,12 @@ document.getElementById('start-button').addEventListener('click', function() {
 });
 
 function updateTimerDisplay(time) {
+
     const hoursLeft = Math.floor(time / 3600);
     const minutesLeft = Math.floor((time % 3600) / 60);
     const secondsLeft = time % 60;
     const timerText = document.getElementById('timer-text');
+
 
     timerText.textContent = `${hoursLeft < 10 ? '0' + hoursLeft : hoursLeft}:${
         minutesLeft < 10 ? '0' + minutesLeft : minutesLeft}:${
@@ -63,6 +66,7 @@ document.getElementById('cancel-button').addEventListener('click', function() {
     const timerText = document.getElementById('timer-text');
     const startButton = document.getElementById('start-button');
     const cancelButton = document.getElementById('cancel-button');
+
 
     timerText.textContent = "00:00:00";
     startButton.disabled = false;
