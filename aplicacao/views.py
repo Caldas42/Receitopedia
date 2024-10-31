@@ -34,7 +34,7 @@ class AddView(View):
         modo_preparo = request.POST.get('modo_preparo')
         comentarios = request.POST.get('comentarios')
         user = request.user
-        if request.user.id == 11:
+        if request.user.nome == 'Receitopedia':
             sugestao = True
         else:
             sugestao = False
