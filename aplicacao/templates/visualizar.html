@@ -20,7 +20,7 @@
             <div class="tag-container">
                 {% if Receita.tags.exists %}
                     {% for tag in Receita.tags.all %}
-                        <span class="tag">{{ tag.nome }}</span>
+                        <p class="colored-line">{{ tag.nome }}</p>
                     {% endfor %}
                 {% else %}
                     <p>Esta receita ainda não possui tags.</p>
