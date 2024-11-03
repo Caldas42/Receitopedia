@@ -42,6 +42,32 @@ h2 {
     background-color: #CAC486;
 }
 
+/* Estilos para a seção de tags */
+.tag-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tag {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #CAC486;
+    color: #3C5F30;
+    border-radius: 20px;
+    font-family: Jaro;
+    font-size: 16px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.tag:hover {
+    background-color: #AD3826;
+    color: #F1E9C0;
+    transform: scale(1.05);
+}
+
 .deleteButton {
     text-align: center;
 }
@@ -63,7 +89,7 @@ h2 {
 }
 
 .delete-btn:hover {
-    transform:scale(1.1);
+    transform: scale(1.1);
 }
 
 .show-star-rating {
@@ -113,7 +139,7 @@ h2 {
 }
 
 .rate-btn:hover {
-    transform:scale(1.1);
+    transform: scale(1.1);
 }
 
 .editButton {

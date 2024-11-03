@@ -17,7 +17,7 @@
 
             <!-- Seção de Tags -->
             <h2>Tags</h2>
-            <div class="tags">
+            <div class="tag-container">
                 {% if Receita.tags.exists %}
                     {% for tag in Receita.tags.all %}
                         <span class="tag">{{ tag.nome }}</span>

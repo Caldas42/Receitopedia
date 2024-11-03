@@ -1,0 +1,60 @@
+body {
+    font-family: Jaro;
+    background-color: #F1E9C0;
+}
+
+h1 {
+    color: #AD3826;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Centralizar o botão */
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3C5F30;
+    color: #CBE5C2;
+    font-size: 16px;
+    font-family: Jaro;
+    border-radius: 30px;
+    text-align: center;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.button:hover {
+    transform: scale(1.1);
+}
+
+/* Container para isolar a lista de tags */
+.tag-list-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #F1E9C0;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos específicos para a lista de tags */
+.tag-list-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.tag-list-container ul li {
+    background-color: #CAC486;
+    color: #3C5F30;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-family: Jaro;
+    text-align: center;
+}
