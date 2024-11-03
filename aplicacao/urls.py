@@ -20,4 +20,7 @@ urlpatterns = [
     path('timer/', views.TimerView.as_view(), name='timer'),
     path('remover_da_pasta/<int:receita_id>/', views.RemoverReceitaDaPastaView.as_view(), name='remover_da_pasta'),
     path('excluir_pasta/<int:pasta_id>/', views.DeletePastaView.as_view(), name='excluir_pasta'),
+    path('tags/', views.TagListView.as_view(), name='tags'),
+    path('tags/<int:tag_id>/', views.ReceitaPorTagView.as_view(), name='receitas_por_tag'),
+    path('criar_tag/', views.CriarTagView.as_view(), name='criar_tag'),  # URL para criar uma nova tag
 ]

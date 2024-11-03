@@ -1,5 +1,5 @@
 from django.shortcuts import redirect, render, get_object_or_404
-from .models import receita, Pasta, ReceitaSalva
+from .models import receita, Pasta, ReceitaSalva, Tag  # Importando o modelo de Tag
 from django.views import View
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
@@ -10,7 +10,6 @@ class HomeView(LoginRequiredMixin, View):
     login_url = 'login'
     
     def get(self, request):
-
         if request.user.is_authenticated:
             Receita = receita.objects.filter(user=request.user)
 
@@ -26,7 +25,8 @@ class HomeView(LoginRequiredMixin, View):
 
 class AddView(View):
     def get(self, request):
-        return render(request, 'adicionar.html')
+        tags = Tag.objects.all()  # Carrega todas as tags para o template
+        return render(request, 'adicionar.html', {'tags': tags})
 
     def post(self, request):
         nome = request.POST.get('nome')
@@ -34,15 +34,28 @@ class AddView(View):
         modo_preparo = request.POST.get('modo_preparo')
         comentarios = request.POST.get('comentarios')
         user = request.user
-        if request.user.nome == 'Receitopedia':
-            sugestao = True
-        else:
-            sugestao = False
 
-        Receita = receita(nome=nome, ingredientes=ingredientes, modo_preparo=modo_preparo, comentarios=comentarios, user=user, sugestao=sugestao)
+        # Usando username para verificação
+        sugestao = True if user.username == 'Receitopedia' else False
+
+        Receita = receita(
+            nome=nome,
+            ingredientes=ingredientes,
+            modo_preparo=modo_preparo,
+            comentarios=comentarios,
+            user=user,
+            sugestao=sugestao
+        )
         Receita.save()
 
+        # Associa as tags à receita
+        tags_ids = request.POST.getlist('tags')  # Obtém os IDs das tags selecionadas
+        for tag_id in tags_ids:
+            tag = get_object_or_404(Tag, id=tag_id)
+            Receita.tags.add(tag)
+
         return redirect('aplicacao:home')
+
 
 class RecipeDetailView(View):
     def get(self, request, id):
@@ -63,7 +76,6 @@ class RateView(View):
         rating = request.POST.get('rating')
 
         if not rating:
-            # Retorna uma mensagem de erro ou redireciona de volta para a página
             messages.error(request, 'Por favor, selecione uma avaliação.')
             return redirect('aplicacao:visualizar', id=id)
 
@@ -74,7 +86,8 @@ class RateView(View):
 class EditarView(View):
     def get(self, request, id):
         receita_obj = get_object_or_404(receita, id=id)
-        return render(request, 'editar_receita.html', {'receita': receita_obj})
+        tags = Tag.objects.all()  # Carrega todas as tags para o template
+        return render(request, 'editar_receita.html', {'receita': receita_obj, 'tags': tags})
 
     def post(self, request, id):
         receita_obj = get_object_or_404(receita, id=id)
@@ -83,9 +96,18 @@ class EditarView(View):
         receita_obj.ingredientes = request.POST.get('ingredientes')
         receita_obj.modo_preparo = request.POST.get('modo_preparo')
         receita_obj.comentarios = request.POST.get('comentarios')
-        receita_obj.save()
 
+        # Atualiza as tags
+        receita_obj.tags.clear()  # Remove todas as tags existentes
+        tags_ids = request.POST.getlist('tags')  # Obtém os IDs das tags selecionadas
+        for tag_id in tags_ids:
+            tag = get_object_or_404(Tag, id=tag_id)
+            receita_obj.tags.add(tag)
+
+        receita_obj.save()
         return redirect('aplicacao:visualizar', id=receita_obj.id)
+
+
     
 class CreateFolderView(View):
     def post(self, request):
@@ -124,7 +146,7 @@ class AdicionarReceitaAPastaView(View):
 class ReceitasPastaView(View):
     def get(self, request, pasta_id):
         pasta = get_object_or_404(Pasta, id=pasta_id, usuario=request.user)
-        receitas = receita.objects.filter(pasta=pasta)  # Pega as receitas que estão nessa pasta
+        receitas = receita.objects.filter(pasta=pasta)
         ctx = {
             'pasta': pasta,
             'receitas': receitas,
@@ -133,11 +155,10 @@ class ReceitasPastaView(View):
 
 class DeleteAllReceitasView(View):
     def post(self, request):
-        # Verificar se existem receitas
         receitas = receita.objects.filter(user=request.user)
         
         if receitas.exists():
-            receitas.delete()  # Deletar todas as receitas
+            receitas.delete()
             messages.success(request, 'Todas as receitas foram excluídas com sucesso!')
         else:
             messages.error(request, 'Não há receitas para excluir.')
@@ -152,21 +173,16 @@ class RemoverReceitaDaPastaView(View):
     def post(self, request, receita_id):
         receita_obj = get_object_or_404(receita, id=receita_id)
 
-        # Armazena o ID da pasta antes de remover a receita
         pasta_id = receita_obj.pasta.id if receita_obj.pasta else None
 
-        # Remover a receita da pasta
         receita_obj.pasta = None
         receita_obj.save()
 
-        
-
-        # Redirecionar para a página da pasta se existir, caso contrário redirecionar para "minhas pastas"
         if pasta_id:
             return redirect('aplicacao:receitas_pasta', pasta_id=pasta_id)
         else:
-            return redirect('aplicacao:minhas_pastas')  # ou 'aplicacao:home', dependendo da sua lógica
-    #def post(self,request):
+            return redirect('aplicacao:minhas_pastas')
+    
 class DeletePastaView(View):
     def post(self, request, pasta_id):
         pasta_obj = get_object_or_404(Pasta, id=pasta_id, usuario=request.user)
@@ -191,3 +207,41 @@ class SalvarReceitaView(LoginRequiredMixin, View):
             ReceitaSalva.objects.create(user=request.user, receitaSalva=receita_especifica)
 
         return redirect('aplicacao:sugestoes')
+
+# Views para Tags
+class TagListView(View):
+    def get(self, request):
+        tags = Tag.objects.all()
+        return render(request, 'tags.html', {'tags': tags})
+
+class ReceitaPorTagView(View):
+    def get(self, request, tag_id):
+        tag = get_object_or_404(Tag, id=tag_id)
+        receitas = receita.objects.filter(tags=tag)
+        return render(request, 'receitas_por_tag.html', {'tag': tag, 'receitas': receitas})
+
+from django.shortcuts import redirect, render
+from .models import Tag
+from django.views import View
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib import messages
+
+class CriarTagView(LoginRequiredMixin, View):
+    login_url = 'login'  # Redirecionar para login se não estiver autenticado
+
+    def get(self, request):
+        return render(request, 'criar_tag.html')
+
+    def post(self, request):
+        nome = request.POST.get('nome')
+        if nome:
+            # Verifica se a tag já existe
+            if Tag.objects.filter(nome=nome).exists():
+                messages.error(request, 'A tag já existe.')
+            else:
+                Tag.objects.create(nome=nome)
+                messages.success(request, 'Tag criada com sucesso!')
+        else:
+            messages.error(request, 'O nome da tag é obrigatório.')
+
+        return redirect('aplicacao:criar_tag')  # Redireciona de volta para a página de criação de tags

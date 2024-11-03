@@ -27,6 +27,13 @@
         <label for="comentarios">Comentários:</label><br>
         <textarea id="comentarios" name="comentarios" rows="10" cols="50" maxlength="2000">{{ receita.comentarios }}</textarea><br><br>
 
+        <label>Tags:</label><br>
+        {% for tag in tags %}
+            <input type="checkbox" id="tag_{{ tag.id }}" name="tags" value="{{ tag.id }}"
+            {% if tag in receita.tags.all %} checked {% endif %}>
+            <label for="tag_{{ tag.id }}">{{ tag.nome }}</label><br>
+        {% endfor %}<br>
+
         <div class="divButton">
             <input type="submit" value="Atualizar" class="button">
         </div>

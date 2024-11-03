@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Tags</title>
+    <link rel="stylesheet" href="{% static 'aplicacao/css/style.css' %}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+    <h1>Tags</h1>
+
+    <!-- Botão para criar nova tag -->
+    <a href="{% url 'aplicacao:criar_tag' %}" class="button">Criar Nova Tag</a>
+
+    <!-- Lista de tags existentes -->
+    {% if tags %}
+        <ul>
+            {% for tag in tags %}
+                <li>{{ tag.nome }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Não há tags disponíveis.</p>
+    {% endif %}
+</body>
+</html>

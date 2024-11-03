@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receitas por Tag: {{ tag.nome }}</title>
+    <link rel="stylesheet" href="{% static 'aplicacao/css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Receitas para a Tag: {{ tag.nome }}</h1>
+        <a href="{% url 'aplicacao:tags' %}">Voltar para Tags</a>
+    </header>
+    
+    <main>
+        <ul>
+            {% if receitas %}
+                {% for receita in receitas %}
+                    <li>
+                        <a href="{% url 'aplicacao:visualizar' receita.id %}">{{ receita.nome }}</a>
+                    </li>
+                {% endfor %}
+            {% else %}
+                <p>Nenhuma receita encontrada para esta tag.</p>
+            {% endif %}
+        </ul>
+    </main>
+</body>
+</html>

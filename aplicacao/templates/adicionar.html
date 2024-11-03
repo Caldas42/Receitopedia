@@ -29,6 +29,16 @@
                 <label for="comentarios">Comentários:</label><br>
                 <textarea id="comentarios" name="comentarios" rows="10" cols="50" maxlength="2000" placeholder=""></textarea><br><br>
 
+                <label for="tags">Tags:</label><br>
+                <select id="tags" name="tags" multiple>
+                    {% for tag in tags %}
+                        <option value="{{ tag.id }}">{{ tag.nome }}</option>
+                    {% endfor %}
+                </select><br><br>
+
+                <label for="nova_tag">Adicionar Nova Tag:</label><br>
+                <input type="text" id="nova_tag" name="nova_tag" placeholder="Digite o nome da nova tag"><br><br>
+
                 <div class="divButton">
                     <input type="submit" value="Enviar" class="button">
                 </div>

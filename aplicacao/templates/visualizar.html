@@ -15,6 +15,18 @@
         <div id="card">
             <h1>{{ Receita.nome }}</h1>
 
+            <!-- Seção de Tags -->
+            <h2>Tags</h2>
+            <div class="tags">
+                {% if Receita.tags.exists %}
+                    {% for tag in Receita.tags.all %}
+                        <span class="tag">{{ tag.nome }}</span>
+                    {% endfor %}
+                {% else %}
+                    <p>Esta receita ainda não possui tags.</p>
+                {% endif %}
+            </div>
+
             <h2>Ingredientes</h2>
             <p class="colored-line">{{ Receita.ingredientes }}</p>
 
