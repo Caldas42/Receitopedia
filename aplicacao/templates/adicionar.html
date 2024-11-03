@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'aplicacao/css/adicionar.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
     <title>Adicionar Receita</title>
 </head>
 <body>   
@@ -30,14 +29,12 @@
                 <textarea id="comentarios" name="comentarios" rows="10" cols="50" maxlength="2000" placeholder=""></textarea><br><br>
 
                 <label for="tags">Tags:</label><br>
-                <select id="tags" name="tags" multiple>
+                <select id="tags" name="tags" multiple class="styled-select" onclick="showOptions(this)">
+                    <option value="" disabled selected>Escolha uma tag</option>
                     {% for tag in tags %}
-                        <option value="{{ tag.id }}">{{ tag.nome }}</option>
+                        <option value="{{ tag.id }}" class="hidden-option">{{ tag.nome }}</option>
                     {% endfor %}
                 </select><br><br>
-
-                <label for="nova_tag">Adicionar Nova Tag:</label><br>
-                <input type="text" id="nova_tag" name="nova_tag" placeholder="Digite o nome da nova tag"><br><br>
 
                 <div class="divButton">
                     <input type="submit" value="Enviar" class="button">
@@ -45,5 +42,13 @@
             </form>
         </div>
     </main>
+
+    <script>
+        function showOptions(selectElement) {
+            // Exibe todas as opções assim que o usuário clica
+            let options = selectElement.querySelectorAll('.hidden-option');
+            options.forEach(option => option.style.display = 'block');
+        }
+    </script>
 </body>
 </html>
