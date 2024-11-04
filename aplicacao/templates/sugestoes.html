@@ -10,19 +10,26 @@
 <body>
     {% include 'navbar.html' %} 
 
-    <h1>sugestoes:</h1>
+    <div class="header-section">
+        <h1>Minhas Receitas</h1>
+    </div>
+    
     <ul>
-        {% for receita in receitas_sugestao %}
-            <div class="cardSugestao">
-                <h3>{{ receita.nome }}</h3>
-                <h5>{{ receita.user }} (oficial!)</h5>
+        <div class=""recipe-list"">
+            <section class="receitas">
+                {% for receita in receitas_sugestao %}
+                    <div class="recipe-card">
+                        <h3>{{ receita.nome }}</h3>
+                        <h5>{{ receita.user }} (oficial!)</h5>
 
-                <form action="{% url 'aplicacao:salvar_receita' receita.id %}" method="post">
-                    {% csrf_token %}
-                    <button type="submit">Salvar</button>
-                </form>
-            </div>
-        {% endfor %}
+                        <form action="{% url 'aplicacao:salvar_receita' receita.id %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit">Salvar</button>
+                        </form>
+                    </div>
+                {% endfor %}
+            </section>
+        </div>
     </ul>
 </body>
 </html>
