@@ -64,7 +64,11 @@ https://github.com/user-attachments/assets/80b9f92d-dbab-49e3-b273-f3547ee5819f
 
 ### Screencast do Deployment das Novas Histórias
 
+### Print do Issue/Bug Tracker
+
 ### Screencast da Execução dos Testes de Sistema Automatizados
+
+### Screencast do Processo de Build e Deployment
 
 ### Print do Quadro da Sprint 03 Atualizado Refletindo a Entrega
 
