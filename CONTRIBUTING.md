@@ -1,4 +1,3 @@
-<!-- omit in toc -->
 # Contribuindo para o Receitopédia
 
 Em primeiro lugar, obrigado por dedicar seu tempo para contribuir! ❤️
@@ -6,146 +5,204 @@ Em primeiro lugar, obrigado por dedicar seu tempo para contribuir! ❤️
 Todos os tipos de contribuições são incentivados e valorizados. Veja o [Índice](#índice) para diferentes maneiras de ajudar e detalhes sobre como este projeto lida com elas. Por favor, certifique-se de ler a seção relevante antes de fazer sua contribuição. Isso tornará tudo muito mais fácil para nós, mantenedores, e facilitará a experiência para todos os envolvidos. A comunidade aguarda suas contribuições. 🎉
 
 > E se você gosta do projeto, mas não tem tempo para contribuir, tudo bem. Existem outras maneiras fáceis de apoiar o projeto e mostrar seu agradecimento, com as quais também ficaríamos muito felizes:
-> - Star the project
 > - Tweet sobre
 > - Referencie esse projeto no readme do seu projeto
 > - Mencione o projeto para seus amigos/colegas
 
-<!-- omit in toc -->
 ## Índice
 
-- [I Have a Question](#i-have-a-question)
-- [I Want To Contribute](#i-want-to-contribute)
-- [Reporting Bugs](#reporting-bugs)
-- [Suggesting Enhancements](#suggesting-enhancements)
-- [Your First Code Contribution](#your-first-code-contribution)
-- [Improving The Documentation](#improving-the-documentation)
-- [Styleguides](#styleguides)
-- [Commit Messages](#commit-messages)
-- [Join The Project Team](#join-the-project-team)
+- [Eu Tenho uma Pergunta](#eu-tenho-uma-pergunta)
+- [Quero Contribuir](#quero-contribuir)
+- [Relatando Bugs](#relatando-bugs)
+- [Sugerindo Melhorias](#sugerindo-melhorias)
+- [Sua Primeira Contribuição de Código](#sua-primeira-contribuição-de-código)
 
 
 
-## I Have a Question
+## Eu Tenho uma Pergunta
 
-> If you want to ask a question, we assume that you have read the available [Documentation]().
+Antes de fazer uma pergunta, é melhor pesquisar os [Problemas](https://github.com/Caldas42/Receitopedia/issues) existentes isso pode ajudá-lo. Caso você tenha encontrado um problema adequado e ainda precise de esclarecimentos, você pode escrever sua pergunta nos comentários. Também é aconselhável pesquisar primeiro as respostas na Internet.
 
-Before you ask a question, it is best to search for existing [Issues](https://github.com/Caldas42/Receitopedia/issues) that might help you. In case you have found a suitable issue and still need clarification, you can write your question in this issue. It is also advisable to search the internet for answers first.
+Se você ainda sentir necessidade de fazer uma pergunta e precisar de esclarecimentos, recomendamos o seguinte:
 
-If you then still feel the need to ask a question and need clarification, we recommend the following:
+- Adicione um [Issue](https://github.com/Caldas42/Receitopedia/issues/new).
+- Forneça o máximo de contexto possível sobre o que você está enfrentando.
+- Forneça versões do projeto e da plataforma (nodejs, npm, etc), dependendo do que parecer relevante.
 
-- Open an [Issue](https://github.com/Caldas42/Receitopedia/issues/new).
-- Provide as much context as you can about what you're running into.
-- Provide project and platform versions (nodejs, npm, etc), depending on what seems relevant.
+Então cuidaremos do problema o mais rápido possível.
 
-We will then take care of the issue as soon as possible.
+## Quero Contribuir
 
-<!--
-You might want to create a separate issue tag for questions and include it in this description. People should then tag their issues accordingly.
+> ### Aviso Legal
+> Ao contribuir para este projeto, você deve concordar que é o autor de 100% do conteúdo, que possui os direitos necessários sobre o conteúdo e que o conteúdo com o qual você contribui pode ser fornecido sob a licença do projeto.
 
-Depending on how large the project is, you may want to outsource the questioning, e.g. to Stack Overflow or Gitter. You may add additional contact and information possibilities:
-- IRC
-- Slack
-- Gitter
-- Stack Overflow tag
-- Blog
-- FAQ
-- Roadmap
-- E-Mail List
-- Forum
--->
+### Relatando Bugs
 
-## I Want To Contribute
+#### Antes de Enviar um Relatório de Bug
 
-> ### Legal Notice <!-- omit in toc -->
-> When contributing to this project, you must agree that you have authored 100% of the content, that you have the necessary rights to the content and that the content you contribute may be provided under the project license.
+Um bom relatório de bug não deve fazer com que outras pessoas precisem persegui-lo para obter mais informações. Portanto, pedimos que você investigue cuidadosamente, colete informações e descreva o problema detalhadamente em seu relatório. Conclua as etapas a seguir com antecedência para nos ajudar a corrigir qualquer possível bug o mais rápido possível.
 
-### Reporting Bugs
+- Certifique-se de estar usando a versão mais recente.
+- Determine se o seu bug é realmente um bug e não um erro da sua parte, por exemplo, usando componentes/versões de ambiente incompatíveis (se você está procurando suporte, você pode querer verificar [esta seção](#eu-tenho-uma-pergunta)).
+- Para ver se outros usuários experimentaram (e potencialmente já resolveram) o mesmo problema que você está tendo, verifique se ainda não existe um relatório de bug para o seu bug ou erro no [bug tracker](https://github.com/Caldas42/Receitopedia/issues).
+- Certifique-se também de pesquisar na Internet (incluindo Stack Overflow) para ver se usuários fora da comunidade GitHub discutiram o problema.
+- Colete informações sobre o bug:
+- SO, Plataforma e Versão (Windows, Linux, macOS, x86, ARM)
+- Versão do interpretador, compilador, SDK, ambiente de execução, gerenciador de pacotes, dependendo do que parecer relevante.
+- Possivelmente sua entrada e saída
+- Você pode reproduzir o problema de maneira confiável? E você também pode reproduzi-lo com versões mais antigas?
 
-<!-- omit in toc -->
-#### Before Submitting a Bug Report
+#### Como Faço Para Enviar um Bom Relatório de Bug?
 
-A good bug report shouldn't leave others needing to chase you up for more information. Therefore, we ask you to investigate carefully, collect information and describe the issue in detail in your report. Please complete the following steps in advance to help us fix any potential bug as fast as possible.
+> Você nunca deve relatar problemas, vulnerabilidades ou bugs relacionados à segurança, incluindo informações confidenciais, ao rastreador de problemas ou em outro lugar público. Em vez disso, bugs sensíveis devem ser enviados por e-mail para <pccc@cesar.school>.
 
-- Make sure that you are using the latest version.
-- Determine if your bug is really a bug and not an error on your side e.g. using incompatible environment components/versions (Make sure that you have read the [documentation](). If you are looking for support, you might want to check [this section](#i-have-a-question)).
-- To see if other users have experienced (and potentially already solved) the same issue you are having, check if there is not already a bug report existing for your bug or error in the [bug tracker](https://github.com/Caldas42/Receitopediaissues?q=label%3Abug).
-- Also make sure to search the internet (including Stack Overflow) to see if users outside of the GitHub community have discussed the issue.
-- Collect information about the bug:
-- Stack trace (Traceback)
-- OS, Platform and Version (Windows, Linux, macOS, x86, ARM)
-- Version of the interpreter, compiler, SDK, runtime environment, package manager, depending on what seems relevant.
-- Possibly your input and the output
-- Can you reliably reproduce the issue? And can you also reproduce it with older versions?
+Usamos o issue/bug tracker do GitHub para rastrear bugs e erros. Se você tiver um problema com o projeto:
 
-<!-- omit in toc -->
-#### How Do I Submit a Good Bug Report?
+- Adicione um [Issue](https://github.com/Caldas42/Receitopedia/issues/new). (Como não podemos ter certeza neste momento se é um bug ou não, pedimos que você não fale sobre um bug ainda e não rotule o problema.)
+- Explique o comportamento que você esperaria e o comportamento real.
+- Forneça o máximo de contexto possível e descreva as *etapas de reprodução* que outra pessoa pode seguir para recriar o problema por conta própria. Isso geralmente inclui seu código. Para obter bons relatórios de bugs, você deve isolar o problema e criar um caso de teste reduzido.
+- Forneça as informações que você coletou na seção anterior.
 
-> You must never report security related issues, vulnerabilities or bugs including sensitive information to the issue tracker, or elsewhere in public. Instead sensitive bugs must be sent by email to <>.
-<!-- You may add a PGP key to allow the messages to be sent encrypted as well. -->
+Uma vez enviado:
 
-We use GitHub issues to track bugs and errors. If you run into an issue with the project:
-
-- Open an [Issue](https://github.com/Caldas42/Receitopedia/issues/new). (Since we can't be sure at this point whether it is a bug or not, we ask you not to talk about a bug yet and not to label the issue.)
-- Explain the behavior you would expect and the actual behavior.
-- Please provide as much context as possible and describe the *reproduction steps* that someone else can follow to recreate the issue on their own. This usually includes your code. For good bug reports you should isolate the problem and create a reduced test case.
-- Provide the information you collected in the previous section.
-
-Once it's filed:
-
-- The project team will label the issue accordingly.
-- A team member will try to reproduce the issue with your provided steps. If there are no reproduction steps or no obvious way to reproduce the issue, the team will ask you for those steps and mark the issue as `needs-repro`. Bugs with the `needs-repro` tag will not be addressed until they are reproduced.
-- If the team is able to reproduce the issue, it will be marked `needs-fix`, as well as possibly other tags (such as `critical`), and the issue will be left to be [implemented by someone](#your-first-code-contribution).
-
-<!-- You might want to create an issue template for bugs and errors that can be used as a guide and that defines the structure of the information to be included. If you do so, reference it here in the description. -->
+- A equipe do projeto rotulará o problema de acordo.
+- Um membro da equipe tentará reproduzir o problema com as etapas fornecidas. Se não houver etapas de reprodução ou nenhuma maneira óbvia de reproduzir o problema, a equipe solicitará essas etapas e marcará o problema como `needs-repro`. Bugs com a tag `needs-repro` não serão resolvidos até que sejam reproduzidos.
+- Se a equipe conseguir reproduzir o problema, ele será marcado como `precisa de correção`, bem como possivelmente outras tags (como `crítico`), e o problema será deixado para ser [implementado por alguém](#your-first-code-contribution).
 
 
-### Suggesting Enhancements
+### Sugerindo Melhorias
 
-This section guides you through submitting an enhancement suggestion for Receitopédia, **including completely new features and minor improvements to existing functionality**. Following these guidelines will help maintainers and the community to understand your suggestion and find related suggestions.
+Esta seção orienta você no envio de sugestões de melhorias para a Receitopédia, **incluindo recursos completamente novos e pequenas melhorias nas funcionalidades existentes**. Seguir essas diretrizes ajudará os mantenedores e a comunidade a entender sua sugestão e encontrar sugestões relacionadas.
 
-<!-- omit in toc -->
-#### Before Submitting an Enhancement
+#### Antes de Enviar uma Melhoria
 
-- Make sure that you are using the latest version.
-- Read the [documentation]() carefully and find out if the functionality is already covered, maybe by an individual configuration.
-- Perform a [search](https://github.com/Caldas42/Receitopedia/issues) to see if the enhancement has already been suggested. If it has, add a comment to the existing issue instead of opening a new one.
-- Find out whether your idea fits with the scope and aims of the project. It's up to you to make a strong case to convince the project's developers of the merits of this feature. Keep in mind that we want features that will be useful to the majority of our users and not just a small subset. If you're just targeting a minority of users, consider writing an add-on/plugin library.
+- Certifique-se de estar usando a versão mais recente.
+- Faça uma [pesquisa](https://github.com/Caldas42/Receitopedia/issues) para ver se a melhoria já foi sugerida.
+- Descubra se a sua ideia se enquadra no escopo e nos objetivos do projeto. Cabe a você apresentar argumentos fortes para convencer os desenvolvedores do projeto dos méritos desse recurso. Tenha em mente que queremos recursos que sejam úteis para a maioria dos nossos usuários e não apenas para um pequeno subconjunto. Se você está segmentando apenas uma minoria de usuários, considere escrever uma biblioteca de complementos/plugins.
 
-<!-- omit in toc -->
-#### How Do I Submit a Good Enhancement Suggestion?
+#### Como Envio uma Boa Sugestão de Melhoria?
 
-Enhancement suggestions are tracked as [GitHub issues](https://github.com/Caldas42/Receitopedia/issues).
+Sugestões de melhorias são rastreadas como [GitHub issues](https://github.com/Caldas42/Receitopedia/issues).
 
-- Use a **clear and descriptive title** for the issue to identify the suggestion.
-- Provide a **step-by-step description of the suggested enhancement** in as many details as possible.
-- **Describe the current behavior** and **explain which behavior you expected to see instead** and why. At this point you can also tell which alternatives do not work for you.
-- You may want to **include screenshots and animated GIFs** which help you demonstrate the steps or point out the part which the suggestion is related to. You can use [this tool](https://www.cockos.com/licecap/) to record GIFs on macOS and Windows, and [this tool](https://github.com/colinkeenan/silentcast) or [this tool](https://github.com/GNOME/byzanz) on Linux. <!-- this should only be included if the project has a GUI -->
-- **Explain why this enhancement would be useful** to most Receitopédia users. You may also want to point out the other projects that solved it better and which could serve as inspiration.
+- Use um **título claro e descritivo** para o problema para identificar a sugestão.
+- Forneça uma **descrição passo a passo da melhoria sugerida** com o máximo de detalhes possível.
+- **Descreva o comportamento atual** e **explique qual comportamento você esperava ver** e por quê. Neste ponto você também pode dizer quais alternativas não funcionam para você.
+- Você pode **incluir capturas de tela e GIFs animados** que ajudam a demonstrar as etapas ou apontar a parte à qual a sugestão está relacionada. Você pode usar [esta ferramenta](https://www.cockos.com/licecap/) to para gravar GIFs no macOS e Windows, e [esta ferramenta](https://github.com/colinkeenan/silentcast) ou [esta ferramenta](https://github.com/GNOME/byzanz) em Linux.
+- **Explique por que essa melhoria seria útil** para a maioria dos usuários da Recetopédia. Você também pode apontar outros projetos que resolveram melhor o problema e que poderiam servir de inspiração.
 
-<!-- You might want to create an issue template for enhancement suggestions that can be used as a guide and that defines the structure of the information to be included. If you do so, reference it here in the description. -->
+### Sua Primeira Contribuição de Código
 
-### Your First Code Contribution
-<!-- TODO
-include Setup of env, IDE and typical getting started instructions?
+#### 📁 Configurando o repositório
 
--->
+<strong>1º) Fork do Repositório:</strong> Faça um Fork para levar uma cópia do repositório para a sua conta. Assim você pode fazer suas alterações sem influenciar o repositório principal.
+<br>
+<p align="center">
+  <!--<img src="https://github.com/Taverna-Hub/ForgeSheets/assets/117609505/12601fac-539b-4456-96cb-f435a5347938">-->
+</p>
 
-### Improving The Documentation
-<!-- TODO
-Updating, improving and correcting the documentation
+<strong>2º) Clone o repositório:</strong> 
+```
+git clone https://github.com/SuaConta/Receitopedia.git
+```
 
--->
+<strong>3º) Crie sua Branch:</strong> 
+```
+git checkout -b minha-nova-funcionalidade
+```
 
-## Styleguides
-### Commit Messages
-<!-- TODO
+<br>
 
--->
+#### 💻 Configurando o ambiente de desenvolvimento
 
-## Join The Project Team
-<!-- TODO -->
+<strong>1º) Entre no Diretório do Projeto:</strong>
+```
+cd Receitopedia
+```
 
-<!-- omit in toc -->
-## Attribution
-This guide is based on the **contributing-gen**. [Make your own](https://github.com/bttger/contributing-gen)!
+<strong>2º) Crie um Ambiente Virtual:</strong>
+```
+python -m venv venv
+```
+
+<strong>3º) Ative o Ambiente Virtual:</strong>
+```
+Windows: venv\Scripts\activate
+Linux/Mac: source venv/bin/activate
+```
+
+<strong>4º) Instale as Dependências:</strong>
+```
+pip install -r requirements.txt
+```
+
+<strong>5º) Aplique as Migrations (Criar o Banco de Dados):</strong>
+```
+python manage.py migrate
+```
+
+<strong>6º) Rode o Servidor:</strong>
+```
+python manage.py runserver
+```
+
+<strong>OBS:</strong>
+<p>Caso queira garantir que o código adicionado não quebre outras partes da aplicação, rode os testes existentes e, se necessário, crie novos testes. Para fazer isto:</p>
+
+<strong>1º) Baixe o <a href="https://nodejs.org/en" target="_blank">Node</a> na sua versão LTS:</strong>
+
+<strong>2º) Instale as dependências:</strong>
+```
+npm ci
+```
+
+<strong>2º) Rode os testes com:</strong>
+```
+npx cypress run
+```
+
+<br>
+
+## 🛰️ Submetendo suas Alterações
+Abra um Pull Request com uma descrição detalhada das alterações realizadas.
+
+<strong>1º) No repositório que você deu fork, clique em ```Contribute```:</strong>
+
+<p align="center">
+  <img src="https://github.com/Taverna-Hub/ForgeSheets/assets/67246528/12782460-6c5e-49df-a65a-d279c36f1ea3">
+</p>
+
+<strong>2º) Depois clique em ```Open pull request```:</strong>
+
+<p align="center">
+  <img src="https://github.com/Taverna-Hub/ForgeSheets/assets/67246528/74a477b3-e314-44a4-8fb6-14c3a3752eeb" width="300">
+</p>
+
+<strong>3º) Agora selecione o repositório que você deu fork e a branch que você fez suas alterações:</strong>
+
+<p align="center">
+  <img src="https://github.com/Taverna-Hub/ForgeSheets/assets/67246528/3643dc38-6a58-45ef-9d0d-e97fb7fbcead">
+</p>
+
+<strong>4º) Então, para criar seu PR, clique em ```Create pull request```:</strong>
+
+<p align="center">
+  <img src="https://github.com/Taverna-Hub/ForgeSheets/assets/67246528/c5a22c16-cd9b-4292-bf36-e938752c0ba9" width="300">
+</p>
+
+<strong>5º) Por fim....</strong>
+
+<p>Nós da &lt;/Taverna&gt; iremos avaliar a sua submissão e caso algo esteja incompatível com nosso projeto, entraremos em contato para revisarmos o seu código.</p>
+
+<br>
+
+## ❤️ Obrigado por Contribuir!
+Temos certeza de que a comunidade Open-Source têm muito a acrescentar no nosso projeto, estamos ansiosos para receber as sugestões de melhorias de vocês!
+
+<br>
+<br>
+
+<p align="center">
+  <img src="https://github.com/Taverna-Hub/ForgeSheets/assets/117609505/0ee4af06-1022-4690-b048-e61cecbd3f30" width="40px">
+  <br>
+  Se tiver dúvidas, sinta-se a vontade para entrar em contato com a gente: <strong>taverna.hub@gmail.com</strong>
+</p>
