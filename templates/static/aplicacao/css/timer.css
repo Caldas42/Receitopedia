@@ -98,3 +98,10 @@ button:hover:not(:disabled) {
 button:active:not(:disabled) {
     transform: scale(0.98);
 }
+
+.button-container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+}

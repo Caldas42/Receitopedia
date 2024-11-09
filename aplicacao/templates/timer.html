@@ -28,9 +28,12 @@
         <div class="progress-bar">
             <div class="progress-bar-inner"></div>
         </div>
-        
-        <button class="start-button" id="start-button">Iniciar</button>
-        <button class="cancel-button" id="cancel-button" disabled>Cancelar</button>
+        <div class="button-container">
+            <button class="start-button" id="start-button">Iniciar</button>
+            <button class="pause-button" id="pause-button" disabled>Pausar</button>
+            <button class="cancel-button" id="cancel-button" disabled>Cancelar</button>
+            <button class="reset-button" id="reset-button">Voltar</button>
+        </div>
     </div>
     
     <script src="{% static 'aplicacao/js/timer.js' %}"></script>
