@@ -174,13 +174,13 @@ Abra um Pull Request com uma descrição detalhada das alterações realizadas.
 <strong>2º) Depois clique em ```Open pull request```:</strong>
 
 <p align="center">
-  <img src="https://github.com/Taverna-Hub/ForgeSheets/assets/67246528/74a477b3-e314-44a4-8fb6-14c3a3752eeb" width="300">
+  <img src="https://github.com/user-attachments/assets/09018a59-01df-45c7-8dbc-d0dc7b50910a" width="300">
 </p>
 
 <strong>3º) Agora selecione o repositório que você deu fork e a branch que você fez suas alterações:</strong>
 
 <p align="center">
-  <img src="https://github.com/Taverna-Hub/ForgeSheets/assets/67246528/3643dc38-6a58-45ef-9d0d-e97fb7fbcead">
+  <img src="https://github.com/user-attachments/assets/9ae82163-0b20-4c50-97c0-6f3ce8cbe81e">
 </p>
 
 <strong>4º) Então, para criar seu PR, clique em ```Create pull request```:</strong>
