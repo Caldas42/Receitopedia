@@ -220,12 +220,6 @@ class ReceitaPorTagView(View):
         receitas = receita.objects.filter(tags=tag)
         return render(request, 'receitas_por_tag.html', {'tag': tag, 'receitas': receitas})
 
-from django.shortcuts import redirect, render
-from .models import Tag
-from django.views import View
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib import messages
-
 class CriarTagView(LoginRequiredMixin, View):
     login_url = 'login'  # Redirecionar para login se não estiver autenticado
 
