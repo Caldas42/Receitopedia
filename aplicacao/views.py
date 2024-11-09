@@ -60,9 +60,19 @@ class AddView(View):
 class RecipeDetailView(View):
     def get(self, request, id):
         receita_obj = get_object_or_404(receita, id=id)
+        tags = Tag.objects.all()  # Carrega todas as tags para o template
+
+        # Se uma tag foi selecionada, adicione-a à receita
+        tag_id = request.GET.get('tags')
+        if tag_id:
+            tag = get_object_or_404(Tag, id=tag_id)
+            receita_obj.tags.add(tag)
+            receita_obj.save()
+
         pastas = Pasta.objects.filter(usuario=request.user)
-        ctx = {'Receita': receita_obj, 'pastas': pastas}
+        ctx = {'Receita': receita_obj, 'tags': tags, 'pastas': pastas}
         return render(request, 'visualizar.html', ctx)
+
 
 class DeleteView(View):
     def post(self, request, id):
