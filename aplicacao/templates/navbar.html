@@ -15,7 +15,10 @@
             </div>
         </a>
         
-        <input type="text" placeholder="Buscar">
+        <form action="{% url 'aplicacao:pesquisar_por_tag' %}" method="get">
+            <input type="text" name="tag" placeholder="Buscar por tag" required>
+            <button type="submit">Buscar</button>
+        </form>
         
         <a href="{% url 'logout' %}" class="logout-button">Sair da conta</a>
     </header>

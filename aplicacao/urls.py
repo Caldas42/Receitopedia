@@ -23,4 +23,6 @@ urlpatterns = [
     path('tags/', views.TagListView.as_view(), name='tags'),
     path('tags/<int:tag_id>/', views.ReceitaPorTagView.as_view(), name='receitas_por_tag'),
     path('criar_tag/', views.CriarTagView.as_view(), name='criar_tag'),  # URL para criar uma nova tag
+    path('pesquisar_por_tag/', views.PesquisarPorTagView.as_view(), name='pesquisar_por_tag'),
+
 ]

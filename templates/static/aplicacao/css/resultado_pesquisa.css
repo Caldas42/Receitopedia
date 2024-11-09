@@ -1,0 +1,134 @@
+@font-face {
+    font-family: 'Jaro';
+    src: url(../../../static/fonts/Jaro-Regular-VariableFont_opsz.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Jaro;
+    background-color: #F1E9C0;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #AD3826;
+}
+
+#card {
+    max-width: 800px; 
+    margin: 20px auto; 
+    background-color: #F1E9C0; 
+    border-radius: 15px;
+    padding: 20px; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative; 
+}
+
+h2 {
+    color: #AD3826;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.colored-line {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #CAC486;
+}
+
+/* Estilos para a tabela */
+table {
+    width: 100%;
+    max-width: 800px;  /* Definindo a mesma largura máxima que #card */
+    margin: 20px auto; /* Centraliza a tabela */
+    border-collapse: collapse; /* Remove espaços entre as células */
+    border-radius: 15px; /* Borda arredondada */
+    overflow: hidden; /* Oculta as bordas fora da tabela */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombramento da tabela */
+}
+
+table, th, td {
+    border: 1px solid #CAC486; /* Borda da tabela e células */
+}
+
+th, td {
+    padding: 10px;
+    text-align: left; /* Alinha o texto à esquerda */
+}
+
+th {
+    background-color: #141414; /* Cor de fundo do cabeçalho da tabela */
+    color: #DBD69B; /* Cor do texto do cabeçalho */
+}
+
+td {
+    transition: transform 0.3s ease; /* Efeito de transição */
+}
+
+td:hover {
+    transform: scale(1.02); /* Aumenta a escala da linha apenas 2% */
+}
+
+a {
+    text-decoration: none;
+    color: #AD3826; /* Cor dos links */
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #DBD69B; /* Cor dos links ao passar o mouse */
+}
+
+/* Estilo para as células da tabela */
+td a {
+    display: inline-block;
+    padding: 5px 10px;
+    border: 1px solid #AD3826; /* Borda do link */
+    border-radius: 5px;
+    color: #AD3826; /* Cor do texto do link */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+td a:hover {
+    background-color: #AD3826; /* Cor de fundo ao passar o mouse */
+    color: #FFF; /* Cor do texto ao passar o mouse */
+}
+
+/* Estilo para parágrafos quando não há receitas */
+p {
+    color: #AD3826; /* Cor do texto quando não há receitas */
+    font-size: 1.2rem;
+}
+
+/* Adiciona efeito de botão a links */
+.delete-btn, .rate-btn, .add-tag-button {
+    border-radius: 30px;
+    background-color: #3C5F30;
+    font-family: Jaro;
+    color: #CBE5C2;
+    font-size: 110%;
+    padding: 10px 20px;
+    text-align: center;
+    border: none;
+    transition: 0.3s;
+    height: 40px;
+    cursor: pointer;
+}
+
+.delete-btn:hover, .rate-btn:hover, .add-tag-button:hover {
+    transform: scale(1.1);
+}
+
+.delete-btn {
+    width: 30%;
+}
+
+.rate-btn {
+    width: 15%;
+}

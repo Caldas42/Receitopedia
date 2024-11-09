@@ -17,6 +17,17 @@
 
             <!-- Seção de Tags -->
             <h2>Tags</h2>
+            <form action="{% url 'aplicacao:visualizar' Receita.id %}" method="get">
+                <label for="tags">Escolha uma tag:</label>
+                <select name="tags" id="tags" required>
+                    <option value="" disabled selected>Escolha uma tag</option> <!-- Placeholder não selecionável -->
+                    {% for tag in tags %}
+                        <option value="{{ tag.id }}">{{ tag.nome }}</option>
+                    {% endfor %}
+                </select>
+                <button type="submit" class="add-tag-button">Adicionar Tag</button>
+            </form>
+
             <div class="tag-container">
                 {% if Receita.tags.exists %}
                     {% for tag in Receita.tags.all %}
