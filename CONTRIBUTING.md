@@ -97,7 +97,7 @@ Sugestões de melhorias são rastreadas como [GitHub issues](https://github.com/
 <strong>1º) Fork do Repositório:</strong> Faça um Fork para levar uma cópia do repositório para a sua conta. Assim você pode fazer suas alterações sem influenciar o repositório principal.
 <br>
 <p align="center">
-  <!--<img src="https://github.com/Taverna-Hub/ForgeSheets/assets/117609505/12601fac-539b-4456-96cb-f435a5347938">-->
+  <img src="https://github.com/user-attachments/assets/a011ee76-9320-4b29-857f-a1a449561255">
 </p>
 
 <strong>2º) Clone o repositório:</strong> 
@@ -191,7 +191,7 @@ Abra um Pull Request com uma descrição detalhada das alterações realizadas.
 
 <strong>5º) Por fim....</strong>
 
-<p>Nós da &lt;/Taverna&gt; iremos avaliar a sua submissão e caso algo esteja incompatível com nosso projeto, entraremos em contato para revisarmos o seu código.</p>
+<p>Nós iremos avaliar a sua submissão e caso algo esteja incompatível com nosso projeto, entraremos em contato para revisarmos o seu código.</p>
 
 <br>
 
@@ -202,7 +202,5 @@ Temos certeza de que a comunidade Open-Source têm muito a acrescentar no nosso 
 <br>
 
 <p align="center">
-  <img src="https://github.com/Taverna-Hub/ForgeSheets/assets/117609505/0ee4af06-1022-4690-b048-e61cecbd3f30" width="40px">
-  <br>
-  Se tiver dúvidas, sinta-se a vontade para entrar em contato com a gente: <strong>taverna.hub@gmail.com</strong>
+  Se tiver dúvidas, sinta-se a vontade para entrar em contato com a gente: <strong>pccc@cesar.school</strong>
 </p>
