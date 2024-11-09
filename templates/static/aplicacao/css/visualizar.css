@@ -152,3 +152,41 @@ h2 {
     color: black; 
     font-size: 24px; 
 }
+
+/* Botão de adicionar tag */
+.add-tag-button {
+    border-radius: 30px;
+    background-color: #3C5F30;
+    font-family: Jaro;
+    color: #CBE5C2;
+    font-size: 110%;
+    padding: 10px 20px;
+    text-align: center;
+    border: none;
+    transition: 0.3s;
+    height: 40px;
+    cursor: pointer;
+}
+
+.add-tag-button:hover {
+    transform: scale(1.1);
+}
+
+/* Selectbox de tags */
+#tags {
+    border-radius: 30px;
+    padding: 10px;
+    font-family: Jaro;
+    font-size: 16px;
+    color: #3C5F30;
+    background-color: #F1E9C0;
+    border: 2px solid #CAC486;
+    margin-right: 10px;
+    transition: 0.3s;
+    height: 40px;
+    cursor: pointer;
+}
+
+#tags:hover {
+    border-color: #AD3826;
+}

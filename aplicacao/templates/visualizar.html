@@ -19,9 +19,10 @@
             <h2>Tags</h2>
             <form action="{% url 'aplicacao:visualizar' Receita.id %}" method="get">
                 <label for="tags">Escolha uma tag:</label>
-                <select name="tags" id="tags">
+                <select name="tags" id="tags" required>
+                    <option value="" disabled selected>Escolha uma tag</option> <!-- Placeholder não selecionável -->
                     {% for tag in tags %}
-                        <option value="{{ tag.id }}" {% if tag in Receita.tags.all %}selected{% endif %}>{{ tag.nome }}</option>
+                        <option value="{{ tag.id }}">{{ tag.nome }}</option>
                     {% endfor %}
                 </select>
                 <button type="submit" class="add-tag-button">Adicionar Tag</button>
