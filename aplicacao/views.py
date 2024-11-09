@@ -249,3 +249,14 @@ class CriarTagView(LoginRequiredMixin, View):
             messages.error(request, 'O nome da tag é obrigatório.')
 
         return redirect('aplicacao:criar_tag')  # Redireciona de volta para a página de criação de tags
+
+class PesquisarPorTagView(View):
+    def get(self, request):
+        tag_nome = request.GET.get('tag')
+        receitas = receita.objects.filter(tags__nome__icontains=tag_nome)
+
+        ctx = {
+            'tag_nome': tag_nome,
+            'receitas': receitas,
+        }
+        return render(request, 'resultado_pesquisa.html', ctx)

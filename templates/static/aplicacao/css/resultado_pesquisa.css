@@ -1,0 +1,86 @@
+@font-face {
+    font-family: 'Jaro';
+    src: url(../../../static/fonts/Jaro-Regular-VariableFont_opsz.ttf);
+}
+
+* {
+    font-family: Jaro;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F1E9C0; /* Cor de fundo */
+}
+
+header {
+    background-color: #141414; /* Cor de fundo do cabeçalho */
+    color: #DBD69B; /* Cor do texto do cabeçalho */
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #AD3826; /* Cor do título */
+}
+
+a {
+    text-decoration: none;
+    color: #AD3826; /* Cor dos links */
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #DBD69B; /* Cor dos links ao passar o mouse */
+}
+
+main {
+    padding: 20px;
+    text-align: center; /* Centraliza o conteúdo */
+}
+
+ul {
+    list-style-type: none; /* Remove marcadores da lista */
+    padding: 0; /* Remove padding */
+}
+
+li {
+    margin: 10px 0; /* Espaçamento entre os itens da lista */
+}
+
+.pasta-card {
+    background-color: #CAC486; /* Cor de fundo do cartão */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+}
+
+.pasta-card:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.pasta-card h2,
+.pasta-card h3 {
+    color: #AD3826; /* Cor dos títulos dentro do cartão */
+    margin: 10px 0;
+}
+
+.pasta-card a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 5px 10px;
+    border: 1px solid #AD3826; /* Borda do link */
+    border-radius: 5px;
+    color: #AD3826; /* Cor do texto do link */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.pasta-card a:hover {
+    background-color: #AD3826; /* Cor de fundo ao passar o mouse */
+    color: #FFF; /* Cor do texto ao passar o mouse */
+}
