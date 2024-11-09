@@ -67,11 +67,11 @@ th {
     color: #DBD69B; /* Cor do texto do cabeçalho */
 }
 
-tr {
+td {
     transition: transform 0.3s ease; /* Efeito de transição */
 }
 
-tr:hover {
+td:hover {
     transform: scale(1.02); /* Aumenta a escala da linha apenas 2% */
 }
 
