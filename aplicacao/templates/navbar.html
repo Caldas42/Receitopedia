@@ -14,15 +14,24 @@
                 <img src="{% static 'aplicacao/img/logo_receitopedia.png' %}" alt="Logo da Receitopédia">
             </div>
         </a>
-
-        <input type="text" placeholder="Buscar">
+        
+        <form action="{% url 'aplicacao:pesquisar_por_tag' %}" method="get">
+            <input type="text" name="tag" placeholder="Buscar por tag" required>
+            <button type="submit">Buscar</button>
+        </form>
+        
+        <a href="{% url 'logout' %}" class="logout-button">Sair da conta</a>
     </header>
     
     <nav>
         <ul>
             <li><a href="{% url 'aplicacao:home' %}">Minhas Receitas</a></li>
             <li><a href="{% url 'aplicacao:minhas_pastas' %}">Minhas Pastas</a></li>
+            <li><a href="{% url 'aplicacao:tags' %}">Tags</a></li>
+            <li><a href="{% url 'aplicacao:sugestoes' %}">Sugestões</a></li>
+            <li><a href="{% url 'aplicacao:timer' %}">Timer</a></li>
         </ul>
     </nav>
+    
 </body>
 </html>

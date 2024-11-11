@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Tags</title>
+    <link rel="stylesheet" href="{% static 'aplicacao/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'aplicacao/css/tags.css' %}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+    <h1>Tags</h1>
+
+    <!-- Centralizar botão em uma div -->
+    <div class="button-container">
+        <a href="{% url 'aplicacao:criar_tag' %}" class="button">Criar Nova Tag</a>
+    </div>
+
+    <!-- Lista de tags existentes -->
+    <div class="tag-list-container">
+        {% if tags %}
+            <ul>
+                {% for tag in tags %}
+                    <li>
+                        {{ tag.nome }}
+                        <!-- Formulário de exclusão -->
+                        <form action="{% url 'aplicacao:excluir_tag' tag.id %}" method="post" style="display:inline;">
+                            {% csrf_token %}
+                            <button type="submit" class="delete-button">Excluir</button>
+                        </form>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Não há tags disponíveis.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

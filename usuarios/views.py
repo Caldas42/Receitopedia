@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.contrib import messages
+from django.views import View
 
 # Create your views here.
 
@@ -16,8 +17,6 @@ def login_view(request):
         if user is not None:
             login(request, user)
             return redirect('aplicacao:home')
-        else:
-            messages.error(request, 'Usuário ou senha incorretos.')
 
     return render(request, 'login.html')
 
@@ -28,14 +27,8 @@ def registrar_view(request):
         password_confirm = request.POST.get('password_confirm')
 
         if password == password_confirm:
-            try:
-                User.objects.create_user(username=username, password=password)
-                messages.success(request, 'Usuário registrado com sucesso!')
-                return redirect('login')
-            except Exception as e:
-                messages.error(request, 'Erro ao criar usuário. Usuário já existe.')
-        else:
-            messages.error(request, 'As senhas não correspondem.')
+            User.objects.create_user(username=username, password=password)
+            return redirect('login')
 
     return render(request, 'registrar.html')
 
@@ -44,3 +37,12 @@ from django.contrib.auth import logout
 def logout_view(request):
     logout(request)
     return render(request, 'logout.html')
+
+class Deletar_Cypress(View):
+
+    def get(self, request):
+        return render(request, 'excluir_cypress.html')
+
+    def post(self, request):
+        User.objects.all().delete()
+        return redirect('login')

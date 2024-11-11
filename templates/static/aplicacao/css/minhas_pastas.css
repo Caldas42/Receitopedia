@@ -75,3 +75,51 @@ h1 {
     background-color: #AD3826;
     color: #FFF;
 }
+
+/* Estilo para os elementos dos formulários */
+.styled-select, .styled-button {
+    width: auto;
+    padding: 8px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: bold;
+    border: 1px solid #AD3826;
+}
+
+.add-receita-form, .delete-pasta-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.pasta-card .add-receita-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Espaço entre os botões */
+}
+
+.styled-select {
+    background-color: #FFF;
+    color: #AD3826;
+}
+
+.styled-button {
+    background-color: #AD3826;
+    color: #FFF;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.styled-button:hover {
+    background-color: #8A2B1C;
+    transform: scale(1.05);
+}
+
+.styled-button:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}

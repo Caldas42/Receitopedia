@@ -15,9 +15,9 @@ body {
 }
 
 .container {
-    max-width: 1200px; /* Largura máxima da container */
-    margin: 0 auto; /* Centraliza a container */
-    padding: 20px; /* Preenchimento da container */
+    max-width: 1200px; 
+    margin: 0 auto;
+    padding: 20px;
 }
 
 h1 {
@@ -27,65 +27,82 @@ h1 {
 
 .receitas-table,
 .receitas-info-table {
-    margin-top: 20px; /* Espaçamento acima da tabela */
+    margin-top: 20px;
     padding: 20px;
-    background-color: #F1E9C0; /* Cor de fundo das seções */
-    border-radius: 10px; /* Bordas arredondadas */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+    background-color: #F1E9C0;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .receitas-table h2,
 .receitas-info-table h2 {
-    color: #AD3826; /* Cor dos títulos das tabelas */
-    margin-bottom: 10px; /* Espaçamento abaixo dos títulos */
+    color: #AD3826;
+    margin-bottom: 10px;
 }
 
 .receitas-table table,
 .receitas-info-table table {
     width: 100%;
-    border-collapse: collapse; /* Colapsa bordas para evitar espaços */
+    border-collapse: collapse;
 }
 
 .receitas-table th,
 .receitas-info-table th,
 .receitas-table td,
 .receitas-info-table td {
-    border: 1px solid #AD3826; /* Borda das células */
-    padding: 10px; /* Espaçamento interno das células */
-    text-align: left; /* Alinhamento à esquerda do texto */
+    border: 1px solid #AD3826;
+    padding: 10px;
+    text-align: left; 
 }
 
 .receitas-table th,
 .receitas-info-table th {
-    background-color: #CAC486; /* Cor de fundo do cabeçalho */
-    color: #AD3826; /* Cor do texto do cabeçalho */
+    background-color: #CAC486; 
+    color: #AD3826; 
 }
 
 .receitas-table tr:nth-child(even),
 .receitas-info-table tr:nth-child(even) {
-    background-color: #F1E9C0; /* Cor de fundo para linhas pares */
+    background-color: #F1E9C0; 
 }
 
 .receitas-table a,
 .receitas-info-table a {
-    color: #AD3826; /* Cor dos links */
-    text-decoration: none; /* Remove sublinhado dos links */
+    color: #AD3826; 
+    text-decoration: none; 
 }
 
 .receitas-table a:hover,
 .receitas-info-table a:hover {
-    text-decoration: underline; /* Sublinha ao passar o mouse */
+    text-decoration: underline; 
 }
 
 .receitas-info-table {
-    margin-top: 40px; /* Espaço adicional acima da tabela de informações */
+    margin-top: 40px; 
 }
 
 .receitas-info-table h3 {
-    margin-top: 20px; /* Espaçamento acima do nome da receita */
-    color: #AD3826; /* Cor dos títulos das informações */
+    margin-top: 20px; 
+    color: #AD3826; 
 }
 
 .receitas-info-table table {
-    margin-top: 10px; /* Espaçamento acima da tabela de informações */
+    margin-top: 10px;
+}
+
+.styled-button {
+    background-color: #ff4b5c;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.styled-button:hover {
+    background-color: #ff1e3c;
 }

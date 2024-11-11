@@ -7,6 +7,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Jaro;
 }
 
 header {
@@ -16,6 +17,13 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+}
+
+header form {
+    display: flex;
+    flex-grow: 1; /* Permite que o formulário ocupe o espaço restante */
+    justify-content: flex-start;
 }
 
 header a {
@@ -28,12 +36,14 @@ header a {
 }
 
 header input {
-    padding: 5px;
-    width: 50%;
+    padding: 10px;
+    width: 200px; /* Aumentando a largura para 70% para ocupar mais espaço */
+    max-width: 500px; /* Definindo um limite máximo para evitar que o input fique muito largo */
     height: 40px;
     border: none;
     border-radius: 10px;
 }
+
 
 header .user-info {
     display: flex;
@@ -68,4 +78,29 @@ nav ul li a {
 
 nav ul li a:hover {
     color: #DBD69B;
+}
+.logout-button {
+    background-color: #ff4b5c; 
+    color: #fff; 
+    padding: 12px 24px; 
+    border: none;
+    border-radius: 30px; 
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    display: inline-block; 
+    text-decoration: none;
+}
+.logout-button:hover {
+    background-color: #ff1e3c;
+    transform: scale(1.05);
+}
+
+.logout-button:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
 }
