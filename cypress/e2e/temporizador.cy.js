@@ -20,7 +20,7 @@ describe('Usando temporizador', () => {
         cy.get('#minutes-input').clear().type('5')
         cy.get('#start-button').click()
         cy.get('#cancel-button').click()
-        cy.get('#timer-text').invoke('text').should('have.string', "00:00")
+        cy.get('#timer-text').invoke('text').should('have.string', "00:00:00")
     })
 
     it('Botando o temporizador em 0 horas e 0 minutos', () => {
@@ -31,6 +31,6 @@ describe('Usando temporizador', () => {
         cy.get('ul > :nth-child(3) > a').click()
         cy.get('#minutes-input').clear().type('0')
         cy.get('#start-button').click()
-        cy.get('#timer-text').invoke('text').should('have.string', "00:00")
+        cy.get('#timer-text').invoke('text').should('have.string', "00:00:00")
     })
 })

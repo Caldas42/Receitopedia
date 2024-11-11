@@ -28,14 +28,8 @@ def registrar_view(request):
         password_confirm = request.POST.get('password_confirm')
 
         if password == password_confirm:
-            try:
-                User.objects.create_user(username=username, password=password)
-                messages.success(request, 'Usuário registrado com sucesso!')
-                return redirect('login')
-            except Exception as e:
-                messages.error(request, 'Erro ao criar usuário. Usuário já existe.')
-        else:
-            messages.error(request, 'As senhas não correspondem.')
+            User.objects.create_user(username=username, password=password)
+            return redirect('login')
 
     return render(request, 'registrar.html')
 

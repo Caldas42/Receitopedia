@@ -6,6 +6,7 @@ Todos os tipos de contribuições são incentivados e valorizados. Veja o [Índi
 
 > E se você gosta do projeto, mas não tem tempo para contribuir, tudo bem. Existem outras maneiras fáceis de apoiar o projeto e mostrar seu agradecimento, com as quais também ficaríamos muito felizes:
 > - Tweet sobre
+> - Dê uma estrela ao repositório
 > - Referencie esse projeto no readme do seu projeto
 > - Mencione o projeto para seus amigos/colegas
 
