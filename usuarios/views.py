@@ -44,5 +44,5 @@ class Deletar_Cypress(View):
         return render(request, 'excluir_cypress.html')
 
     def post(self, request):
-        usersCypress = User.objects.exclude(username = 'Receitopedia').delete()
+        User.objects.all().delete()
         return redirect('login')
