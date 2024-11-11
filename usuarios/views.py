@@ -46,4 +46,4 @@ class Deletar_Cypress(View):
     def post(self, request):
         usersCypress = User.objects.filter(username = 'cypress')
         usersCypress.delete()
-        return redirect('usuarios:login')
+        return redirect('login')

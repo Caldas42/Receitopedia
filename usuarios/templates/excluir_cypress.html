@@ -10,9 +10,7 @@
 <body>
     <h1>Excluir cypress</h1>
     <form method="POST" action="">
-
-        {% crsf_token %}
-
+        {% csrf_token %}
         <button type="submit" class="button">Excluir cypress</button>
 
     </form>
