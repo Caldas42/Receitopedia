@@ -17,6 +17,13 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+}
+
+header form {
+    display: flex;
+    flex-grow: 1; /* Permite que o formulário ocupe o espaço restante */
+    justify-content: flex-start;
 }
 
 header a {
@@ -29,12 +36,14 @@ header a {
 }
 
 header input {
-    padding: 5px;
-    width: 50%;
+    padding: 10px;
+    width: 200px; /* Aumentando a largura para 70% para ocupar mais espaço */
+    max-width: 500px; /* Definindo um limite máximo para evitar que o input fique muito largo */
     height: 40px;
     border: none;
     border-radius: 10px;
 }
+
 
 header .user-info {
     display: flex;

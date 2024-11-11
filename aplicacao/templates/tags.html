@@ -22,7 +22,14 @@
         {% if tags %}
             <ul>
                 {% for tag in tags %}
-                    <li>{{ tag.nome }}</li>
+                    <li>
+                        {{ tag.nome }}
+                        <!-- Formulário de exclusão -->
+                        <form action="{% url 'aplicacao:excluir_tag' tag.id %}" method="post" style="display:inline;">
+                            {% csrf_token %}
+                            <button type="submit" class="delete-button">Excluir</button>
+                        </form>
+                    </li>
                 {% endfor %}
             </ul>
         {% else %}

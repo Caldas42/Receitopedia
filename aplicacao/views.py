@@ -260,3 +260,9 @@ class PesquisarPorTagView(View):
             'receitas': receitas,
         }
         return render(request, 'resultado_pesquisa.html', ctx)
+    
+class ExcluirTagView(View):
+    def post(self, request, tag_id):
+        tag = get_object_or_404(Tag, id=tag_id)
+        tag.delete()
+        return redirect('aplicacao:tags')

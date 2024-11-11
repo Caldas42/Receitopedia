@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from .views import ExcluirTagView
 
 app_name = 'aplicacao'
 
@@ -24,5 +25,6 @@ urlpatterns = [
     path('tags/<int:tag_id>/', views.ReceitaPorTagView.as_view(), name='receitas_por_tag'),
     path('criar_tag/', views.CriarTagView.as_view(), name='criar_tag'),  # URL para criar uma nova tag
     path('pesquisar_por_tag/', views.PesquisarPorTagView.as_view(), name='pesquisar_por_tag'),
+    path('tags/excluir/<int:tag_id>/', ExcluirTagView.as_view(), name='excluir_tag'),
 
 ]

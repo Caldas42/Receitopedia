@@ -58,3 +58,19 @@ h1 {
     font-family: Jaro;
     text-align: center;
 }
+
+.delete-button {
+    background-color: #ff4b5c; /* Cor vermelha */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.delete-button:hover {
+    background-color: #ff1e3c; /* Cor mais escura no hover */
+}
