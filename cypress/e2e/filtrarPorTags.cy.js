@@ -1,7 +1,14 @@
 describe('Filtrando por tags', () => {
     it('Filtrar por tag', () => {
+        cy.visit('/usuarios/delete_cypress/');
+        cy.get('.button').click()
         cy.visit('/');
-        cy.get('#username').type('cypress2')
+        cy.get('a').click()
+        cy.get('#username').type('cypress')
+        cy.get('#password').type('123abc')
+        cy.get('#password_confirm').type('123abc')
+        cy.get('.button').click()
+        cy.get('#username').type('cypress')
         cy.get('#password').type('123abc')
         cy.get('button').click()
         cy.get('ul > :nth-child(3) > a').click()
@@ -34,10 +41,16 @@ describe('Filtrando por tags', () => {
     })
 
     it('Criando tag já existente', () => {
+        cy.visit('/usuarios/delete_cypress/');
+        cy.get('.button').click()
         cy.visit('/');
-        cy.get('#username').type('cypress2')
+        cy.get('a').click()
+        cy.get('#username').type('cypress')
         cy.get('#password').type('123abc')
-        cy.wait(2000)
+        cy.get('#password_confirm').type('123abc')
+        cy.get('.button').click()
+        cy.get('#username').type('cypress')
+        cy.get('#password').type('123abc')
         cy.get('button').click()
         cy.wait(5000)
         cy.get('ul > :nth-child(3) > a').click()
@@ -57,11 +70,16 @@ describe('Filtrando por tags', () => {
     })
 
     it('Tentando pesquisar tags sem tê-la cadastrada', () => {
+        cy.visit('/usuarios/delete_cypress/');
+        cy.get('.button').click()
         cy.visit('/');
-        cy.wait(2000)
-        cy.get('#username').type('cypress2')
+        cy.get('a').click()
+        cy.get('#username').type('cypress')
         cy.get('#password').type('123abc')
-        cy.wait(2000)
+        cy.get('#password_confirm').type('123abc')
+        cy.get('.button').click()
+        cy.get('#username').type('cypress')
+        cy.get('#password').type('123abc')
         cy.get('button').click()
         cy.wait(5000)
         cy.get('header > form > input').type('bebidas geladas')

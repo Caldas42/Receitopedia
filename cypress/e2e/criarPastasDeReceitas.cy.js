@@ -1,19 +1,33 @@
 describe('Criar pastas de receitas ', () => {
     it('Criando uma pasta', () => {
+        cy.visit('/usuarios/delete_cypress/');
+        cy.get('.button').click()
         cy.visit('/');
-        cy.get('#username').type('cypress3')
+        cy.get('a').click()
+        cy.get('#username').type('cypress')
+        cy.get('#password').type('123abc')
+        cy.get('#password_confirm').type('123abc')
+        cy.get('.button').click()
+        cy.get('#username').type('cypress')
         cy.get('#password').type('123abc')
         cy.get('button').click()
         cy.get('ul > :nth-child(2) > a').click()
         cy.get('.create-folder-link').click()
-        cy.get('form > [type="text"]').type('Bebidas quentes')
-        cy.get('button').click()
+        cy.get('#nomenav').type('Bebidas quentes')
+        cy.get('#botao').click()
         cy.get('h2').last().invoke('text').should('have.string', "Bebidas quentes")
     })
 
     it('Adicionando receita a pasta', () => {
+        cy.visit('/usuarios/delete_cypress/');
+        cy.get('.button').click()
         cy.visit('/');
-        cy.get('#username').type('cypress3')
+        cy.get('a').click()
+        cy.get('#username').type('cypress')
+        cy.get('#password').type('123abc')
+        cy.get('#password_confirm').type('123abc')
+        cy.get('.button').click()
+        cy.get('#username').type('cypress')
         cy.get('#password').type('123abc')
         cy.get('button').click()
         cy.get('.card').click()
@@ -25,8 +39,8 @@ describe('Criar pastas de receitas ', () => {
         cy.get('h2').last().invoke('text').should('have.string', "chocolate quente")
         cy.get('ul > :nth-child(2) > a').click()
         cy.get('.create-folder-link').click()
-        cy.get('form > [type="text"]').type('Bebidas quentes')
-        cy.get('button').click()
+        cy.get('#nomenav').type('Bebidas quentes')
+        cy.get('#botao').click()
         cy.get('h2').last().invoke('text').should('have.string', "Bebidas quentes")
         cy.get('.add-receita-form').last().find('select').then($select => {
             cy.wrap($select)
@@ -43,13 +57,20 @@ describe('Criar pastas de receitas ', () => {
     })
 
     it('Esquecendo de colocar o nome da pasta ao cria-la', () => {
+        cy.visit('/usuarios/delete_cypress/');
+        cy.get('.button').click()
         cy.visit('/');
-        cy.get('#username').type('cypress3')
+        cy.get('a').click()
+        cy.get('#username').type('cypress')
+        cy.get('#password').type('123abc')
+        cy.get('#password_confirm').type('123abc')
+        cy.get('.button').click()
+        cy.get('#username').type('cypress')
         cy.get('#password').type('123abc')
         cy.get('button').click()
         cy.get('ul > :nth-child(2) > a').click()
         cy.get('.create-folder-link').click()
-        cy.get('button').click()
+        cy.get('#botao').click()
         cy.get('#nomenav').invoke('text').should('have.string', "")
     })
 })

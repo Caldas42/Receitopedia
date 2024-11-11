@@ -1,7 +1,14 @@
 describe('Adicionando receita', () => {
     it('Adicionando uma receita com sucesso', () => {
+        cy.visit('/usuarios/delete_cypress/');
+        cy.get('.button').click()
         cy.visit('/');
-        cy.get('#username').type('cypress2')
+        cy.get('a').click()
+        cy.get('#username').type('cypress')
+        cy.get('#password').type('123abc')
+        cy.get('#password_confirm').type('123abc')
+        cy.get('.button').click()
+        cy.get('#username').type('cypress')
         cy.get('#password').type('123abc')
         cy.get('button').click()
         cy.get('.card').click()
@@ -14,8 +21,15 @@ describe('Adicionando receita', () => {
     })
 
     it('Esquecendo de colocar o nome ao adicionar receita', () => {
+        cy.visit('/usuarios/delete_cypress/');
+        cy.get('.button').click()
         cy.visit('/');
-        cy.get('#username').type('cypress2')
+        cy.get('a').click()
+        cy.get('#username').type('cypress')
+        cy.get('#password').type('123abc')
+        cy.get('#password_confirm').type('123abc')
+        cy.get('.button').click()
+        cy.get('#username').type('cypress')
         cy.get('#password').type('123abc')
         cy.get('button').click()
         cy.get('.card').click()
@@ -27,8 +41,15 @@ describe('Adicionando receita', () => {
     })
 
     it('Esquecendo de colocar os ingredientes ao adicionar receita', () => {
+        cy.visit('/usuarios/delete_cypress/');
+        cy.get('.button').click()
         cy.visit('/');
-        cy.get('#username').type('cypress2')
+        cy.get('a').click()
+        cy.get('#username').type('cypress')
+        cy.get('#password').type('123abc')
+        cy.get('#password_confirm').type('123abc')
+        cy.get('.button').click()
+        cy.get('#username').type('cypress')
         cy.get('#password').type('123abc')
         cy.get('button').click()
         cy.get('.card').click()
