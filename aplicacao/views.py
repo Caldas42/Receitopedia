@@ -219,15 +219,19 @@ class SalvarReceitaView(LoginRequiredMixin, View):
         return redirect('aplicacao:sugestoes')
 
 # Views para Tags
-class TagListView(View):
+class TagListView(LoginRequiredMixin, View):
+    login_url = 'login'  # Redirecionar para login se não estiver autenticado
+
     def get(self, request):
-        tags = Tag.objects.all()
+        tags = Tag.objects.filter(user=request.user)  # Filtra as tags do usuário autenticado
         return render(request, 'tags.html', {'tags': tags})
 
-class ReceitaPorTagView(View):
+class ReceitaPorTagView(LoginRequiredMixin, View):
+    login_url = 'login'  # Redirecionar para login se não estiver autenticado
+
     def get(self, request, tag_id):
-        tag = get_object_or_404(Tag, id=tag_id)
-        receitas = receita.objects.filter(tags=tag)
+        tag = get_object_or_404(Tag, id=tag_id, user=request.user)  # Garante que a tag pertence ao usuário
+        receitas = receita.objects.filter(tags=tag)  # Certifique-se de que o modelo Receita está correto
         return render(request, 'receitas_por_tag.html', {'tag': tag, 'receitas': receitas})
 
 class CriarTagView(LoginRequiredMixin, View):
@@ -239,11 +243,11 @@ class CriarTagView(LoginRequiredMixin, View):
     def post(self, request):
         nome = request.POST.get('nome')
         if nome:
-            # Verifica se a tag já existe
-            if Tag.objects.filter(nome=nome).exists():
+            # Verifica se a tag já existe para o usuário autenticado
+            if Tag.objects.filter(nome=nome, user=request.user).exists():
                 messages.error(request, 'A tag já existe.')
             else:
-                Tag.objects.create(nome=nome)
+                Tag.objects.create(nome=nome, user=request.user)  # Associar a tag ao usuário
                 messages.success(request, 'Tag criada com sucesso!')
         else:
             messages.error(request, 'O nome da tag é obrigatório.')
@@ -253,16 +257,19 @@ class CriarTagView(LoginRequiredMixin, View):
 class PesquisarPorTagView(View):
     def get(self, request):
         tag_nome = request.GET.get('tag')
-        receitas = receita.objects.filter(tags__nome__icontains=tag_nome)
+        receitas = receita.objects.filter(tags__nome__icontains=tag_nome, tags__user=request.user)  # Filtra receitas do usuário
 
         ctx = {
             'tag_nome': tag_nome,
             'receitas': receitas,
         }
         return render(request, 'resultado_pesquisa.html', ctx)
-    
-class ExcluirTagView(View):
+
+class ExcluirTagView(LoginRequiredMixin, View):
+    login_url = 'login'  # Redirecionar para login se não estiver autenticado
+
     def post(self, request, tag_id):
-        tag = get_object_or_404(Tag, id=tag_id)
+        tag = get_object_or_404(Tag, id=tag_id, user=request.user)  # Garante que a tag pertence ao usuário
         tag.delete()
+        messages.success(request, 'Tag excluída com sucesso!')
         return redirect('aplicacao:tags')
