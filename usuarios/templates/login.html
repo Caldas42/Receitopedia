@@ -8,19 +8,29 @@
     <title>Login</title>
 </head>
 <body>
-    <h2>Entrar</h2>
-    
-    <form method="POST" action="">
-        {% csrf_token %}
-        <label for="username">Usuário:</label>
-        <input type="text" id="username" name="username" required>
-    
-        <label for="password">Senha:</label>
-        <input type="password" id="password" name="password" required>
-    
-        <button type="submit">Login</button>
-    </form>
-    
-    <h4>Não tem conta? <a href="{% url 'registrar' %}" id="links">Regsitre-se aqui</a></h4>
+    <div class="container">
+        <div class="space">
+            <img src="{% static 'aplicacao/img/logo_receitopedia.png' %}" alt="Logo da Receitopédia" class="logo">
+        </div>
+        
+        <h2>Entrar</h2>
+        
+        <div class="login-box">
+            <form method="POST" action="">
+                {% csrf_token %}
+                <div class="login-form">
+                    <label for="username">Usuário:</label>
+                    <input type="text" id="username" name="username" required>
+                
+                    <label for="password">Senha:</label>
+                    <input type="password" id="password" name="password" required>
+                    
+                    <button type="submit" class="button">Login</button>
+                </div>
+            </form>
+        </div>
+        
+        <p class="register-link">Não tem conta? <a href="{% url 'registrar' %}">Registre-se aqui</a></p>
+    </div>
 </body>
 </html>

@@ -5,15 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'aplicacao/css/receitas_pasta.css' %}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <title>Receitas na Pasta</title>
+    <title>Receitas Pasta</title>
 </head>
 <body>
-    {% include 'navbar.html' %} 
-
+    {% include 'navbar.html' %}
+    
     <div class="container">
-        <h1>Receitas na Pasta: {{ pasta.nome }}</h1>
-
         <div class="receitas-info-table">
             <h2>Informações das Receitas</h2>
             {% for receita in receitas %}
@@ -45,6 +42,15 @@
                                 {% endfor %}
                             </div>
                         {% endif %}
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <form action="{% url 'aplicacao:remover_da_pasta' receita.id %}" method="POST">
+                            {% csrf_token %}
+                            <input type="hidden" name="pasta_id" value="{{ pasta.id }}">
+                            <button type="submit" class="styled-button">Remover da Pasta</button>
+                        </form>
                     </td>
                 </tr>
             </table>

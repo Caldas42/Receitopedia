@@ -1,4 +1,85 @@
+@font-face {
+    font-family: 'Jaro';
+    src: url(../../../static/fonts/Jaro-Regular-VariableFont_opsz.ttf);
+}
+
 body {
-    background-color: blueviolet;
-    size: 10px;
+    font-family: Jaro;
+    background-color: #F1E9C0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 300px;
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin: 15px 0 5px;
+    font-weight: bold;
+    color: #3C5F30;
+
+}
+h2 {
+    font-size: 2rem;
+    color: #3C5F30;
+    margin-bottom: 1rem;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #3C5F30;
+    outline: none;
+}
+
+.button {
+    border-radius: 30px;
+    background-color: #3C5F30;
+    font-family: Jaro;
+    width: 100%;
+    padding: 10px;
+    color: #CBE5C2;
+    font-size: 110%;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.button:hover {
+    transform: scale(1.1);
+    background-color: #2B4A24;
+}
+
+.message {
+    margin-top: 15px;
+    color: red;
+}
+.space {
+    margin-bottom: 20px;
+}
+
+.logo {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }

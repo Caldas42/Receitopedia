@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sugestões</title>
+    <link rel="stylesheet" href="{% static 'aplicacao/css/sugestoes.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    {% include 'navbar.html' %} 
+
+    <h1 id="titleMinhasReceitas">Minhas Receitas</h1>
+    
+    <ul>
+        <div class=""recipe-list"">
+            <section class="receitas">
+                {% for receita in receitas_sugestao %}
+                    <div class="recipe-card">
+                        <h3>{{ receita.nome }}</h3>
+                        <h5>{{ receita.user }} (oficial!)</h5>
+
+                        <form action="{% url 'aplicacao:salvar_receita' receita.id %}" method="post">
+                            {% csrf_token %}
+                            <br>
+                            <button type="submit" class="icone-botao">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </form>
+                        <br>
+                    </div>
+                {% endfor %}
+            </section>
+        </div>
+    </ul>
+</body>
+</html>

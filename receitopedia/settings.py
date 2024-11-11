@@ -29,7 +29,7 @@ if NOT_PROD:
     # SECURITY WARNING: don't run with debug turned on in production!
     DEBUG = True
     # SECURITY WARNING: keep the secret key used in production secret!
-    SECRET_KEY = '<django-insecure-g($n!$bxfmkr#at_z1na2ps&aa926)5dg_tmgtch=a95+yca7s>'
+    SECRET_KEY = 'django-insecure-g($n!$bxfmkr#at_z1na2ps&aa926)5dg_tmgtch=a95+yca7s'
     ALLOWED_HOSTS = []
     DATABASES = {
         'default': {
@@ -38,7 +38,7 @@ if NOT_PROD:
         }
     }
 else:
-    SECRET_KEY = os.getenv('django-insecure-g($n!$bxfmkr#at_z1na2ps&aa926)5dg_tmgtch=a95+yca7s')
+    SECRET_KEY = os.getenv('SECRET_KEY')
     DEBUG = os.getenv('DEBUG', '0').lower() in ['true', 't', '1']
     ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(' ')
     CSRF_TRUSTED_ORIGINS = os.getenv('CSRF_TRUSTED_ORIGINS').split(' ')
@@ -59,11 +59,10 @@ else:
             'OPTIONS': {'sslmode': 'require'},
         }
     }
-
+    
 # Application definition
 
 INSTALLED_APPS = [
-    'usuarios',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -71,6 +70,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'aplicacao',
+    'usuarios',
     #Adicionar whitenoise na lista de aplicativos instalados
     "whitenoise.runserver_nostatic",
 ]

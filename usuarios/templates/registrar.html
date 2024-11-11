@@ -10,21 +10,30 @@
     <title>Registrar</title>
 </head>
 <body>
-    <h2 id="titulo_principal">Criar Conta</h2>
-    
-    <form method="POST" action="">
-        {% csrf_token %}
-        <label for="username">Usuário:</label>
-        <input type="text" id="username" name="username" required>
-    
-        <label for="password">Senha:</label>
-        <input type="password" id="password" name="password" required>
-    
-        <label for="password_confirm">Confirme a Senha:</label>
-        <input type="password" id="password_confirm" name="password_confirm" required>
-    
-        <button type="submit">Registrar</button>
-    </form>
-    
+    <div class="container">
+        <div class="space">
+            <img src="{% static 'aplicacao/img/logo_receitopedia.png' %}" alt="Logo da Receitopédia" class="logo">
+        </div>
+        
+        <h2 id="titulo_principal">Criar Conta</h2>
+        
+        <form method="POST" action="">
+            {% csrf_token %}
+            <label for="username">Usuário:</label>
+            <input type="text" id="username" name="username" placeholder="Digite seu usuário" required>
+        
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+        
+            <label for="password_confirm">Confirme a Senha:</label>
+            <input type="password" id="password_confirm" name="password_confirm" placeholder="Confirme sua senha" required>
+            
+            <br>
+            <button type="submit" class="button">Registrar</button>
+        </form>
+
+        <div class="message">
+        </div>
+    </div>
 </body>
 </html>

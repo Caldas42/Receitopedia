@@ -1,18 +1,25 @@
+/* Fonte personalizada */
 @font-face {
     font-family: 'Jaro';
     src: url(../../../static/fonts/Jaro-Regular-VariableFont_opsz.ttf);
 }
 
+/* Reset básico e estilo global */
 * {
+    font-family: Jaro;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Jaro;
 }
 
 body {
-    font-family: Jaro;
     background-color: #F1E9C0;
+}
+
+/* Estilos do conteúdo principal */
+main {
+    padding: 20px;
+    text-align: center;
 }
 
 .h1Ad_receita {
@@ -29,6 +36,7 @@ h1 {
     color: #3C5F30;
 }
 
+/* Estilo do campo de texto e área de texto */
 #nome {
     border-radius: 5px;
     background-color: #CAC486;
@@ -47,6 +55,28 @@ textarea {
     padding-left: 10px;
 }
 
+/* Estilo da select box */
+.styled-select {
+    background-color: #FFF;
+    color: #AD3826;
+    font-weight: bold;
+    border: 1px solid #AD3826;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 14px;
+    width: 30%;
+    cursor: pointer;
+    transition: 0.3s;
+    text-align-last: center; /* Centraliza o placeholder */
+}
+
+/* Efeito hover para a select box */
+.styled-select:hover {
+    border-color: #8A2B1C;
+    color: #8A2B1C;
+}
+
+/* Estilo do botão de enviar */
 .divButton {
     text-align: center;
 }
@@ -66,4 +96,8 @@ textarea {
 
 .button:hover {
     transform: scale(1.1);
+}
+
+.hidden-option {
+    display: none;
 }

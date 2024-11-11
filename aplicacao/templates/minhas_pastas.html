@@ -16,7 +16,6 @@
         </div>
 
         <div class="pasta-list">
-            <!-- Card para Criar Nova Pasta -->
             <div class="pasta-card create-folder-card">
                 <h2>Criar Nova Pasta</h2>
                 <a href="{% url 'aplicacao:criar_pasta' %}" class="create-folder-link">Clique aqui para criar uma nova pasta</a>
@@ -25,14 +24,39 @@
             {% for pasta in pastas %}
                 <div class="pasta-card">
                     <h2><a href="{% url 'aplicacao:receitas_pasta' pasta.id %}">{{ pasta.nome }}</a></h2>
-                    {% for receita in receitas %}
-                        <a href="{% url 'aplicacao:adicionar_a_pasta' receita.id %}">Adicionar {{ receita.nome }} a esta Pasta</a><br>
-                    {% endfor %}
+                    
+                    <form action="{% url 'aplicacao:adicionar_a_pasta' 0 %}" method="POST" class="add-receita-form">
+                        {% csrf_token %}
+                        <select name="receita_id" onchange="updateFormAction(this.value, this.form)" class="styled-select">
+                            <option value="" disabled selected>Escolha uma receita</option>
+                            {% for receita in receitas %}
+                                <option value="{{ receita.id }}">{{ receita.nome }}</option>
+                            {% endfor %}
+                        </select>
+                        <input type="hidden" name="pasta_id" value="{{ pasta.id }}">
+                        <button type="submit" class="styled-button">Adicionar à Pasta</button>
+                    </form>
+                    
+                    <!-- Formulário para excluir a pasta -->
+                    <form action="{% url 'aplicacao:excluir_pasta' pasta.id %}" method="POST" class="delete-pasta-form">
+                        {% csrf_token %}
+                        <button type="submit" class="styled-button" onclick="return confirm('Tem certeza que deseja excluir esta pasta?');">Excluir Pasta</button>
+                    </form>
                 </div>
             {% empty %}
                 <p>Você não tem pastas criadas.</p>
             {% endfor %}
         </div>
     </main>
+
+    <script>
+        function updateFormAction(receitaId, form) {
+            if (receitaId) {
+                form.action = "{% url 'aplicacao:adicionar_a_pasta' 0 %}".replace('0', receitaId);
+            } else {
+                form.action = "{% url 'aplicacao:adicionar_a_pasta' 0 %}".replace('0', '');
+            }
+        }
+    </script>
 </body>
 </html>

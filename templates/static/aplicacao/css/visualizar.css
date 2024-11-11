@@ -26,7 +26,7 @@ h1 {
     border-radius: 15px;
     padding: 20px; 
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    position: relative; /* Adicionando position relative */
+    position: relative; 
 }
 
 h2 {
@@ -40,6 +40,32 @@ h2 {
     border-radius: 5px;
     margin-bottom: 10px;
     background-color: #CAC486;
+}
+
+/* Estilos para a seção de tags */
+.tag-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tag {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #CAC486;
+    color: #3C5F30;
+    border-radius: 20px;
+    font-family: Jaro;
+    font-size: 16px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.tag:hover {
+    background-color: #AD3826;
+    color: #F1E9C0;
+    transform: scale(1.05);
 }
 
 .deleteButton {
@@ -63,7 +89,7 @@ h2 {
 }
 
 .delete-btn:hover {
-    transform:scale(1.1);
+    transform: scale(1.1);
 }
 
 .show-star-rating {
@@ -113,16 +139,54 @@ h2 {
 }
 
 .rate-btn:hover {
-    transform:scale(1.1);
+    transform: scale(1.1);
 }
 
 .editButton {
-    position: absolute; /* Posiciona o elemento em relação ao card */
-    top: 20px; /* Distância do topo do card */
-    right: 20px; /* Distância da direita do card */
+    position: absolute; 
+    top: 20px;
+    right: 20px; 
 }
 
 #lapis {
-    color: black; /* Mantém a cor do ícone */
-    font-size: 24px; /* Ajusta o tamanho do ícone conforme necessário */
+    color: black; 
+    font-size: 24px; 
+}
+
+/* Botão de adicionar tag */
+.add-tag-button {
+    border-radius: 30px;
+    background-color: #3C5F30;
+    font-family: Jaro;
+    color: #CBE5C2;
+    font-size: 110%;
+    padding: 10px 20px;
+    text-align: center;
+    border: none;
+    transition: 0.3s;
+    height: 40px;
+    cursor: pointer;
+}
+
+.add-tag-button:hover {
+    transform: scale(1.1);
+}
+
+/* Selectbox de tags */
+#tags {
+    border-radius: 30px;
+    padding: 10px;
+    font-family: Jaro;
+    font-size: 16px;
+    color: #3C5F30;
+    background-color: #F1E9C0;
+    border: 2px solid #CAC486;
+    margin-right: 10px;
+    transition: 0.3s;
+    height: 40px;
+    cursor: pointer;
+}
+
+#tags:hover {
+    border-color: #AD3826;
 }

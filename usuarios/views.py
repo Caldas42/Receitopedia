@@ -31,7 +31,7 @@ def registrar_view(request):
             try:
                 User.objects.create_user(username=username, password=password)
                 messages.success(request, 'Usuário registrado com sucesso!')
-                return redirect('login')  # Redirecionar para login após registro
+                return redirect('login')
             except Exception as e:
                 messages.error(request, 'Erro ao criar usuário. Usuário já existe.')
         else:

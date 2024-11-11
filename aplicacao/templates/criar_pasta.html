@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'aplicacao/css/home1.css' %}">
+    <link rel="stylesheet" href="{% static 'aplicacao/css/criar_pasta.css' %}">
     <title>Criar Pasta</title>
 </head>
 <body>
@@ -14,8 +14,8 @@
     <form method="post">
         {% csrf_token %}
         <label>Nome da pasta:</label>
-        <input type="text" name="nome" required>
-        <button type="submit">Criar pasta</button>
+        <input type="text" name="nome" required id="nomenav">
+        <button type="submit" id="botao">Criar pasta</button>
     </form>
     
 </body>

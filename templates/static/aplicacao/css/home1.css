@@ -7,6 +7,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Jaro;
 }
 
 body {
@@ -46,7 +47,7 @@ h1 {
     margin-bottom: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
-    width: 300px; /* Ajuste conforme necessário */
+    width: 300px;
 }
 
 .create-folder-form button {
@@ -136,7 +137,7 @@ h1 {
     transition: transform 0.3s, box-shadow 0.3s;
     text-align: center;
     background-color: #CAC486;
-    position: relative; /* Mantém o link no card */
+    position: relative;
 }
 
 .recipe-card:hover {
@@ -145,15 +146,15 @@ h1 {
 }
 
 .recipe-link {
-    text-decoration: none; /* Remove sublinhado do link */
-    color: inherit; /* Herda a cor do texto do card */
-    display: flex; /* Torna o link um contêiner flexível */
-    flex-direction: column; /* Alinha os elementos em coluna */
-    justify-content: center; /* Centraliza verticalmente */
-    align-items: center; /* Centraliza horizontalmente */
-    height: 100%; /* Faz o link ocupar toda a altura do card */
-    width: 100%; /* Faz o link ocupar toda a largura do card */
-    padding: 20px; /* Adiciona padding para que o link cubra todo o card */
+    text-decoration: none;
+    color: inherit;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    height: 100%; 
+    width: 100%; 
+    padding: 20px;
 }
 
 .recipe-card h2 {
@@ -163,11 +164,38 @@ h1 {
 }
 
 .stars {
-    display: flex; /* Alinha as estrelas na mesma linha */
-    justify-content: center; /* Centraliza as estrelas horizontalmente */
-    margin-top: 10px; /* Adiciona espaço entre o título e as estrelas */
+    display: flex; 
+    justify-content: center; 
+    margin-top: 10px; 
 }
 
 h2 {
     text-align: center; 
+}
+.delete-all-btn {
+    background-color: #AD3826; 
+    color: #fff; 
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-bottom: 20px;
+}
+
+.delete-all-btn:hover {
+    background-color: #9B2E21;
+    transform: scale(1.05);
+}
+
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header-section .delete-all-btn {
+    margin-right: 20px;
 }

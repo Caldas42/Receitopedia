@@ -1,0 +1,37 @@
+@font-face {
+    font-family: 'Jaro';
+    src: url(../../../static/fonts/Jaro-Regular-VariableFont_opsz.ttf);
+}
+
+body {
+    font-family: Jaro;
+    background-color: #F1E9C0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+}
+
+#titulo1 {
+    color: brown;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+a {
+    color: #3C5F30;
+    font-size: 1.2em;
+    text-decoration: none;
+    border: 2px solid #3C5F30;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+a:hover {
+    background-color: #3C5F30;
+    color: #CBE5C2;
+}

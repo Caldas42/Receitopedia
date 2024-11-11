@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados da Pesquisa</title>
+    <link rel="stylesheet" href="{% static 'aplicacao/css/resultado_pesquisa.css' %}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+    
+    <main>
+        <h1>Resultados da Pesquisa</h1>
+        
+        {% if receitas %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome da Receita</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for receita in receitas %}
+                        <tr>
+                            <td><a href="{% url 'aplicacao:visualizar' receita.id %}">{{ receita.nome }}</a></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>Nenhuma receita encontrada.</p>
+        {% endif %}
+    </main>
+</body>
+</html>
