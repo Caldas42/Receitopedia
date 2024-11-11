@@ -16,8 +16,6 @@ def login_view(request):
         if user is not None:
             login(request, user)
             return redirect('aplicacao:home')
-        else:
-            messages.error(request, 'Usuário ou senha incorretos.')
 
     return render(request, 'login.html')
 
