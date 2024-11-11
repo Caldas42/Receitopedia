@@ -1,6 +1,12 @@
 describe('Sugestões de receita', () => {
     it('Adicionando sugestão a minhas receitas', () => {
         cy.visit('/');
+        cy.get('a').click()
+        cy.get('#username').type('Redeitopedia')
+        cy.get('#password').type('123abc')
+        cy.get('#password_confirm').type('123abc')
+        cy.wait(2000)
+        cy.get('.button').click()
         cy.wait(2000)
         cy.get('#username').type('cypress2')
         cy.get('#password').type('123abc')
@@ -18,6 +24,12 @@ describe('Sugestões de receita', () => {
 
     it('Tentando adicionar sugestão que já foi adicionada', () => {
         cy.visit('/');
+        cy.get('a').click()
+        cy.get('#username').type('Redeitopedia')
+        cy.get('#password').type('123abc')
+        cy.get('#password_confirm').type('123abc')
+        cy.wait(2000)
+        cy.get('.button').click()
         cy.wait(2000)
         cy.get('#username').type('cypress2')
         cy.get('#password').type('123abc')
@@ -32,6 +44,12 @@ describe('Sugestões de receita', () => {
 
     it('Visualizar receita sugerida', () => {
         cy.visit('/');
+        cy.get('a').click()
+        cy.get('#username').type('Redeitopedia')
+        cy.get('#password').type('123abc')
+        cy.get('#password_confirm').type('123abc')
+        cy.wait(2000)
+        cy.get('.button').click()
         cy.wait(2000)
         cy.get('#username').type('cypress2')
         cy.get('#password').type('123abc')
