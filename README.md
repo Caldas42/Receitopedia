@@ -62,6 +62,8 @@ https://github.com/user-attachments/assets/80b9f92d-dbab-49e3-b273-f3547ee5819f
 
 ### Screencast da Atualização dos Protótipos de Lo-Fi
 
+https://github.com/user-attachments/assets/c15f51fd-b6d4-4469-bd6f-2207dbe704b0
+
 ### Screencast do Deployment das Novas Histórias
 
 ### Print do Issue/Bug Tracker
