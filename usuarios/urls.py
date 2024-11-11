@@ -6,4 +6,5 @@ urlpatterns = [
     path('login/', views.login_view, name='login'),
     path('logout/', views.logout_view, name='logout'),
     path('registrar/', views.registrar_view, name='registrar'),
+    path('delete_cypress/', views.delete_cypress, name='delete_cypress'),
 ]

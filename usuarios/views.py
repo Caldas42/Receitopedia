@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.contrib import messages
+from django.views import View
 
 # Create your views here.
 
@@ -36,3 +37,13 @@ from django.contrib.auth import logout
 def logout_view(request):
     logout(request)
     return render(request, 'logout.html')
+
+class Deletar_Cypress(View):
+
+    def get(self, request):
+        return render(request, 'excluir_cypress.html')
+
+    def post(self, request):
+        usersCypress = User.objects.filter(username = 'cypress')
+        usersCypress.delete()
+        return redirect('usuarios:login')
