@@ -71,7 +71,7 @@ https://github.com/user-attachments/assets/c15f51fd-b6d4-4469-bd6f-2207dbe704b0
 ![image](https://github.com/user-attachments/assets/63098970-46a7-40a4-bf65-3c5bbdf15c83)
 
 ![image](https://github.com/user-attachments/assets/0702d708-7b72-4044-a353-f5b31259193d)
-
+![image](https://github.com/user-attachments/assets/15bc28a5-6005-4886-a69b-3a0f317a1a29)
 
 ### Screencast da Execução dos Testes de Sistema Automatizados
 
