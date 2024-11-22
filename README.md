@@ -66,6 +66,8 @@ https://github.com/user-attachments/assets/c15f51fd-b6d4-4469-bd6f-2207dbe704b0
 
 ### Screencast do Deployment das Novas Histórias
 
+https://github.com/user-attachments/assets/75c3877c-0eeb-49c8-af69-818366213636
+
 ### Print do Issue/Bug Tracker
 
 ![image](https://github.com/user-attachments/assets/63098970-46a7-40a4-bf65-3c5bbdf15c83)
@@ -75,7 +77,9 @@ https://github.com/user-attachments/assets/c15f51fd-b6d4-4469-bd6f-2207dbe704b0
 
 ### Screencast da Execução dos Testes de Sistema Automatizados
 
-### Screencast do Processo de Build e Deployment
+https://github.com/user-attachments/assets/374fca8b-fb6a-487d-aad7-7d65b55a6692
+
+### [Screencast do Processo de Build e Deployment](https://youtu.be/bop8lL5siMs)
 
 ### Print do Quadro da Sprint 03 Atualizado Refletindo a Entrega
 
