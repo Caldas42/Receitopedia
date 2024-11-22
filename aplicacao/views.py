@@ -1,10 +1,10 @@
+import random
+
 from django.shortcuts import redirect, render, get_object_or_404
-from .models import receita, Pasta, ReceitaSalva, Tag  # Importando o modelo de Tag
 from django.views import View
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
-
-import random
+from .models import receita, Pasta, ReceitaSalva, Tag
 
 class HomeView(LoginRequiredMixin, View):
     login_url = 'login'
